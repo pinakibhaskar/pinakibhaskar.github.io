@@ -2,6 +2,10 @@
     background: transparent;
     opacity: 1.00;
 }
+.style_SkipStroke_3 {
+    background: transparent;
+    opacity: 1.00;
+}
 .style_SkipStrokeSkipFillSkipOpacity {
 }
 .style_SkipStroke {
@@ -56,22 +60,9 @@ a:hover {
     color: rgb(224, 92, 0);
     text-decoration: none;
 }
-#widget4 .Comment_Posted_Date {
+#widget0 a {
     color: rgb(119, 45, 35);
-    font-family: 'CourierNewPS-BoldMT', 'Courier New', monospace;
-    font-size: 14px;
-    font-stretch: normal;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 16px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    opacity: 1.00;
-    text-align: left;
     text-decoration: none;
-    text-transform: none;
 }
 #id1 div.caption span.title {
     color: rgb(88, 77, 77);
@@ -87,6 +78,39 @@ a:hover {
     text-decoration: none;
     text-transform: none;
 }
+#widget3 a {
+    color: rgb(119, 45, 35);
+    text-decoration: none;
+}
+#widget4 a {
+    color: rgb(119, 45, 35);
+    text-decoration: none;
+}
+#widget5 a {
+    color: rgb(119, 45, 35);
+    text-decoration: none;
+}
+#widget6 a {
+    color: rgb(119, 45, 35);
+    text-decoration: none;
+}
+#widget6 a:hover {
+    color: rgb(224, 92, 0);
+    text-decoration: none;
+}
+#id1 div.caption {
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    padding-bottom: 4px;
+    padding-top: 0px;
+    text-align: center;
+    text-indent: 0px;
+    white-space: nowrap;
+}
 #id1 div.caption span.metric {
     color: rgb(88, 77, 77);
     font-family: 'Handwriting-Dakota', 'Handwriting - Dakota';
@@ -101,15 +125,46 @@ a:hover {
     text-decoration: none;
     text-transform: none;
 }
+#widget4 a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+#id1 canvas {
+    z-index: -1;
+}
+#widget6 a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+#widget7 a {
+    color: rgb(119, 45, 35);
+    text-decoration: none;
+}
+.bumper {
+    font-size: 1px;
+    line-height: 1px;
+}
 #widget0 a:visited {
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
-#widget3 a:visited {
+#widget8 a {
+    color: rgb(119, 45, 35);
+    text-decoration: none;
+}
+#widget5 a:hover {
+    color: rgb(224, 92, 0);
+    text-decoration: none;
+}
+#widget8 a:visited {
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
-#widget3 .Comment_Posted_Date {
+.spacer {
+    font-size: 1px;
+    line-height: 1px;
+}
+#widget7 .Comment_Posted_Date {
     color: rgb(119, 45, 35);
     font-family: 'CourierNewPS-BoldMT', 'Courier New', monospace;
     font-size: 14px;
@@ -126,15 +181,48 @@ a:hover {
     text-decoration: none;
     text-transform: none;
 }
-.spacer {
-    font-size: 1px;
-    line-height: 1px;
-}
-#widget3 a:hover {
+#widget8 a:hover {
     color: rgb(224, 92, 0);
     text-decoration: none;
 }
+#widget7 a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
 #widget4 a:hover {
+    color: rgb(224, 92, 0);
+    text-decoration: none;
+}
+#widget5 a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+#widget7 a:hover {
+    color: rgb(224, 92, 0);
+    text-decoration: none;
+}
+#widget3 a:visited {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+#widget8 .Comment_Posted_Date {
+    color: rgb(119, 45, 35);
+    font-family: 'CourierNewPS-BoldMT', 'Courier New', monospace;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+}
+#widget0 a:hover {
     color: rgb(224, 92, 0);
     text-decoration: none;
 }
@@ -142,45 +230,9 @@ a:hover {
     font-size: 1px;
     line-height: 1px;
 }
-#id1 div.caption {
-    line-height: 16px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    padding: 0px;
-    padding-bottom: 4px;
-    padding-top: 0px;
-    text-align: center;
-    text-indent: 0px;
-    white-space: nowrap;
-}
-#widget4 a:visited {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-#widget0 a {
-    color: rgb(119, 45, 35);
-    text-decoration: none;
-}
-#widget0 a:hover {
+#widget3 a:hover {
     color: rgb(224, 92, 0);
     text-decoration: none;
-}
-.bumper {
-    font-size: 1px;
-    line-height: 1px;
-}
-#widget3 a {
-    color: rgb(119, 45, 35);
-    text-decoration: none;
-}
-#widget4 a {
-    color: rgb(119, 45, 35);
-    text-decoration: none;
-}
-#id1 canvas {
-    z-index: -1;
 }
 body { 
     -webkit-text-size-adjust: none;

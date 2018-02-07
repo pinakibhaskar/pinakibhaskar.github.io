@@ -44,36 +44,11 @@
     text-indent: 0px;
     text-transform: none;
 }
-.style_SkipStroke_2 {
-    background: transparent;
-    opacity: 1.00;
-}
-.style_SkipStrokeSkipFillSkipOpacity_1 {
-}
-.style_SkipStrokeSkipFillSkipOpacity {
-}
-.style_SkipStroke {
-    background: transparent;
-    opacity: 1.00;
-}
-.style_SkipStroke_1 {
-    background: transparent;
-    opacity: 1.00;
-}
 .style_3 {
     line-height: 21px;
     text-decoration: none;
 }
 .style_4 {
-    font-family: 'Palatino-Bold', 'Palatino', serif;
-    font-size: 14px;
-    font-stretch: normal;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px;
-    text-decoration: none;
-}
-.style_5 {
     line-height: 21px;
 }
 .paragraph_style_1 {
@@ -98,15 +73,6 @@
     text-indent: 0px;
     text-transform: none;
 }
-.style_6 {
-    font-family: 'Palatino-Roman', 'Palatino', serif;
-    font-size: 9px;
-    font-stretch: normal;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    vertical-align: 4px;
-}
 .paragraph_style_2 {
     color: rgb(88, 77, 77);
     font-family: 'Palatino-Roman', 'Palatino', serif;
@@ -129,6 +95,25 @@
     text-indent: 0px;
     text-transform: none;
 }
+.style_5 {
+    color: rgb(0, 0, 0);
+    font-family: 'TimesNewRomanPSMT', 'Times New Roman', serif;
+    font-size: 12px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    opacity: 1.00;
+}
+.style_6 {
+    font-family: 'Palatino-Roman', 'Palatino', serif;
+    font-size: 9px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    vertical-align: 4px;
+}
 .paragraph_style_3 {
     color: rgb(88, 77, 77);
     font-family: 'AbadiMT-CondensedExtraBold', 'Abadi MT Condensed Extra Bold';
@@ -136,7 +121,7 @@
     font-stretch: condensed;
     font-style: normal;
     font-variant: normal;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0;
     line-height: 18px;
     margin-bottom: 0px;
@@ -156,7 +141,7 @@
     font-size: 18px;
     font-stretch: condensed;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 24px;
 }
 .style_8 {
@@ -176,6 +161,50 @@
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
+}
+.paragraph_style_4 {
+    color: rgb(88, 77, 77);
+    font-family: 'Palatino-Roman', 'Palatino', serif;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    opacity: 1.00;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0px;
+    text-transform: none;
+}
+.style_SkipStroke_2 {
+    background: transparent;
+    opacity: 1.00;
+}
+.style_SkipStroke_3 {
+    background: transparent;
+    opacity: 1.00;
+}
+.style_SkipStroke {
+    background: transparent;
+    opacity: 1.00;
+}
+.style_SkipStroke_1 {
+    background: transparent;
+    opacity: 1.00;
+}
+.style_SkipStrokeSkipFillSkipOpacity_1 {
+}
+.style_SkipStrokeSkipFillSkipOpacity {
+}
+.style_SkipStrokeSkipFillSkipOpacity_2 {
 }
 .Body {
     color: rgb(88, 77, 77);
@@ -213,29 +242,31 @@
     background: transparent;
     opacity: 1.00;
 }
+.graphic_shape_style_default_SkipStrokeSkipFillSkipOpacity {
+}
+.graphic_textbox_layout_style_default_External_620_321 {
+    position: relative;
+}
 .graphic_textbox_layout_style_default {
     padding: 4px;
 }
-.graphic_textbox_layout_style_default_External_620_300 {
+.graphic_textbox_layout_style_default_External_620_70 {
     position: relative;
 }
-.graphic_textbox_layout_style_default_External_618_175 {
+.graphic_textbox_layout_style_default_External_477_396 {
     position: relative;
 }
-.graphic_textbox_layout_style_default_External_477_306 {
+.graphic_textbox_layout_style_default_External_620_1000 {
     position: relative;
 }
-.graphic_textbox_layout_style_default_External_620_107 {
+.graphic_textbox_layout_style_default_External_620_363 {
     position: relative;
 }
-.graphic_textbox_layout_style_default_External_620_477 {
-    position: relative;
+.graphic_textbox_style_default_SkipStrokeSkipFillSkipOpacity {
 }
 .graphic_textbox_style_default_SkipStroke {
     background: transparent;
     opacity: 1.00;
-}
-.graphic_textbox_style_default_SkipStrokeSkipFillSkipOpacity {
 }
 a {
     color: rgb(119, 45, 35);

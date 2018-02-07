@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>My podcast</title>
+    <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/Podcast/Podcast.html</link>
+    <description>will come soon...</description>
+    <generator>iWeb 3.0.4</generator>
+    <image>
+      <url>https://pinakibhaskar.github.io/Pinaki_Bhaskar/Podcast/Podcast_files/dexph055_001a.jpg</url>
+      <title>My podcast</title>
+      <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/Podcast/Podcast.html</link>
+    </image>
+  </channel>
+</rss>

@@ -58,6 +58,10 @@
     background: transparent;
     opacity: 1.00;
 }
+.style_SkipStroke_3 {
+    background: transparent;
+    opacity: 1.00;
+}
 .paragraph_style_2 {
     color: rgb(88, 77, 77);
     font-family: 'Palatino-Bold', 'Palatino', serif;
@@ -151,10 +155,13 @@
 .graphic_textbox_layout_style_default {
     padding: 4px;
 }
-.graphic_textbox_layout_style_default_External_618_541 {
+.graphic_textbox_layout_style_default_External_618_970 {
     position: relative;
 }
 .graphic_textbox_layout_style_default_External_623_279 {
+    position: relative;
+}
+.graphic_textbox_layout_style_default_External_614_138 {
     position: relative;
 }
 .graphic_textbox_layout_style_default_External_614_97 {

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<rss xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>Podcast</title>
+    <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/Podcast</link>
+    <description>will come soon...</description>
+    <iweb:dateFormat>EEEE, d MMMM y</iweb:dateFormat>
+    <iweb:baseURL>https://pinakibhaskar.github.io/Pinaki_Bhaskar/Podcast</iweb:baseURL>
+    <iweb:maximumSummaryItems>5</iweb:maximumSummaryItems>
+  </channel>
+</rss>

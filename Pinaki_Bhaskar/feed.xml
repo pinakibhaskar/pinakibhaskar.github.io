@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>urn:iweb:904F84BF-7E92-4AF1-AF43-304D9F842B79</id>
+ <title>Page list Atom feed</title>
+ <updated>2018-02-07T22:00:16+05:30</updated>
+ <link rel="self" href="feed.xml"/>
+ <generator>iWeb</generator>
+ <author>
+  <name>iWeb</name>
+ </author>
+ <entry>
+  <id>urn:iweb:848F2833-F6F1-4CD5-A606-F6E2438EDDD7</id>
+  <title>Welcome</title>
+  <title xmlns="urn:iweb:">Welcome</title>
+  <in-navbar xmlns="urn:iweb:">848F2833-F6F1-4CD5-A606-F6E2438EDDD7</in-navbar>
+  <link rel="alternate" href="Welcome.html"/>
+  <updated>2018-02-07T22:00:16.001+05:30</updated>
+  <content>Welcome</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:DF105270-D762-403A-98B6-DFCE646C029C</id>
+  <title>About Me</title>
+  <title xmlns="urn:iweb:">About Me</title>
+  <in-navbar xmlns="urn:iweb:">DF105270-D762-403A-98B6-DFCE646C029C</in-navbar>
+  <link rel="alternate" href="About_Me.html"/>
+  <updated>2018-02-07T22:00:16.002+05:30</updated>
+  <content>About Me</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:C2DC10CA-BD2A-42F0-999F-D696D5927187</id>
+  <title>Research</title>
+  <title xmlns="urn:iweb:">Research</title>
+  <in-navbar xmlns="urn:iweb:">C2DC10CA-BD2A-42F0-999F-D696D5927187</in-navbar>
+  <link rel="alternate" href="Research.html"/>
+  <updated>2018-02-07T22:00:16.003+05:30</updated>
+  <content>Research</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:650B7FBB-6017-4AAE-885C-5CAB9CFF65AC</id>
+  <title>Experience</title>
+  <title xmlns="urn:iweb:">Experience</title>
+  <in-navbar xmlns="urn:iweb:">650B7FBB-6017-4AAE-885C-5CAB9CFF65AC</in-navbar>
+  <link rel="alternate" href="Experience.html"/>
+  <updated>2018-02-07T22:00:16.004+05:30</updated>
+  <content>Experience</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:A2637DEF-E03E-43C6-9A54-F9200D3764FD</id>
+  <title>Publication</title>
+  <title xmlns="urn:iweb:">Publication</title>
+  <in-navbar xmlns="urn:iweb:">A2637DEF-E03E-43C6-9A54-F9200D3764FD</in-navbar>
+  <link rel="alternate" href="Publication.html"/>
+  <updated>2018-02-07T22:00:16.005+05:30</updated>
+  <content>Publication</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:D0AC16B9-B973-44D4-942B-7877B2DE87AA</id>
+  <title>My Albums</title>
+  <title xmlns="urn:iweb:">My Albums</title>
+  <in-navbar xmlns="urn:iweb:">D0AC16B9-B973-44D4-942B-7877B2DE87AA</in-navbar>
+  <link rel="alternate" href="My_Albums/My_Albums.html"/>
+  <updated>2018-02-07T22:00:16.006+05:30</updated>
+  <content>My Albums</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:0F341657-BA4A-42C6-B634-B791F2AC506D</id>
+  <title>Blog</title>
+  <title xmlns="urn:iweb:">Blog</title>
+  <in-navbar xmlns="urn:iweb:">0F341657-BA4A-42C6-B634-B791F2AC506D</in-navbar>
+  <link rel="alternate" href="Blog/Blog.html"/>
+  <updated>2005-09-21T06:38:38+05:30</updated>
+  <content>Blog</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:8CF25BF4-37E8-46E1-A43C-C971C61E52B3</id>
+  <title>Podcast</title>
+  <title xmlns="urn:iweb:">Podcast</title>
+  <in-navbar xmlns="urn:iweb:">8CF25BF4-37E8-46E1-A43C-C971C61E52B3</in-navbar>
+  <link rel="alternate" href="Podcast/Podcast.html"/>
+  <updated>2005-09-21T06:38:38+05:30</updated>
+  <content>Podcast</content>
+ </entry>
+</feed>

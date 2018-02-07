@@ -2,7 +2,27 @@
 <rss xmlns:iphoto="urn:iphoto:property" xmlns:iweb="http://www.apple.com/iweb" version="2.0">
   <channel>
     <title>Pinaki Bhaskar</title>
-    <link>http://pinakibhaskar.com/Pinaki_Bhaskar/My_Albums/My_Albums.html</link>
+    <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/My_Albums/My_Albums.html</link>
     <description>Pinaki Bhaskar</description>
+    <item>
+      <title>Convocation 2010</title>
+      <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/My_Albums/Pages/Convocation_2010.html</link>
+      <guid isPermaLink="false">d2fa0cd3-b03c-4973-8cd8-83628f08a190</guid>
+    </item>
+    <item>
+      <title>Rotang, the way to Heaven</title>
+      <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/My_Albums/Pages/Rotang,_the_way_to_Heaven.html</link>
+      <guid isPermaLink="false">25ff1577-bf6a-4ba9-91fa-84b6518adc66</guid>
+    </item>
+    <item>
+      <title>Mukutmanipur</title>
+      <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/My_Albums/Pages/Mukutmanipur.html</link>
+      <guid isPermaLink="false">94092f17-ae9b-4af2-9dde-a23508c03f6e</guid>
+    </item>
+    <item>
+      <title>Europe</title>
+      <link>https://pinakibhaskar.github.io/Pinaki_Bhaskar/My_Albums/Pages/Europe.html</link>
+      <guid isPermaLink="false">4884d244-1d6b-4179-8f16-975076ce6cd6</guid>
+    </item>
   </channel>
 </rss>
