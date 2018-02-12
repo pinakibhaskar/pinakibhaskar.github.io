@@ -65,13 +65,13 @@
 .paragraph_style_2 {
     color: rgb(88, 77, 77);
     font-family: 'Palatino-Bold', 'Palatino', serif;
-    font-size: 18px;
+    font-size: 14px;
     font-stretch: normal;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 26px;
+    line-height: 21px;
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -97,13 +97,13 @@
 .paragraph_style_3 {
     color: rgb(88, 77, 77);
     font-family: 'Palatino-Bold', 'Palatino', serif;
-    font-size: 14px;
+    font-size: 18px;
     font-stretch: normal;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 21px;
+    line-height: 26px;
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -155,16 +155,13 @@
 .graphic_textbox_layout_style_default {
     padding: 4px;
 }
-.graphic_textbox_layout_style_default_External_618_970 {
-    position: relative;
-}
 .graphic_textbox_layout_style_default_External_623_279 {
     position: relative;
 }
-.graphic_textbox_layout_style_default_External_614_138 {
+.graphic_textbox_layout_style_default_External_618_1086 {
     position: relative;
 }
-.graphic_textbox_layout_style_default_External_614_97 {
+.graphic_textbox_layout_style_default_External_614_138 {
     position: relative;
 }
 .graphic_textbox_style_default_SkipStroke {

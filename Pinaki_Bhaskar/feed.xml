@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  <id>urn:iweb:904F84BF-7E92-4AF1-AF43-304D9F842B79</id>
  <title>Page list Atom feed</title>
- <updated>2018-02-08T00:18:13+05:30</updated>
+ <updated>2018-02-13T00:25:55+05:30</updated>
  <link rel="self" href="feed.xml"/>
  <generator>iWeb</generator>
  <author>
@@ -14,7 +14,7 @@
   <title xmlns="urn:iweb:">Welcome</title>
   <in-navbar xmlns="urn:iweb:">848F2833-F6F1-4CD5-A606-F6E2438EDDD7</in-navbar>
   <link rel="alternate" href="Welcome.html"/>
-  <updated>2018-02-08T00:18:13.001+05:30</updated>
+  <updated>2018-02-13T00:25:55.001+05:30</updated>
   <content>Welcome</content>
  </entry>
  <entry>
@@ -23,7 +23,7 @@
   <title xmlns="urn:iweb:">About Me</title>
   <in-navbar xmlns="urn:iweb:">DF105270-D762-403A-98B6-DFCE646C029C</in-navbar>
   <link rel="alternate" href="About_Me.html"/>
-  <updated>2018-02-08T00:18:13.002+05:30</updated>
+  <updated>2018-02-13T00:25:55.002+05:30</updated>
   <content>About Me</content>
  </entry>
  <entry>
@@ -32,7 +32,7 @@
   <title xmlns="urn:iweb:">Research</title>
   <in-navbar xmlns="urn:iweb:">C2DC10CA-BD2A-42F0-999F-D696D5927187</in-navbar>
   <link rel="alternate" href="Research.html"/>
-  <updated>2018-02-08T00:18:13.003+05:30</updated>
+  <updated>2018-02-13T00:25:55.003+05:30</updated>
   <content>Research</content>
  </entry>
  <entry>
@@ -41,7 +41,7 @@
   <title xmlns="urn:iweb:">Experience</title>
   <in-navbar xmlns="urn:iweb:">650B7FBB-6017-4AAE-885C-5CAB9CFF65AC</in-navbar>
   <link rel="alternate" href="Experience.html"/>
-  <updated>2018-02-08T00:18:13.004+05:30</updated>
+  <updated>2018-02-13T00:25:55.004+05:30</updated>
   <content>Experience</content>
  </entry>
  <entry>
@@ -50,7 +50,7 @@
   <title xmlns="urn:iweb:">Publication</title>
   <in-navbar xmlns="urn:iweb:">A2637DEF-E03E-43C6-9A54-F9200D3764FD</in-navbar>
   <link rel="alternate" href="Publication.html"/>
-  <updated>2018-02-08T00:18:13.005+05:30</updated>
+  <updated>2018-02-13T00:25:55.005+05:30</updated>
   <content>Publication</content>
  </entry>
  <entry>
@@ -59,7 +59,7 @@
   <title xmlns="urn:iweb:">My Albums</title>
   <in-navbar xmlns="urn:iweb:">D0AC16B9-B973-44D4-942B-7877B2DE87AA</in-navbar>
   <link rel="alternate" href="My_Albums/My_Albums.html"/>
-  <updated>2018-02-08T00:18:13.006+05:30</updated>
+  <updated>2018-02-13T00:25:55.006+05:30</updated>
   <content>My Albums</content>
  </entry>
  <entry>
