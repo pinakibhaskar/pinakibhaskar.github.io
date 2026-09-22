@@ -1,0 +1,1388 @@
+/* ========================================
+   pinakibhaskar.github.io — "Editorial" stylesheet
+   Plain CSS, no build step. Mobile-first.
+
+   CONTENTS
+     1.  Fonts
+     2.  Design tokens (colour, type, space, layout) — light + dark
+     3.  Base & typography
+     4.  Utilities (.row grid, .vh, prose measure, buttons, chips, profile links, tags, lists, .plate)
+     5.  Layout shell
+     6.  Header: top bar (phone) / inline nav (tablet) / left rail (wide)
+     7.  Hero
+     8.  Proof strip
+     9.  Now
+     10. Sections & section heads
+     11. Case studies (definition-list "spreads")
+     12. Recognition (pull-quote + award photo), What I do
+     13. Timeline (experience, education), progression strip
+     14. Patents (one table: real table from 64rem, stacked rows below)
+     15. Research: metrics strip, publications, results table, filters
+     16. Awards, contact, footer
+     17. Photography: grid + lightbox
+     18. Motion (reveal on scroll) — opt-in via JS only
+     19. Print
+   ======================================== */
+
+
+/* 1. FONTS ------------------------
+   Self-hosted, latin subset, variable. Fraunces (display serif) and Inter
+   (text sans) are both SIL Open Font License. Inter has no italic file here:
+   italics are always set in Fraunces (see `em, cite` below).
+   The files carry only the axis ranges this stylesheet asks for — Fraunces wght 300–600,
+   opsz 12–72; Inter wght 400–700 — so keep font-weight inside those ranges. */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-var.woff2") format("woff2");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-var-italic.woff2") format("woff2");
+  font-weight: 300 600;
+  font-style: italic;
+  font-display: swap;
+}
+/* A plain ampersand. Fraunces' "&" is ornate: right for the big section titles, fussy in
+   smaller serif text ("Samsung R&D Institute"). This face holds "&" only (unicode-range),
+   drawn from Inter; it leads --serif, while --serif-display goes without it. */
+@font-face {
+  font-family: "Plain Ampersand";
+  src: url("../fonts/inter-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0026;
+}
+/* Metric-matched stand-ins, shown until the web fonts arrive (font-display: swap), so the text
+   does not jump when they do. Arial is scaled to Inter's width; Georgia takes Fraunces' ascent
+   and descent (Fraunces' width changes with optical size, so its size is left alone).
+   Where Arial / Georgia are not installed these faces are skipped and the stacks carry on. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  size-adjust: 107.4%; ascent-override: 90.2%; descent-override: 22.5%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia");
+  ascent-override: 97.8%; descent-override: 25.5%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia Italic"), local("Georgia-Italic");
+  font-style: italic;
+  ascent-override: 97.8%; descent-override: 25.5%; line-gap-override: 0%;
+}
+
+
+/* 2. DESIGN TOKENS ------------------------ */
+
+/* CV SLOT ------------------------------------------------------------------
+   The site is waiting for a CV. When the PDF is ready, save it as
+   assets/Pinaki_Bhaskar_CV.pdf and DELETE this one rule: the three links marked
+   data-cv-slot in index.html (hero button, rail, contact) reappear by themselves.
+   ------------------------------------------------------------------------- */
+[data-cv-slot] { display: none !important; }
+
+:root {
+  /* Colour — light ("paper"). One accent only: burnt orange.
+     --accent       decoration, rules, focus rings, large UI (3:1 on paper)
+     --accent-text  accent used for text (4.5:1 on paper and on --accent-wash)
+     --accent-fill  solid button background (4.5:1 against --on-accent)
+     --accent-wash  quiet accent tint behind a tag */
+  --paper: #FAF6EE;
+  --paper-2: #F2ECE0;
+  --ink: #211D18;
+  --ink-2: #564E44;
+  --ink-3: #74695B;
+  --rule: #E2D9CA;
+  --rule-strong: #C9BDAA;
+  --field-border: #8A7F70;   /* outline of form fields: 3:1 or better on --paper (WCAG 1.4.11) */
+  --accent: #D9622B;
+  --accent-text: #AE4518;
+  --accent-fill: #BC4C1B;
+  --accent-fill-hover: #9C3E14;
+  --accent-wash: #F8E9DC;
+  --on-accent: #FFFCF7;
+
+  /* Type. --serif-display keeps Fraunces' own ampersand (section titles only). */
+  --serif-display: "Fraunces", "Fraunces Fallback", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --serif: "Plain Ampersand", var(--serif-display);
+  --sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --fs-label: 0.75rem;      /* 12px  uppercase labels */
+  --fs-small: 0.875rem;     /* 14px  captions, meta */
+  --fs-body-s: 0.9375rem;   /* 15px  secondary text */
+  --fs-body: 1.0625rem;     /* 17px  body */
+  --fs-lead: clamp(1.25rem, 1.12rem + 0.55vw, 1.4375rem);
+  --fs-h3: clamp(1.4375rem, 1.3rem + 0.6vw, 1.75rem);
+  --fs-h2: clamp(2rem, 1.55rem + 2vw, 3rem);
+  --fs-display: clamp(2.5rem, 1.45rem + 4.6vw, 4.5rem);
+
+  --lh-body: 1.65;
+  --lh-tight: 1.15;
+
+  /* Space (4px base) */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-section: clamp(5rem, 3.5rem + 6vw, 8.5rem);
+
+  /* Layout */
+  --page-pad: clamp(1rem, 0.2rem + 3.6vw, 3.5rem);  /* 16px on a 360px phone */
+  --label-col: 8.5rem;     /* hanging-label column on >= 48rem */
+  --gutter: 2rem;
+  --measure: 45rem;        /* 720px reading column */
+  --prose: 68ch;           /* longest line of running text inside that column */
+  --rail-w: 13rem;
+  --bar-h: 3.5rem;
+  --radius: 3px;
+
+  /* CSS-drawn arrows (used as masks): north-east after external links, down after in-page jumps */
+  --icon-ext: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8.5 7H17v8.5'/%3E%3C/svg%3E");
+  --icon-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14m0 0-6-6m6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* Colour — dark ("warm charcoal"). Designed, not inverted: lower-contrast
+   rules, a lighter, slightly desaturated accent, dark text on the accent.
+   KEEP THE TWO BLOCKS BELOW IN SYNC (system preference + manual toggle). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1D1A17;
+    --paper-2: #262220;
+    --ink: #EFE8DC;
+    --ink-2: #C3B9A9;
+    --ink-3: #A09585;
+    --rule: #36312B;
+    --rule-strong: #4F483F;
+    --field-border: #7C7366;
+    --accent: #E27A45;
+    --accent-text: #EE9160;
+    --accent-fill: #E8834E;
+    --accent-fill-hover: #F29A6B;
+    --accent-wash: #33261D;
+    --on-accent: #1D1A17;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1D1A17;
+  --paper-2: #262220;
+  --ink: #EFE8DC;
+  --ink-2: #C3B9A9;
+  --ink-3: #A09585;
+  --rule: #36312B;
+  --rule-strong: #4F483F;
+  --field-border: #7C7366;
+  --accent: #E27A45;
+  --accent-text: #EE9160;
+  --accent-fill: #E8834E;
+  --accent-fill-hover: #F29A6B;
+  --accent-wash: #33261D;
+  --on-accent: #1D1A17;
+}
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+
+/* 3. BASE & TYPOGRAPHY ------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--bar-h) + 1.5rem);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+p + p { margin-top: var(--s-4); }
+p, dd, li, figcaption, .patents__desc { text-wrap: pretty; }
+
+strong, b { font-weight: 600; }
+
+/* No Inter italic is shipped: every italic is Fraunces. */
+em, cite, i { font-family: var(--serif); font-style: italic; font-size: 1.04em; }
+
+abbr[title] { text-decoration: none; border-bottom: 1px dotted var(--ink-3); cursor: help; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+a:hover { color: var(--accent-text); text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+main:focus { outline: none; }
+
+::selection { background: var(--accent-fill); color: var(--on-accent); }
+
+svg { flex: none; }
+.sprite { position: absolute; }
+
+
+/* 4. UTILITIES ------------------------ */
+
+/* Visually hidden, still read by assistive tech */
+.vh {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.nowrap { white-space: nowrap; }
+.dot { color: var(--ink-3); margin-inline: 0.15em; }
+.js-only { display: none; }
+.js .js-only { display: inline; }
+
+.skip-link {
+  position: absolute;
+  left: var(--s-4); top: -4rem;
+  z-index: 100;
+  padding: var(--s-3) var(--s-4);
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--radius);
+  font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: var(--s-4); color: var(--paper); }
+
+/* .row — the page's core grid: a hanging label column + the reading column.
+   One column on phones; label | text from 48rem up.
+   Children: first = label, second = text. `.row__body` forces the text column. */
+.row { display: grid; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 48rem) {
+  .row {
+    grid-template-columns: var(--label-col) minmax(0, var(--measure));
+    column-gap: var(--gutter);
+  }
+  .row__body { grid-column: 2; }
+}
+
+/* Uppercase micro-label */
+.rail-label,
+.case__index,
+.spread dt,
+.now__label,
+.field__label,
+.pub__type,
+.tools__label,
+.results thead th,
+.photos__label,
+.photo figcaption,
+.recognition__photo figcaption {
+  font-family: var(--sans);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+.photos__label, .photo figcaption, .recognition__photo figcaption { color: var(--ink-2); }   /* labels that go with a photograph: one ink */
+
+/* Lead paragraph (serif) */
+.lead {
+  font-family: var(--serif);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: -0.005em;
+}
+.lead + p { margin-top: var(--s-5); }
+
+/* Prose measure: running text stops at about 68 characters even where the column is wider
+   (it bites on the smaller text sizes). Rules stay full width: blocks that carry their own
+   hairlines are narrowed with padding instead of max-width. */
+.row__body > p, .spread dd, .bullets > li, .roles__head + p, .entry__role, .thesis, .pub__body > p, .results caption { max-width: var(--prose); }
+.ruled-list > li { padding-right: max(0px, calc(100% - var(--prose))); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font: 600 var(--fs-body-s)/1 var(--sans);
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn--primary { background: var(--accent-fill); color: var(--on-accent); }
+.btn--primary:hover { background: var(--accent-fill-hover); color: var(--on-accent); }
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--secondary:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 30rem) { .btn { padding-inline: 1rem; gap: 0.5rem; } }
+@media (max-width: 23.5rem) { .hero__actions .btn { padding-inline: 0.7rem; gap: 0.4rem; } }   /* both hero buttons on one row at 360px */
+.btn--large { min-height: 3.5rem; padding-inline: 1.5rem; font-size: var(--fs-body); }
+.btn--small { min-height: 2.75rem; padding-inline: 1rem; font-size: var(--fs-small); }
+
+/* Square icon button (theme, menu) */
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  min-width: 2.75rem; min-height: 2.75rem;
+  padding: 0;
+  background: none; border: 0; border-radius: var(--radius);
+  color: var(--ink-2);
+  font: 500 var(--fs-small)/1 var(--sans);
+  cursor: pointer;
+}
+@media (hover: hover) { .icon-btn:hover { color: var(--accent-text); } }
+.icon-btn[hidden] { display: none; }
+
+/* Link chips */
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-4); }
+.chips--tight { margin-top: var(--s-3); }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  min-height: 2.75rem;                     /* 44px tap target on touch */
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  font-size: var(--fs-small); font-weight: 500; line-height: 1.3;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+/* External-link arrow, drawn in CSS so the HTML stays light */
+.chip[target="_blank"]::after {
+  content: ""; flex: none; width: 0.8rem; height: 0.8rem;
+  background: var(--accent);
+  -webkit-mask: var(--icon-ext) center / contain no-repeat;
+          mask: var(--icon-ext) center / contain no-repeat;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent-text); }
+@media (hover: hover) and (pointer: fine) {
+  .chip { min-height: 2.125rem; }          /* tighter where a mouse is used */
+  .chip--quiet { min-height: 1.875rem; padding: 0.15rem 0.6rem; font-size: 0.8125rem; }
+}
+.chip--quiet { white-space: nowrap; }        /* short labels only ("WIPO Patentscope", "PDF (author copy)") */
+
+/* Profile links (LinkedIn, Scholar, Patents, CV): icon + text label at every width */
+.profiles { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.icon-link {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  min-height: 2.75rem; padding-inline: 0.85rem;
+  border: 1px solid var(--rule-strong); border-radius: var(--radius);
+  color: var(--ink);
+  font-size: var(--fs-small); font-weight: 500; line-height: 1.2;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.icon-link svg { color: var(--ink-2); }
+.icon-link:hover { border-color: var(--accent); }
+.icon-link:hover, .icon-link:hover svg { color: var(--accent-text); }
+/* Phone hero: labels only, so the three profile chips share one row under the buttons */
+@media (max-width: 30rem) {
+  .hero__actions .icon-link { padding-inline: 0.7rem; }
+  .hero__actions .icon-link svg { display: none; }
+}
+/* Narrow phones (360–375px, e.g. iPhone SE/mini): tighten the chips so "Google Patents" stays on the row */
+@media (max-width: 23.5rem) {
+  .hero__actions .profiles { gap: 0.375rem; }
+  .hero__actions .icon-link { padding-inline: 0.45rem; font-size: 0.8125rem; }
+}
+
+/* Topic tags (not links) */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: var(--s-4); }
+.tags li {
+  padding: 0.12rem 0.55rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper-2);
+  font-size: 0.8125rem; line-height: 1.5;
+  color: var(--ink-2);
+}
+.tags .tags__now { border-color: var(--accent); background: var(--accent-wash); color: var(--accent-text); }
+
+/* Hairline-ruled list */
+.ruled-list > li {
+  padding-block: 0.8rem;
+  border-top: 1px solid var(--rule);
+}
+.ruled-list > li:last-child { border-bottom: 1px solid var(--rule); }
+@media (min-width: 40rem) {
+  .ruled-list--two { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); }
+  .ruled-list--two > li:nth-last-child(2) { border-bottom: 1px solid var(--rule); }
+}
+
+.plain-list > li + li { margin-top: var(--s-2); }
+.plain-list > li,
+.bullets > li { position: relative; padding-left: 1.25rem; }
+.plain-list > li::before,
+.bullets > li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.78em;
+  width: 0.6rem; height: 1px;
+  background: var(--accent);
+}
+.bullets > li + li { margin-top: var(--s-3); }
+
+.fineprint { margin-top: var(--s-5); font-size: var(--fs-body-s); color: var(--ink-2); line-height: 1.6; }
+.fineprint strong { color: var(--ink); }
+
+/* Plate: a photograph of the owner in a hairline frame with a thin paper mat (hero portrait, award photo).
+   Goes on the <picture>; the photo itself is never recoloured or filtered. */
+.plate { display: block; padding: 3px; border: 1px solid var(--rule-strong); border-radius: var(--radius); }
+.plate img { display: block; width: 100%; height: auto; border-radius: 1px; }
+
+
+/* 5. LAYOUT SHELL ------------------------ */
+
+.layout { padding-inline: var(--page-pad); }
+main { display: block; max-width: calc(var(--label-col) + var(--gutter) + var(--measure)); margin-inline: auto; }
+
+@media (min-width: 77.5rem) {
+  .layout {
+    display: grid;
+    grid-template-columns: var(--rail-w) minmax(0, 1fr);
+    column-gap: clamp(3rem, 5vw, 5rem);
+    max-width: 82rem;
+    margin-inline: auto;
+  }
+  .site-header { grid-column: 1; grid-row: 1 / span 2; }
+  main, .site-footer { grid-column: 2; margin-inline: 0; }
+  html { scroll-padding-top: 2rem; }
+}
+
+
+/* 6. HEADER ------------------------
+   6a. Phone/tablet (< 64rem): sticky top bar; the index opens as a panel.
+       Without JS the panel is simply shown in the flow, un-sticky. */
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  margin-inline: calc(var(--page-pad) * -1);
+  padding-inline: var(--page-pad);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+html:not(.js) .site-header { position: static; }
+
+.site-header__bar {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: var(--bar-h);
+}
+.site-header__tools { display: flex; align-items: center; gap: var(--s-1); margin-right: -0.5rem; }
+
+.brand { display: inline-flex; align-items: center; gap: 0.7rem; min-height: 2.75rem; text-decoration: none; color: var(--ink); }
+.brand:hover { color: var(--ink); }
+.brand__mark {
+  display: grid; place-items: center;
+  width: 2rem; height: 2rem;
+  background: var(--accent-fill); color: var(--on-accent);
+  border-radius: var(--radius);
+  font: 600 0.875rem/1 var(--serif);
+  letter-spacing: -0.02em;
+}
+.brand__text { display: grid; }
+.brand__name { font: 600 1.0625rem/1.2 var(--serif); letter-spacing: -0.005em; }
+.brand__role { display: none; }
+/* Below the rail breakpoint the bar shows the monogram alone while the masthead <h1> is on
+   screen, so the name is not printed twice; site.js adds .past-masthead once it scrolls away.
+   Without JS the name simply stays. */
+@media (max-width: 77.49rem) {
+  .js .brand__text { opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s; }
+  .js.past-masthead .brand__text,
+  .js .brand:focus-visible .brand__text { opacity: 1; visibility: visible; }    /* a focus ring never surrounds empty space */
+}
+
+/* Theme toggle: moon on light, sun on dark. Label text only shows in the rail. */
+.theme-toggle__sun, .theme-toggle__label { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle__sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle__moon { display: none; }
+}
+:root[data-theme="dark"] .theme-toggle__sun { display: block; }
+:root[data-theme="dark"] .theme-toggle__moon { display: none; }
+
+.nav-toggle__close { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__open { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__close { display: block; }
+
+.site-nav { padding-block: var(--s-3) var(--s-5); }
+.js .site-nav {
+  display: none;
+  position: absolute; left: 0; right: 0; top: 100%;
+  max-height: calc(100vh - var(--bar-h)); max-height: calc(100dvh - var(--bar-h));
+  overflow-y: auto;
+  padding: var(--s-3) var(--page-pad) var(--s-6);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule-strong);
+}
+.js .site-nav[data-open="true"] { display: block; }
+/* Open menu: a scrim dims the page under the panel (site.js sets .nav-open on <html>).
+   It belongs to the header, so a tap on it closes the menu and never reaches the page below. */
+@media (max-width: 63.99rem) {
+  .nav-open .site-header::before { content: ""; position: fixed; inset: var(--bar-h) 0 0; z-index: -1; background: rgb(0 0 0 / 0.5); }
+}
+
+.rail-label { margin: var(--s-4) 0 var(--s-2); }
+
+/* Without JS (phones/tablets): a compact, wrapped row of section links in the flow */
+@media (max-width: 63.99rem) {
+  html:not(.js) .site-nav { padding-block: 0 var(--s-3); }
+  html:not(.js) .rail-label, html:not(.js) .rail-contact, html:not(.js) .index__num { display: none; }
+  html:not(.js) .index { display: flex; flex-wrap: wrap; column-gap: var(--s-5); }
+  html:not(.js) .index a { min-height: 2.75rem; padding-block: 0; align-items: center; border: 0; font-size: var(--fs-body-s); }
+}
+
+.index { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--gutter); }
+.index a {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  min-height: 3rem; padding-block: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  font-weight: 500; line-height: 1.3;
+  text-decoration: none;
+}
+.index__num {
+  font-size: var(--fs-label); font-weight: 500;
+  font-variant-numeric: tabular-nums; letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+.index a[aria-current] { color: var(--accent-text); }
+.index a[aria-current] .index__num { color: var(--accent-text); }
+
+/* Contact block: closes the phone menu with all five links; the rail keeps the two calls to action */
+.rail-contact { margin-top: var(--s-5); }
+.rail-contact ul { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+/* 6b. Tablet / small laptop (64rem – 77.5rem): index sits inline in the bar. */
+@media (min-width: 64rem) {
+  .site-header, html:not(.js) .site-header { position: sticky; display: flex; align-items: center; gap: var(--s-5); min-height: var(--bar-h); }
+  .site-header__bar { display: contents; }
+  .brand { order: 1; flex: none; }                           /* nine links share the bar: the name keeps its line */
+  .site-nav, .js .site-nav {
+    order: 2; display: block; position: static;
+    margin-left: auto; padding: 0;
+    max-height: none; overflow: visible;
+    border: 0; box-shadow: none; background: none;
+  }
+  .site-header__tools { order: 3; }
+  .nav-toggle, .nav-toggle:not([hidden]) { display: none; }
+  .rail-label, .rail-contact, .index__num { display: none; }
+  .index { display: flex; gap: 0; }
+  .index a {
+    min-height: 2.75rem; padding: 0 clamp(0.45rem, -1.15rem + 2.6vw, 0.7rem); align-items: center;
+    border: 0;
+    font-size: var(--fs-small); color: var(--ink-2);
+  }
+  .index a:hover, .index a[aria-current] { color: var(--ink); }
+  .index a[aria-current] { box-shadow: inset 0 -2px 0 var(--accent); }
+}
+
+/* 6c. Wide (>= 77.5rem): the header becomes a sticky left rail. */
+@media (min-width: 77.5rem) {
+  .site-header, html:not(.js) .site-header {
+    top: 0; align-self: start;
+    flex-direction: column; align-items: stretch; gap: 0;
+    height: 100vh; height: 100dvh;
+    /* The rail scrolls if it must (overflow-y), which also clips it sideways. The side padding,
+       cancelled by equal negative margins, keeps focus rings and the index's accent rule inside. */
+    margin-inline: -1.25rem -0.5rem; padding: 3.25rem 0.5rem 2rem 1.25rem;
+    overflow-y: auto;
+    border-bottom: 0;
+    background: none;
+  }
+  .brand { flex: none; flex-direction: column; align-items: flex-start; gap: var(--s-4); }
+  .brand__mark { flex: none; width: 2.75rem; height: 2.75rem; font-size: 1.1875rem; }
+  .brand__name { font-size: 1.3125rem; }
+  .brand__role { display: block; margin-top: 0.3rem; font-size: 0.8125rem; line-height: 1.45; color: var(--ink-2); max-width: 11rem; }
+
+  .site-nav, .js .site-nav { margin: var(--s-7) 0 0; flex: 1 0 auto; }      /* grows, never squashed: a short window scrolls the rail */
+  .rail-label, .rail-contact { display: block; }
+  .rail-label { margin: 0 0 var(--s-3); }
+  .index { display: block; }
+  .index__num { display: inline; }
+  .index a {
+    display: grid; grid-template-columns: 1.9rem 1fr; gap: 0; align-items: baseline;
+    min-height: 0; padding: 0.42rem 0 0.42rem 0.9rem; margin-left: -0.9rem;
+    border-left: 2px solid transparent;
+    font-size: var(--fs-body-s); font-weight: 450;
+    color: var(--ink-2);
+    box-shadow: none !important;
+  }
+  .index a:hover { color: var(--ink); }
+  .index a[aria-current] { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
+  .index a[aria-current] .index__num { color: var(--accent-text); }
+
+  .rail-contact { margin-top: var(--s-6); }
+  .rail-contact ul { display: grid; justify-items: start; }
+  .rail-contact__profile { display: none; }
+  /* The hero carries the same two buttons, so the rail's copies wait until those have scrolled
+     away (site.js sets .past-hero). Without JS they are simply always there. */
+  .js .rail-contact { opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s; }
+  .js.past-hero .rail-contact { opacity: 1; visibility: visible; }
+
+  .site-header__tools { margin: var(--s-5) 0 0 -0.6rem; }
+  .theme-toggle { padding-inline: 0.6rem; }
+  .theme-toggle__label { display: inline; }
+}
+/* Short wide windows: tighten the rail in two steps so nothing is cut off
+   (the second step covers a 1366 × 768 laptop, whose browser window is about 625px tall). */
+@media (min-width: 77.5rem) and (max-height: 46rem) {
+  .site-header, html:not(.js) .site-header { padding-top: 1.75rem; padding-bottom: 1rem; }
+  .brand__role { display: none; }
+  .site-nav, .js .site-nav { margin-top: var(--s-5); }
+  .rail-contact { margin-top: var(--s-4); }
+}
+@media (min-width: 77.5rem) and (max-height: 41rem) {
+  .site-header, html:not(.js) .site-header { padding-bottom: 0.5rem; }
+  .site-nav, .js .site-nav { margin-top: var(--s-4); }
+  .rail-label { margin-bottom: var(--s-2); }
+  .index a { padding-block: 0.2rem; }
+  .rail-contact { margin-top: var(--s-3); }
+  .site-header__tools { margin-top: var(--s-3); }
+}
+
+
+/* 7. HERO ------------------------ */
+
+.hero { padding-top: clamp(1.5rem, 0.6rem + 4vw, 3.5rem); }
+@media (min-width: 77.5rem) { .hero { padding-top: 3.25rem; } }   /* the portrait's top edge lines up with the rail's monogram */
+
+/* Masthead: name + meta sit on the rule; the portrait stands on it at the right end.
+   The portrait is small on purpose (its backdrop is loud): 64–80px on phones, where it takes no
+   extra height beside the name and meta, 96px under the top bar, 112px beside the rail. */
+.hero__masthead {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; column-gap: var(--s-4);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--ink);
+}
+.hero__id { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-1) var(--s-5); }
+.hero__name {
+  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.hero__meta { font-size: 0.8125rem; color: var(--ink-2); line-height: 1.5; }
+.hero__portrait { width: 5rem; }
+@media (max-width: 23.5rem) { .hero__portrait { width: 4rem; } }
+@media (min-width: 48rem) {
+  .hero__masthead { column-gap: var(--s-5); }
+  .hero__meta { display: flex; column-gap: 0.6rem; }
+  .hero__meta li + li::before { content: "·"; margin-right: 0.6rem; color: var(--ink-3); }
+  .hero__portrait { width: 7rem; }
+}
+/* No rail (top bar): smaller portrait, less air above, so the proof figures make a 1024 x 768 first screen */
+@media (min-width: 48rem) and (max-width: 77.49rem) {
+  .hero { padding-top: var(--s-5); }
+  .hero__portrait { width: 6rem; }
+}
+
+.hero__headline {
+  margin-top: clamp(1.25rem, 0.8rem + 2vw, 2.25rem);
+  font-family: var(--serif);
+  font-size: var(--fs-display);
+  font-weight: 340;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+  max-width: 16em;
+}
+.hero__headline em { font-size: 1em; font-weight: 340; color: var(--accent-text); letter-spacing: -0.02em; }
+
+.hero__role {
+  margin-top: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  font-size: var(--fs-body-s);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.hero__role strong { color: var(--ink); }
+@media (max-width: 23.5rem) {                  /* narrowest phones: role, employer and years each take a line, no separators */
+  .hero__role > * { display: block; }
+  .hero__role > .dot { display: none; }
+}
+
+.hero__sub {
+  margin-top: var(--s-4);
+  max-width: var(--measure);
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  line-height: 1.6;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-top: var(--s-5); }
+
+
+/* 8. PROOF STRIP ------------------------
+   Five linked tiles, each two-tier: a serif figure over a sans caption.
+   Phone: a ledger (figure | caption). From 64rem: five columns under an ink rule,
+   figures on one baseline. Every figure shares the same font-size and line-height,
+   so the baseline holds whatever sits inside it (numeral, word, or the Galaxy chips). */
+
+.proof { margin-top: clamp(2rem, 1.2rem + 3vw, 3.25rem); }
+.proof__list { border-top: 2px solid var(--ink); }
+.proof__item {
+  display: grid; grid-template-columns: 9.75rem minmax(0, 1fr); column-gap: var(--s-4); align-items: baseline;
+  min-height: 3.5rem; padding-block: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+.proof__figure {
+  font-family: var(--serif); font-size: 1.75rem; font-weight: 400; line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.proof__unit { font-size: 1.0625rem; font-weight: 500; letter-spacing: -0.005em; }
+.proof__unit--word { font-size: 1.375rem; font-weight: 450; }      /* "Top-ranked" is a word: sized not to outweigh the numerals */
+
+/* Galaxy tile: small-cap label over two outlined model chips */
+.proof__figure--galaxy { display: grid; row-gap: 0.3rem; }
+.proof__kicker {
+  font: 600 var(--fs-label)/1.3 var(--sans); letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.proof__models { word-spacing: -0.08em; }
+.proof__models > span {
+  display: inline-block; padding: 0.2em 0.34em;
+  border: 1px solid var(--accent); border-radius: var(--radius);
+  font-size: 1.0625rem; font-weight: 500; line-height: 1; letter-spacing: 0; word-spacing: 0;
+  color: var(--accent-text);
+}
+
+.proof__text { padding-right: 1.2em; font-size: var(--fs-small); line-height: 1.45; color: var(--ink-2); }
+/* Down arrow after the caption: each tile jumps to the section that backs it up.
+   It sits in the caption's right padding (negative margin), so it never wraps onto a line of its own. */
+.proof__text::after {
+  content: ""; display: inline-block; width: 0.85em; height: 0.85em; margin: 0 -1.2em 0 0.35em; vertical-align: -0.08em;
+  background: var(--accent);
+  -webkit-mask: var(--icon-down) center / contain no-repeat;
+          mask: var(--icon-down) center / contain no-repeat;
+  transition: transform 0.15s ease;
+}
+.proof__item:hover { color: inherit; }
+.proof__item:hover .proof__figure { color: var(--accent-text); }
+.proof__item:hover .proof__text::after { transform: translateY(2px); }
+
+@media (min-width: 40rem) {
+  .proof__item { grid-template-columns: 14rem minmax(0, 1fr); }
+}
+@media (min-width: 64rem) {
+  /* Column widths follow the length of each figure ("35+ publications" needs more room than "7 patents"). */
+  .proof__list { display: grid; grid-template-columns: 0.95fr 1.1fr 0.9fr 1.3fr 0.95fr; border-bottom: 1px solid var(--rule); }
+  .proof__list > li + li { border-left: 1px solid var(--rule); }
+  .proof__item {
+    grid-template-columns: minmax(0, 1fr); grid-template-rows: 3.75rem 1fr; row-gap: var(--s-2);
+    height: 100%; padding: var(--s-3) 0 var(--s-4) 0.9rem;        /* the caption's own right padding is the gap */
+    border-bottom: 0;
+  }
+  .proof__list > li:first-child .proof__item { padding-left: 0; }
+  .proof__figure { align-self: end; font-size: 2rem; }        /* figures sit on a common line */
+  .proof__text { font-size: 0.8125rem; }
+}
+
+
+/* 9. NOW ------------------------ */
+
+.now { margin-top: clamp(2.5rem, 2rem + 2.5vw, 4rem); row-gap: var(--s-3); }
+.now__label { align-self: start; display: flex; align-items: center; gap: var(--s-2); padding-top: 0.95rem; color: var(--ink-2); }
+.now__pip { align-self: flex-start; margin-top: 0.28rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); }
+.now__list > li {
+  padding-block: 0.8rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--serif); font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); line-height: 1.35;
+}
+.now__list > li:last-child { border-bottom: 1px solid var(--rule); }
+
+
+/* 10. SECTIONS ------------------------ */
+
+.section { margin-top: var(--s-section); }
+.section__head {
+  padding-top: var(--s-4);
+  border-top: 2px solid var(--ink);
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+  align-items: baseline;
+}
+.section__num {
+  font-family: var(--serif); font-size: 1.125rem; font-weight: 500; font-style: italic;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--accent-text);
+}
+.section__title { font-family: var(--serif-display); font-size: var(--fs-h2); font-weight: 400; letter-spacing: -0.02em; line-height: 1.08; }
+.section__title--display { font-size: var(--fs-display); font-weight: 340; letter-spacing: -0.028em; }
+
+/* Title with links pinned beside it (Research): one line on wide screens, links wrap under on narrow ones */
+.section__headline { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-3) var(--s-5); }
+.section__links { margin-top: 0; }
+
+.subhead { margin-top: clamp(3rem, 2.5rem + 2vw, 4.5rem); margin-bottom: var(--s-5); }
+.subhead__title, .earlier__title, .whatido__title, .awards__group, .allpubs__title { font-size: var(--fs-h3); letter-spacing: -0.012em; }
+
+
+/* 11. CASE STUDIES ------------------------ */
+
+.case + .case, .earlier { margin-top: clamp(3.5rem, 3rem + 2.5vw, 5.5rem); }
+.case__head { row-gap: var(--s-2); margin-bottom: var(--s-6); }
+.case__index { padding-top: 0.55rem; }
+.case__no { color: var(--accent-text); }
+.case__title { font-size: clamp(1.625rem, 1.4rem + 1vw, 2.125rem); letter-spacing: -0.018em; line-height: 1.12; }
+.case__hook {
+  margin-top: var(--s-3);
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: var(--fs-lead); line-height: 1.35;
+  color: var(--ink-2);
+}
+
+/* Definition-list spread: label | text, hairline between rows */
+.spread > .row { padding-block: 1.05rem; border-top: 1px solid var(--rule); row-gap: var(--s-1); }
+.spread > .row:last-child { border-bottom: 1px solid var(--rule); }
+.spread dt { padding-top: 0.42rem; color: var(--ink-2); }
+.spread dd { min-width: 0; }
+/* Outcome: the row a skimmer should land on. Serif lead size + an accent rule that hangs in the gutter. */
+.spread__outcome dt { color: var(--accent-text); }
+.spread__outcome dd {
+  padding-left: var(--s-4); border-left: 2px solid var(--accent);
+  font-family: var(--serif); font-size: var(--fs-lead); line-height: 1.4; letter-spacing: -0.005em;
+}
+@media (min-width: 48rem) { .spread__outcome dd { margin-left: calc(var(--s-4) * -1 - 2px); } }
+.spread__aside { font-size: var(--fs-body-s); color: var(--ink-2); }
+.spread__aside + .chips { margin-top: var(--s-2); }
+.spread dd > .chips:first-child { margin-top: 0.1rem; }
+.spread--first { margin-top: var(--s-6); }
+.spread--compact { margin-top: var(--s-6); }
+.spread--compact dd { font-size: var(--fs-body-s); line-height: 1.7; }
+
+.earlier { row-gap: var(--s-4); }
+.earlier__title, .whatido__title, .awards__group { font-size: 1.3125rem; line-height: 1.25; padding-top: 0.55rem; }
+
+
+/* 12. RECOGNITION, WHAT I DO ------------------------
+   The Zinnov pull-quote with the award photo: photo above the quote on phones,
+   to the right of it from 48rem (the photo comes first in the HTML). */
+
+.recognition { display: grid; row-gap: var(--s-6); margin-block: clamp(3.5rem, 3rem + 3vw, 6rem); }
+.recognition__photo { display: grid; grid-template-columns: 10.5rem minmax(0, 1fr); column-gap: var(--s-4); align-items: end; }   /* phones: a small plate, its caption hanging beside it */
+.pullquote::before { content: ""; display: block; width: 3rem; height: 2px; margin-bottom: var(--s-5); background: var(--accent); }
+.pullquote blockquote p {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: clamp(1.375rem, 1.05rem + 1.3vw, 1.9375rem);
+  line-height: 1.3; letter-spacing: -0.012em;
+  text-wrap: balance;
+  hanging-punctuation: first;
+}
+.pullquote figcaption { margin-top: var(--s-5); font-size: var(--fs-small); color: var(--ink-2); }
+@media (min-width: 48rem) {
+  .recognition { grid-template-columns: minmax(0, 1fr) 15rem; column-gap: var(--s-6); align-items: start; }
+  .recognition__photo { grid-area: 1 / 2; display: block; }
+  .recognition__photo figcaption { margin-top: var(--s-3); }
+  .pullquote { grid-area: 1 / 1; }
+}
+@media (min-width: 64rem) { .recognition { grid-template-columns: minmax(0, 1fr) 17.5rem; column-gap: var(--s-7); } }
+
+.whatido { row-gap: var(--s-4); }
+.tools { margin-top: var(--s-4); font-size: var(--fs-small); color: var(--ink-2); }
+.tools__label { margin-right: var(--s-3); }
+
+
+/* 13. TIMELINE ------------------------ */
+
+.entry { padding-block: clamp(1.75rem, 1.5rem + 1vw, 2.5rem); border-top: 1px solid var(--rule); row-gap: var(--s-2); }
+.timeline > .entry:first-child { border-top: 0; padding-top: 0; }
+.timeline > .entry:last-child { padding-bottom: 0; }
+.entry__dates {
+  padding-top: 0.5rem;
+  font-size: var(--fs-small); font-weight: 500; line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+}
+.entry__org { font-size: var(--fs-h3); letter-spacing: -0.012em; }
+.entry__org a { text-decoration-color: var(--rule-strong); }
+.entry__role { margin-top: var(--s-2); color: var(--ink-2); font-size: var(--fs-body-s); line-height: 1.55; }
+.entry__role strong { color: var(--ink); }
+
+/* Progression strip: three steps, earliest first, the current one accent-ruled.
+   Stacked with a left rule on phones; a row under a top rule from 40rem. */
+.progression { display: grid; margin-top: var(--s-5); font-size: var(--fs-small); line-height: 1.4; }
+.progression > li { position: relative; padding: 0.55rem 0 0.55rem var(--s-4); border-left: 2px solid var(--rule-strong); }
+.progression__role { display: block; font-size: var(--fs-body-s); font-weight: 600; }
+.progression__grade { font-weight: 400; color: var(--ink-2); }
+.progression__years { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.progression > .progression__now { border-color: var(--accent); }
+@media (min-width: 40rem) {
+  .progression { grid-template-columns: 1fr 1.15fr 1.35fr; }
+  .progression > li { padding: 0.7rem 2rem 0 0; border-left: 0; border-top: 2px solid var(--rule-strong); }
+  .progression > li:not(:last-child)::after { content: "→"; position: absolute; top: 0.7rem; right: 0.6rem; color: var(--ink-3); }
+}
+/* Narrow reading column: the first two steps take their own width, role names stay on one line,
+   and the grade drops under "Architect", so all three steps are the same height. */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .progression { grid-template-columns: max-content max-content minmax(0, 1fr); }
+  .progression > li { padding-right: 2.5rem; }
+  .progression > li:last-child { padding-right: 0; }
+  .progression__role { white-space: nowrap; }
+  .progression__grade { display: block; }
+}
+
+.entry .bullets { margin-top: var(--s-5); }
+
+.roles { margin-top: var(--s-4); }
+.roles > li { padding-block: var(--s-4); border-top: 1px solid var(--rule); }
+.roles > li:last-child { padding-bottom: 0; }
+.roles__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; column-gap: var(--s-4); }
+.roles__dates { font-size: var(--fs-small); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+@media (max-width: 30rem) {                    /* phones: the dates always sit under the title, whatever its length */
+  .roles__head, .roles__dates { display: block; }
+}
+.roles__head + p { margin-top: var(--s-1); font-size: var(--fs-body-s); line-height: 1.65; color: var(--ink-2); }
+
+.thesis { margin-top: var(--s-3); font-size: var(--fs-body-s); color: var(--ink-2); }
+.thesis cite { color: var(--ink); }
+
+
+/* 14. PATENTS ------------------------
+   One <table>, two presentations. From 64rem it is a real table:
+   No. | Invention | Number (+ other filings, official link) | Status (any narrower and the
+   Invention column is cramped).
+   Below that every row becomes a block in the page's label | text grid (status in the
+   label column; one column on phones).
+   role="..." attributes in the HTML keep the table semantics when display changes. */
+
+.patents { width: 100%; margin-top: var(--s-7); border-collapse: collapse; text-align: left; }
+.patents th, .patents td { font-weight: 400; vertical-align: top; }
+.patents__title {
+  display: block;
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.1875rem, 1.12rem + 0.3vw, 1.3125rem); line-height: 1.25; letter-spacing: -0.008em;
+  text-wrap: balance;
+}
+.patents__desc { display: block; margin-top: var(--s-2); max-width: var(--prose); }
+.patents__num { font-size: var(--fs-small); line-height: 1.45; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.patents__id { display: block; color: var(--ink); font-weight: 500; white-space: nowrap; }
+.patents__also { display: block; margin-top: 0.15rem; font-size: 0.8125rem; }
+.patents__num .chips { margin-top: var(--s-2); }
+
+/* Status: filled dot = granted, hollow = pending. Both are drawn with the border alone (the
+   filled dot is all border), so they stay different in print and in forced-colours mode,
+   where backgrounds are dropped. */
+.status { display: block; font-size: var(--fs-small); line-height: 1.45; color: var(--ink-2); }
+.status__state { font-weight: 600; color: var(--ink); }
+.status__state::before {
+  content: ""; display: inline-block; width: 0.5rem; height: 0.5rem; margin-right: 0.5rem;
+  border-radius: 50%; border: 0.25rem solid var(--accent);
+  vertical-align: 0.05em;
+}
+.status--pending .status__state::before { border-width: 1.5px; }
+/* Wherever the status has a column to itself it stacks: state over place and date, then any note */
+@media (min-width: 48rem) {
+  .status__state, .status__where, .status__meta { display: block; }
+  .status__where, .status__meta { padding-left: 1rem; font-size: 0.8125rem; }
+  .status__sep { display: none; }
+}
+
+/* 14a. Stacked rows */
+@media (max-width: 63.99rem) {
+  .patents, .patents tbody, .patents th, .patents td { display: block; }
+  .patents thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .patents tbody tr {
+    display: grid; grid-template-columns: minmax(0, 1fr); row-gap: var(--s-2);
+    padding-block: var(--s-5);
+    border-top: 1px solid var(--rule);
+  }
+  .patents tbody tr:last-child { border-bottom: 1px solid var(--rule); }
+  .patents .patents__no { display: none; }
+  .patents__status { order: -1; }
+}
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .patents tbody tr { grid-template-columns: var(--label-col) minmax(0, var(--measure)); column-gap: var(--gutter); }
+  .patents__status { grid-column: 1; grid-row: 1 / span 2; padding-top: 0.2rem; }
+  .patents__invention, .patents__num { grid-column: 2; }
+}
+
+/* 14b. Table */
+@media (min-width: 64rem) {
+  .patents th, .patents td { padding: 1.15rem var(--s-5) 1.3rem 0; border-top: 1px solid var(--rule); vertical-align: baseline; }
+  .patents thead th {
+    padding-block: 0.5rem; border-top: 0; border-bottom: 1px solid var(--ink); vertical-align: bottom;
+    font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .patents tbody tr:last-child > * { border-bottom: 1px solid var(--rule); }
+  /* "No." hangs in the label column so the inventions line up with the reading column */
+  .patents__no {
+    width: calc(var(--label-col) + var(--gutter));
+    font-family: var(--serif); font-size: 1.125rem; font-style: italic; font-variant-numeric: lining-nums;
+    color: var(--accent-text);
+  }
+  .patents__title { font-size: 1.125rem; }
+  .patents__desc { font-size: var(--fs-body-s); line-height: 1.6; color: var(--ink-2); }
+  .patents__num { width: 14.5rem; }          /* room for two link chips side by side and a short filing note */
+  .patents .patents__status { width: 9.5rem; padding-right: 0; }
+}
+
+
+/* 15. RESEARCH ------------------------ */
+
+/* Metrics strip: three ruled cells, figure over caption, in ink. (In the HTML each <dt> comes
+   before its <dd>, as a definition list requires; column-reverse puts the figure on top.) */
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--s-6); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.metrics > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; padding: var(--s-3) var(--s-3) var(--s-3) var(--s-4); }
+.metrics > div:first-child { padding-left: 0; }
+.metrics > div + div { border-left: 1px solid var(--rule); }
+.metrics dd { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: lining-nums; }
+.metrics dt { margin-top: 0.15rem; font-size: var(--fs-small); line-height: 1.4; color: var(--ink-2); }
+.metrics__src { margin-top: var(--s-2); font-size: 0.8125rem; color: var(--ink-2); }
+
+/* Publication item (shared by "selected" and "all") */
+.pub { padding-block: var(--s-5); border-top: 1px solid var(--rule); row-gap: var(--s-1); }
+.pub[hidden] { display: none; }
+.pubs > .pub:last-child { border-bottom: 1px solid var(--rule); }
+.pub__meta { display: flex; align-items: baseline; gap: var(--s-3); line-height: 1.3; }
+.pub__year { font-family: var(--serif); font-size: 1.0625rem; font-weight: 500; font-variant-numeric: lining-nums tabular-nums; }
+.pub__title { font-size: 1.1875rem; line-height: 1.3; letter-spacing: -0.006em; }
+.pub__authors, .pub__venue { margin-top: 0.3rem; font-size: var(--fs-body-s); line-height: 1.5; color: var(--ink-2); }
+.pub__authors strong { color: var(--ink); }
+.pub__venue { margin-top: 0.1rem; }
+.pub__note { margin-top: var(--s-2); font-family: var(--serif); font-style: italic; font-size: 1.0625rem; line-height: 1.4; color: var(--accent-text); }
+.pub__topics { margin-top: var(--s-2); font-size: 0.8125rem; color: var(--ink-3); }
+p + .pub__authors, p + .pub__venue { margin-top: 0.1rem; }
+@media (min-width: 48rem) {
+  .pub__meta { display: block; padding-top: 0.12rem; }
+  .pub__type { display: block; margin-top: 0.25rem; }
+}
+.pubs--selected .pub { padding-block: 1.75rem; }
+.pubs--selected .pub__title { font-size: clamp(1.25rem, 1.18rem + 0.35vw, 1.4375rem); line-height: 1.25; }
+
+/* Results table */
+.table-wrap { overflow-x: auto; }
+.results { width: 100%; border-collapse: collapse; font-size: var(--fs-body-s); line-height: 1.45; }
+.results caption { caption-side: top; padding-bottom: var(--s-4); text-align: left; font-size: var(--fs-body-s); color: var(--ink-2); line-height: 1.6; }
+.results th, .results td { padding: 0.8rem 0.75rem 0.8rem 0; text-align: left; vertical-align: top; border-top: 1px solid var(--rule); }
+.results thead th { border-top: 0; border-bottom: 1px solid var(--ink); padding-block: 0.5rem; vertical-align: bottom; }
+.results tbody tr:first-child > * { border-top: 0; }
+.results tbody tr:last-child > * { border-bottom: 1px solid var(--rule); }
+.results tbody th { font-family: var(--serif); font-size: 1.0625rem; font-weight: 500; white-space: nowrap; font-variant-numeric: lining-nums; }
+.results td:last-child { padding-right: 0; }
+@media (min-width: 48rem) { .results td:last-child, .results th:last-child { width: 17.5rem; } }
+/* Below 35rem (560px) each row stacks: campaign, task, result. The header row stays for screen readers. */
+@media (max-width: 34.99rem) {
+  .results, .results caption, .results tbody, .results tr, .results th, .results td { display: block; }
+  .results thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .results tbody tr { padding-block: 0.85rem; border-top: 1px solid var(--rule); }
+  .results tbody tr:first-child { border-top-color: var(--ink); }
+  .results tbody tr:last-child { border-bottom: 1px solid var(--rule); }
+  .results tbody th, .results tbody td { padding: 0; border: 0 !important; }
+  .results tbody td { margin-top: 0.2rem; color: var(--ink-2); }
+  .results tbody td:last-child { color: var(--ink); }
+}
+
+/* All publications — every item is in the page; site.js clips the list and adds the filters */
+.allpubs { margin-top: clamp(3rem, 2.5rem + 2vw, 4.5rem); }
+.allpubs__head { padding-top: var(--s-4); border-top: 2px solid var(--ink); }
+.allpubs__hint { margin-top: 0.3rem; font-size: var(--fs-small); color: var(--ink-2); }
+.filters[hidden] + .pubs { margin-top: var(--s-5); }            /* no filter bar: JS is off */
+.allpubs__more { margin-top: var(--s-5); }
+.allpubs__more[hidden] { display: none; }
+.allpubs__more .btn { width: 100%; }
+.filters { padding-block: var(--s-4) var(--s-5); }
+@media (min-width: 48rem) {
+  .filters, .allpubs__more { padding-left: calc(var(--label-col) + var(--gutter)); }
+  .allpubs__more .btn { width: auto; min-width: 14rem; }
+}
+.filters[hidden] { display: none; }
+.filters__top { display: grid; gap: var(--s-4); }
+@media (min-width: 40rem) { .filters__top { grid-template-columns: minmax(0, 1fr) 16rem; } }
+.field { display: grid; gap: 0.35rem; }
+.field__control {
+  display: flex; align-items: center; gap: var(--s-2);
+  min-height: 2.875rem; padding-inline: 0.8rem;
+  border: 1px solid var(--field-border); border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink-2);
+}
+.field__control:focus-within { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.field input, .field select {
+  flex: 1; min-width: 0; height: 2.75rem;
+  border: 0; background: transparent; color: var(--ink);
+  font: 400 1rem/1.2 var(--sans);
+  outline: none;
+}
+.field input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.field input::placeholder { color: var(--ink-3); opacity: 1; }
+.field select { cursor: pointer; }
+.field--select .field__control { padding-right: 0.4rem; }
+
+.filters__types { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-4); }
+.filter-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  min-height: 2.75rem; padding: 0 0.9rem;
+  border: 1px solid var(--rule-strong); border-radius: 999px;
+  background: transparent; color: var(--ink);
+  font: 500 var(--fs-small)/1 var(--sans);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.filter-btn__n { font-size: var(--fs-label); font-variant-numeric: tabular-nums; color: var(--ink-3); }
+@media (hover: hover) { .filter-btn:hover { border-color: var(--ink); } }
+.filter-btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.filter-btn[aria-pressed="true"] .filter-btn__n { color: inherit; opacity: 0.75; }
+@media (forced-colors: active) {               /* the pressed pill is otherwise shown by colour alone */
+  .filter-btn[aria-pressed="true"] { forced-color-adjust: none; background: Highlight; border-color: Highlight; color: HighlightText; }
+}
+@media (hover: hover) and (pointer: fine) { .filter-btn { min-height: 2.25rem; } }
+
+.filters__status { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--s-4); margin-top: var(--s-3); min-height: 2.75rem; }
+.link-btn {
+  min-height: 2.75rem; padding: 0; border: 0; background: none; cursor: pointer;
+  font: 500 var(--fs-small)/1 var(--sans); color: var(--accent-text);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em;
+}
+.link-btn[hidden] { display: none; }
+.filters__count { font-size: var(--fs-small); font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+.empty { padding: var(--s-7) 0; border-block: 1px solid var(--rule); text-align: center; }
+.empty[hidden] { display: none; }
+.empty__title { font-family: var(--serif); font-size: var(--fs-lead); }
+
+
+/* 16. AWARDS, CONTACT, FOOTER ------------------------ */
+
+.awards { row-gap: var(--s-3); }
+.awards + .awards { margin-top: var(--s-8); }
+.awards__qual { display: block; margin-top: 0.15rem; font: 500 var(--fs-small)/1.4 var(--sans); letter-spacing: 0; color: var(--ink-3); }
+.awards .ruled-list > li { font-size: var(--fs-body-s); line-height: 1.6; color: var(--ink-2); }
+.awards .ruled-list strong { font-size: var(--fs-body); color: var(--ink); }
+.source { display: block; margin-top: 0.15rem; font-size: var(--fs-small); }     /* provenance line under an award */
+
+.section--contact .section__head { margin-bottom: var(--s-5); }
+.contact__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+.contact__cta .btn { max-width: 100%; }
+.contact__cta .btn[hidden] { display: none; }
+.contact__cta button { min-width: 12.75rem; }                    /* no jump when the label becomes "Address copied" */
+.contact__cta + .profiles { margin-top: var(--s-4); }
+
+.site-footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s-2) var(--s-5);
+  max-width: calc(var(--label-col) + var(--gutter) + var(--measure));
+  margin-top: var(--s-section); margin-inline: auto;
+  padding-block: var(--s-5) var(--s-7);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-small); color: var(--ink-2);
+}
+.site-footer p + p { margin-top: 0; }
+@media (min-width: 77.5rem) { .site-footer { margin-inline: 0; } }
+.site-footer__top { display: inline-flex; align-items: center; min-height: 2.75rem; }
+
+
+/* 17. PHOTOGRAPHY ------------------------
+   A quiet plate section: uniform 4:3 tiles (2 / 3 / 4 columns), each over a small-cap place
+   caption and a hairline. The source images are small, so a tile is never wider than ~220px
+   and the lightbox never shows an image above its native pixel size. */
+
+.photos__label { padding-top: 0.42rem; }
+.photos__label + p { margin-top: 0; }
+.photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5) var(--s-3); margin-top: var(--s-6); }
+.photos > li { display: grid; }
+.photo { padding-bottom: var(--s-3); border-bottom: 1px solid var(--rule); }
+.photo a { display: block; border-radius: var(--radius); overflow: hidden; background: var(--paper-2); }
+.photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; transition: opacity 0.15s ease; }
+.photo a:hover img { opacity: 0.88; }
+.photo img, .lightbox__stage img { outline: 1px solid var(--rule); outline-offset: -1px; }   /* an edge for the night photographs on dark paper */
+.photo figcaption { margin-top: var(--s-3); }
+@media (min-width: 40rem) { .photos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6) var(--s-4); } }
+@media (min-width: 64rem) { .photos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Lightbox: a <dialog> built by site.js (without JS each tile simply opens its JPEG).
+   A full page of paper in either theme: bar (count · Close), the photograph at native size
+   or smaller with its caption, then Previous / Next. */
+.lightbox-open { overflow: hidden; }                       /* set on <html> while open: the page behind cannot scroll */
+.lightbox {
+  position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; padding: 0 var(--page-pad) var(--s-5); border: 0;
+  background: var(--paper); color: var(--ink);
+  overscroll-behavior: contain; touch-action: pinch-zoom;
+  --chrome: 14rem;                                          /* bar + caption + Previous / Next + padding */
+}
+.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.lightbox::backdrop { background: var(--paper); }
+.lightbox__bar { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; border-bottom: 1px solid var(--rule); }
+.lightbox__count { font-family: var(--serif); font-style: italic; font-size: 1.125rem; font-variant-numeric: lining-nums; color: var(--accent-text); }
+/* Photographs are 720 x 540 or 800 x 600: the first row is as tall as the larger size would be here and the
+   photograph is centred in it, so the caption does not move between frames (auto rows without dvh / min()). */
+.lightbox__stage {
+  display: grid; align-content: center; justify-items: center; row-gap: var(--s-3); min-height: 0;
+  grid-template-rows: min(600px, calc(100dvh - var(--chrome)), calc((100vw - 2 * var(--page-pad)) * 0.75)) auto;
+}
+.lightbox__stage picture { display: grid; place-items: center; min-height: 0; }
+.lightbox__stage img {
+  display: block; width: auto; height: auto;               /* width/height attributes = native size: never upscaled */
+  max-width: 100%; max-height: calc(100vh - var(--chrome)); max-height: calc(100dvh - var(--chrome));
+  border-radius: var(--radius); background: var(--paper-2);
+}
+.lightbox__stage figcaption { font: 600 var(--fs-label)/1.4 var(--sans); letter-spacing: 0.09em; text-transform: uppercase; text-align: center; color: var(--ink-2); }
+.lightbox__nav { display: flex; justify-content: center; gap: var(--s-3); }
+.lightbox__nav .btn { min-width: 8rem; }
+@media (max-height: 30rem) {                                /* a phone held sideways: less chrome, more photograph */
+  .lightbox { --chrome: 10rem; }
+  .lightbox__bar { min-height: 3.25rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox[open] { animation: lightbox-in 0.2s ease; }
+  @keyframes lightbox-in { from { opacity: 0; } }
+}
+
+
+/* 18. MOTION ------------------------
+   site.js adds .reveal-on to <html> only when IntersectionObserver exists and
+   the visitor has not asked for reduced motion. No JS = nothing is ever hidden. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on [data-reveal] { opacity: 0; transform: translateY(0.75rem); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .reveal-on [data-reveal].is-in { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+
+/* 19. PRINT ------------------------
+   Black on white, no chrome, every publication shown, key URLs spelled out. */
+
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    --paper: #fff; --paper-2: #fff; --ink: #000; --ink-2: #222; --ink-3: #444;
+    --rule: #bbb; --rule-strong: #888; --accent: #000; --accent-text: #000;
+    --s-section: 2.25rem;
+    color-scheme: light;
+  }
+  @page { margin: 16mm 15mm; }
+  html { font-size: 10.5pt; }
+  body { background: #fff; color: #000; line-height: 1.45; }
+
+  .site-header, .skip-link, .sprite, .filters, .empty, .hero__actions, .allpubs__more, .section__links,
+  .allpubs__hint .js-only, .site-footer__top, .contact__cta svg, .contact__cta button, .chip::after,
+  .proof__text::after, .profiles svg, .recognition__photo, #photography { display: none !important; }
+
+  .layout { display: block; max-width: none; padding: 0; }
+  main, .site-footer { max-width: none; }
+  .row { grid-template-columns: 7rem minmax(0, 1fr); column-gap: 1.25rem; }
+  .row__body { grid-column: 2; }
+
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+
+  /* Every publication prints, whatever site.js has clipped or filtered out on screen */
+  .pubs[hidden] { display: block !important; }
+  .pub[hidden] { display: grid !important; }
+  .allpubs .pubs { margin-top: 1rem; }
+
+  .hero { padding-top: 0; }
+  .hero__headline { font-size: 26pt; margin-top: 0.75rem; }
+  .section__title { font-size: 18pt; }
+  .section__title--display { font-size: 22pt; }
+  .section__head { margin-bottom: 1rem; border-top-width: 1.5pt; }
+  .case + .case, .earlier { display: block; margin-top: 1.5rem; margin-bottom: 0; }
+  .recognition { display: block; margin-block: 1.5rem; }
+  .pullquote blockquote p { font-size: 14pt; }
+  .proof__list { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .proof__item { display: block; padding: 0.5rem 0.5rem 0.5rem 0; border-bottom: 0; }
+  .proof__figure { display: block; font-size: 15pt; }
+  .proof__unit { font-size: 10pt; }
+  .proof__models > span { border-color: #888; font-size: 10pt; }
+
+  a { text-decoration: none; }
+  .chip, .icon-link, .btn { border: 0; padding: 0; min-height: 0; background: none !important; color: #000 !important; }
+  .chips { gap: 0.15rem 1rem; margin-top: 0.35rem; }
+  .tags li, .tags .tags__now { background: none; border-color: #bbb; }
+  .spread__outcome dd { margin-left: calc(-1rem - 2px); }
+  .patents tbody tr { grid-template-columns: 7rem minmax(0, 1fr); column-gap: 1.25rem; padding-block: 0.7rem; }
+  .patents__status { grid-column: 1; grid-row: 1 / span 2; }
+  .patents__invention, .patents__num { grid-column: 2; }
+  .patents__title { font-size: 11pt; }
+
+  /* The label column is kept in print, so use the stacked (wide-screen) form of these labels. */
+  .pub__meta, .pub__type, .status__state, .status__where, .status__meta { display: block; }
+  .pub__type { margin-top: 0.15rem; font-size: 6.5pt; letter-spacing: 0.06em; }
+  .status__sep { display: none; }
+  .status__where, .status__meta { padding-left: 1rem; }
+  .spread dt, .case__index, .now__label { font-size: 7pt; }
+
+  /* Spell out URLs where a reader would want them; omit them in the hero and the dense publication list. */
+  .spread a[href^="http"]::after,
+  .patents__num .chip::after,
+  .pullquote a[href^="http"]::after,
+  .section--contact .profiles a[href^="http"]::after {
+    content: " <" attr(href) ">";
+    font: 400 8pt var(--sans); color: #333; word-break: break-all;
+  }
+  .patents__num .chip { display: inline; }
+  .patents__num .chip::after { display: inline !important; width: auto; height: auto; background: none; -webkit-mask: none; mask: none; }
+  .hero__id::after { content: "pinaki.bhaskar@gmail.com · pinakibhaskar.github.io"; font: 500 9pt var(--sans); flex-basis: 100%; }
+  .hero__portrait { width: 22mm; }
+
+  /* Headings stay with what follows. Chrome only honours break-after: avoid on plain blocks, so in print
+     the heading rows leave the .row grid: the text is indented by the label column (7rem + 1.25rem gap)
+     and the label is placed in it. The line-heights put the section number on the title's baseline. */
+  h2, h3, h4, .section__head, .case__head, .subhead, .allpubs__head, .entry__role { break-after: avoid; page-break-after: avoid; }
+  .section__head, .case__head, .subhead, .allpubs__head { display: block; position: relative; padding-left: 8.25rem; }
+  .section__headline { display: block; }
+  .section__num, .case__index { position: absolute; left: 0; top: 0; }
+  /* Same again for timeline entries and "What I do": an employer is never left at the foot of a page, and
+     Chrome cannot move a stranded section head to the next page when the block before it is a grid. */
+  .entry, .whatido { display: block; position: relative; padding-left: 8.25rem; }
+  .entry__dates, .whatido__title { position: absolute; left: 0; width: 7rem; }
+  .section__num { top: var(--s-4); line-height: 23.9pt; }
+  .section--contact .section__num { line-height: 31pt; }
+  .pub, .patents tr, .metrics, .progression, .spread > .row, .roles > li, .ruled-list > li, tr, .recognition, .proof,
+  .section--contact { break-inside: avoid; page-break-inside: avoid; }
+  .site-footer { margin-top: 1.5rem; padding-block: 0.5rem 0; }
+  .pub { padding-block: 0.6rem; }
+  .pub__title { font-size: 11pt; }
+  .pub__topics { display: none; }
+}

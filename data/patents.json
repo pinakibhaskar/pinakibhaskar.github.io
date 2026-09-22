@@ -1,0 +1,135 @@
+{
+ "note": "One entry per invention (patent family). Verified 2026-09-21 against USPTO, WIPO PATENTSCOPE, the Indian Patent Office's Official Journal and Google Patents. 'links' must be patent-office or Google Patents pages that do NOT show inventors' home addresses - never link WO/PCT PDFs or third-party mirrors. After editing, re-run the generator (see README) - it also checks that the two count strings below match every place they appear in index.html.",
+ "summary": {
+  "inventions": 7,
+  "granted": 5,
+  "headline": "7 patents",
+  "caption": "US, PCT, China & India · 5 granted"
+ },
+ "patents": [
+  {
+   "id": "search-query",
+   "title": "Method and system for modifying search query for a user",
+   "number": "US 11,989,193 B2",
+   "status": "granted",
+   "status_chip": "Granted · US · May 2024",
+   "status_meta": "",
+   "also": "Also filed via PCT (WO 2023/277342) and in India.",
+   "description": "Rewrites a search query using the user's current context and an on-device personalised knowledge graph, so search returns more relevant results.",
+   "links": [
+    {
+     "label": "USPTO",
+     "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11989193"
+    },
+    {
+     "label": "Google Patents",
+     "url": "https://patents.google.com/patent/US11989193B2/en"
+    }
+   ]
+  },
+  {
+   "id": "hyperlink-classification",
+   "title": "Method and system for classifying one or more hyperlinks in a document",
+   "number": "US 12,561,514 B2",
+   "status": "granted",
+   "status_chip": "Granted · US · Feb 2026",
+   "status_meta": "",
+   "also": "A continuation is pending (US 2026/0187343 A1). Also filed via PCT (WO 2024/080794), in China and in India.",
+   "description": "Sorts the hyperlinks in a document into categories by analysing the text around each link, without opening the linked content.",
+   "links": [
+    {
+     "label": "USPTO",
+     "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12561514"
+    },
+    {
+     "label": "Google Patents",
+     "url": "https://patents.google.com/patent/US12561514B2/en"
+    }
+   ]
+  },
+  {
+   "id": "entity-of-interest",
+   "title": "Methods and electronic devices for adding entity of interest to captured image",
+   "number": "US 2026/0099969 A1",
+   "status": "pending",
+   "status_chip": "Pending · US & PCT",
+   "status_meta": "published Apr 2026",
+   "also": "Also filed via PCT (WO 2026/079564) and in India.",
+   "description": "Adds a missing person to an already-captured photo, generating a suitable pose and placement from other relevant images.",
+   "links": [
+    {
+     "label": "USPTO",
+     "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20260099969"
+    },
+    {
+     "label": "Google Patents",
+     "url": "https://patents.google.com/patent/US20260099969A1/en"
+    }
+   ]
+  },
+  {
+   "id": "desired-event-capture",
+   "title": "A method and a device for capturing a desired event",
+   "number": "WO 2026/168644 A1",
+   "status": "pending",
+   "status_chip": "Pending · PCT",
+   "status_meta": "published Aug 2026",
+   "also": "Also filed in India.",
+   "description": "The user describes the moment they want in a prompt; the camera matches that description against the live stream frame by frame and captures when the event appears.",
+   "links": [
+    {
+     "label": "WIPO Patentscope",
+     "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2026168644"
+    }
+   ]
+  },
+  {
+   "id": "personalised-av",
+   "title": "Method and system for providing personalized audio-visual experience to a user based on an event",
+   "number": "Indian Patent 520765",
+   "status": "granted",
+   "status_chip": "Granted · India · Mar 2024",
+   "status_meta": "",
+   "also": "Application 202141009613. Grant notified in the Official Journal of the Patent Office, No. 10/2024.",
+   "description": "Senses the excitement of a live event and plays sounds and visuals matched to the user's profile.",
+   "links": [
+    {
+     "label": "WIPO Patentscope",
+     "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=IN374030930"
+    }
+   ]
+  },
+  {
+   "id": "personalised-activities",
+   "title": "Method and electronic device for generating personalized activities for a user",
+   "number": "Indian Patent 562688",
+   "status": "granted",
+   "status_chip": "Granted · India · Mar 2025",
+   "status_meta": "",
+   "also": "Application 202141009075. Grant notified in the Official Journal of the Patent Office, No. 12/2025.",
+   "description": "A device such as a social robot learns a user's preferences and its relationship with them, then initiates personalised activities.",
+   "links": [
+    {
+     "label": "WIPO Patentscope",
+     "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=IN374030927"
+    }
+   ]
+  },
+  {
+   "id": "fitness-monitoring",
+   "title": "Method and system for monitoring physical fitness",
+   "number": "Indian Patent 552631",
+   "status": "granted",
+   "status_chip": "Granted · India · Oct 2024",
+   "status_meta": "",
+   "also": "Application 202041027276. Grant notified in the Official Journal of the Patent Office, No. 43/2024.",
+   "description": "A conversational fitness assistant that understands natural-language input in context and reports results back in natural language.",
+   "links": [
+    {
+     "label": "WIPO Patentscope",
+     "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=IN346888030"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Dr. Pinaki Bhaskar</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script>
+  /* Same theme bootstrap as index.html: honour a saved choice before first paint. */
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+  /* Standalone layout for this page only; colours and fonts come from site.css tokens. */
+  body { min-height: 100vh; display: grid; place-items: center; margin: 0; padding: 2rem; }
+  .nf { max-width: 34rem; grid-column: auto; }   /* site.css puts <main> in its rail layout's second column; not here */
+  .nf__code { font: 600 0.8rem/1 var(--sans, system-ui, sans-serif); letter-spacing: .14em;
+              text-transform: uppercase; color: var(--accent-text, #a8431a); margin: 0 0 1rem; }
+  .nf h1 { font: 300 clamp(2.2rem, 6vw, 3.4rem)/1.08 var(--serif, Georgia, serif); margin: 0 0 1rem; }
+  .nf p { margin: 0 0 1.5rem; }
+  .nf a { color: inherit; text-decoration-color: var(--accent, #c2541d); text-underline-offset: .2em; }
+</style>
+</head>
+<body>
+<main class="nf">
+  <p class="nf__code">404 · Page not found</p>
+  <h1>That page has moved on.</h1>
+  <p>This site was rebuilt in 2026 and older addresses were retired. Everything now lives on one page.</p>
+  <p><a href="/">Go to pinakibhaskar.github.io</a> · <a href="/#research">Publications</a> · <a href="/#contact">Contact</a></p>
+</main>
+</body>
+</html>

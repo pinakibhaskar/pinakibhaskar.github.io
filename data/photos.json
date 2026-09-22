@@ -1,0 +1,161 @@
+{
+ "note": "Photographs by Pinaki Bhaskar. Files live in assets/photos/ as <slug>-480.{webp,jpg} (grid) and <slug>-full.{webp,jpg} (enlarged view). Order here is display order.",
+ "photos": [
+  {
+   "slug": "rohtang-peaks-cirrus",
+   "caption": "Rohtang Pass, Himachal Pradesh",
+   "alt": "Snow-dusted Himalayan peaks wrapped in cloud beneath a deep blue sky streaked with cirrus.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "mukutmanipur-island-sun",
+   "caption": "Mukutmanipur, West Bengal",
+   "alt": "Low sun above a small wooded island, its reflection a bright path across the still reservoir.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "eiffel-lattice-night",
+   "caption": "Under the Eiffel Tower, Paris",
+   "alt": "The iron lattice of the Eiffel Tower seen from directly below at night, lit gold against a black sky.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 800,
+    "h": 600
+   }
+  },
+  {
+   "slug": "rohtang-snow-road",
+   "caption": "Rohtang Pass, Himachal Pradesh",
+   "alt": "A dark mountain road curving through fresh snow towards a valley filled with storm cloud.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "mukutmanipur-golden-birds",
+   "caption": "Mukutmanipur, West Bengal",
+   "alt": "A line of birds flying low between two wooded headlands over water turned gold by the evening sun.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "seine-rainbow",
+   "caption": "Rainbow over the Seine, Paris",
+   "alt": "A rainbow arcing through dark storm clouds above sunlit trees and moored boats on the Seine.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 800,
+    "h": 600
+   }
+  },
+  {
+   "slug": "rohtang-huts-cloud",
+   "caption": "Rohtang Pass, Himachal Pradesh",
+   "alt": "Two stone huts at the foot of a mountain swallowed by cloud, with two black birds in flight.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "invalides-night",
+   "caption": "Les Invalides by night, Paris",
+   "alt": "The gilded dome of Les Invalides glowing among the city lights of Paris, seen from above at night.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 800,
+    "h": 600
+   }
+  },
+  {
+   "slug": "mukutmanipur-lone-tree",
+   "caption": "Mukutmanipur, West Bengal",
+   "alt": "A single bright-green tree standing on red earth in front of a dark line of woodland.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "notre-dame",
+   "caption": "Notre-Dame de Paris",
+   "alt": "The south side of Notre-Dame cathedral with its spire and rose window, above the trees of the riverbank.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 800,
+    "h": 600
+   }
+  },
+  {
+   "slug": "rohtang-switchbacks",
+   "caption": "Rohtang Pass, Himachal Pradesh",
+   "alt": "A high green valley crossed by a road of tight switchbacks, with vehicles small in the distance.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 720,
+    "h": 540
+   }
+  },
+  {
+   "slug": "amsterdam-tall-ship",
+   "caption": "Tall ship, Amsterdam",
+   "alt": "The masts, yards and rigging of a moored three-masted sailing ship against a pale overcast sky.",
+   "thumb": {
+    "w": 480,
+    "h": 360
+   },
+   "full": {
+    "w": 800,
+    "h": 600
+   }
+  }
+ ]
+}

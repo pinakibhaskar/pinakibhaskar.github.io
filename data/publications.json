@@ -1,0 +1,1035 @@
+[
+ {
+  "id": "new-2",
+  "year": 2024,
+  "title": "POP-VQA – Privacy Preserving, On-Device, Personalized Visual Question Answering",
+  "authors": [
+   "Pragya Paramita Sahu",
+   "Abhishek Raut",
+   "Jagdish Singh Samant",
+   "Mahesh Gorijala",
+   "Vignesh Lakshminarayanan",
+   "Pinaki Bhaskar"
+  ],
+  "venue": "WACV 2024",
+  "venue_full": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2024, pp. 8470-8479",
+  "pages": "",
+  "type": "Conference",
+  "topics": [
+   "Multimodal & on-device",
+   "Knowledge graphs"
+  ],
+  "selected": true,
+  "note": "On-device VQA personalised with a user knowledge graph; +36% absolute on KVQA 1-hop questions.",
+  "links": [
+   {
+    "label": "CVF Open Access",
+    "url": "https://openaccess.thecvf.com/content/WACV2024/html/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.html"
+   },
+   {
+    "label": "PDF",
+    "url": "https://openaccess.thecvf.com/content/WACV2024/papers/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.pdf"
+   }
+  ]
+ },
+ {
+  "id": "new-3",
+  "year": 2023,
+  "title": "Multi-Hop Relation Aware Representations for Inductive Knowledge Graphs",
+  "authors": [
+   "Aniruddha Bala",
+   "Ankit Sharma",
+   "Shlok Sharma",
+   "Pinaki Bhaskar"
+  ],
+  "venue": "ICON 2023",
+  "venue_full": "Proceedings of the 20th International Conference on Natural Language Processing (ICON 2023), Goa University, pp. 27-35",
+  "pages": "27–35",
+  "type": "Conference",
+  "topics": [
+   "Knowledge graphs"
+  ],
+  "selected": true,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/2023.icon-1.3/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/2023.icon-1.3.pdf"
+   }
+  ]
+ },
+ {
+  "id": "new-4",
+  "year": 2021,
+  "title": "An On-device Deep-Learning Approach for Attribute Extraction from Heterogeneous Unstructured Text",
+  "authors": [
+   "Mahesh Gorijala",
+   "Aniruddha Bala",
+   "Pinaki Bhaskar",
+   "Krishnaditya",
+   "Vikram Mupparthi"
+  ],
+  "venue": "ICON 2021",
+  "venue_full": "Proceedings of the 18th International Conference on Natural Language Processing (ICON 2021), NIT Silchar, pp. 573-582",
+  "pages": "573–582",
+  "type": "Conference",
+  "topics": [
+   "Multimodal & on-device",
+   "Knowledge graphs"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/2021.icon-main.70/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/2021.icon-main.70.pdf"
+   }
+  ]
+ },
+ {
+  "id": "new-1",
+  "year": 2015,
+  "title": "From Literature to Knowledge: Exploiting PubMed to Answer Biomedical Questions in Natural Language",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Marina Buzzi",
+   "Filippo Geraci",
+   "Marco Pellegrini"
+  ],
+  "venue": "ITBAM 2015 · Springer LNCS",
+  "venue_full": "ITBAM 2015 - Information Technology in Bio- and Medical Informatics, Springer LNCS, pp. 3-15",
+  "pages": "3–15",
+  "type": "Conference",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": true,
+  "note": "Biomedical question answering over PubMed; from the ERCIM postdoctoral fellowship at IIT-CNR, Pisa.",
+  "links": [
+   {
+    "label": "DOI",
+    "url": "https://doi.org/10.1007/978-3-319-22741-2_1"
+   }
+  ]
+ },
+ {
+  "id": "C1",
+  "year": 2014,
+  "title": "Cross Lingual Snippet Generation Using Snippet Translation System",
+  "authors": [
+   "Pintu Lohar",
+   "Pinaki Bhaskar",
+   "Santanu Pal",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "CICLing 2014 · Springer LNCS 8404",
+  "venue_full": "CICLing 2014, Computational Linguistics and Intelligent Text Processing, Springer LNCS 8404",
+  "pages": "331–342",
+  "type": "Conference",
+  "topics": [
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "DOI",
+    "url": "https://doi.org/10.1007/978-3-642-54903-8_28"
+   }
+  ]
+ },
+ {
+  "id": "conf-3",
+  "year": 2013,
+  "title": "A Hybrid Question Answering System for Multiple Choice Question (MCQ)",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Somnath Banerjee",
+   "Partha Pakray",
+   "Samadrita Banerjee",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "QA4MRE @ CLEF 2013 Working Notes",
+  "venue_full": "QA4MRE @ CLEF 2013 Working Notes, CEUR-WS Vol-1179",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "Top-ranked system, c@1 = 0.59.",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1179/CLEF2013wn-QA4MRE-BhaskarEt2013b.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-7",
+  "year": 2013,
+  "title": "Answering Questions from Multiple Documents – the Role of Multi-Document Summarization",
+  "authors": [
+   "Pinaki Bhaskar"
+  ],
+  "venue": "RANLP 2013 Student Research Workshop",
+  "venue_full": "Proceedings of the Student Research Workshop associated with RANLP 2013, Hissar, Bulgaria, September 2013, pp. 14–21 (INCOMA Ltd.)",
+  "pages": "14–21",
+  "type": "Workshop",
+  "topics": [
+   "Question answering",
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/R13-2003/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/R13-2003.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-6",
+  "year": 2013,
+  "title": "Automatic Evaluation of Summary Using Textual Entailment",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Partha Pakray"
+  ],
+  "venue": "RANLP 2013 Student Research Workshop",
+  "venue_full": "Proceedings of the Student Research Workshop associated with RANLP 2013, Hissar, Bulgaria, September 2013, pp. 30–37 (INCOMA Ltd.)",
+  "pages": "30–37",
+  "type": "Workshop",
+  "topics": [
+   "Evaluation & entailment",
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/R13-2005/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/R13-2005.pdf"
+   }
+  ]
+ },
+ {
+  "id": "J1",
+  "year": 2013,
+  "title": "Entailment-based Fully Automatic Technique for Evaluation of Summaries",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Partha Pakray",
+   "Alexander Gelbukh",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "Research in Computing Science, vol. 65",
+  "venue_full": "Research in Computing Science, Vol. 65, pp. 11-23 (ISSN 1870-4069)",
+  "pages": "11–23",
+  "type": "Journal",
+  "topics": [
+   "Evaluation & entailment",
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "Journal issue",
+    "url": "https://www.rcs.cic.ipn.mx/2013_65/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://www.rcs.cic.ipn.mx/2013_65/Entailment-based%20Fully%20Automatic%20Technique%20for%20Evaluation%20of%20Summaries.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-5",
+  "year": 2013,
+  "title": "Multi-Document Summarization using Automatic Key-Phrase Extraction",
+  "authors": [
+   "Pinaki Bhaskar"
+  ],
+  "venue": "RANLP 2013 Student Research Workshop",
+  "venue_full": "Proceedings of the Student Research Workshop associated with RANLP 2013, Hissar, Bulgaria, September 2013, pp. 22–29 (INCOMA Ltd.)",
+  "pages": "22–29",
+  "type": "Workshop",
+  "topics": [
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/R13-2004/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/R13-2004.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-4",
+  "year": 2013,
+  "title": "Multiple Choice Question (MCQ) Answering System for Entrance Examination",
+  "authors": [
+   "Somnath Banerjee",
+   "Pinaki Bhaskar",
+   "Partha Pakray",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "QA4MRE @ CLEF 2013 Working Notes",
+  "venue_full": "Working Notes for CLEF 2013 Conference (QA4MRE lab, Entrance Exams pilot task), Valencia, Spain, CEUR-WS Vol-1179",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1179/CLEF2013wn-QA4MRE-BanerjeeEt2013.pdf"
+   }
+  ]
+ },
+ {
+  "id": "B1",
+  "year": 2013,
+  "title": "Query Focused Language Independent Multi-document Summarization and Information Retrieval for English and Bengali",
+  "authors": [
+   "Pinaki Bhaskar"
+  ],
+  "venue": "LAP LAMBERT Academic Publishing",
+  "venue_full": "LAP LAMBERT Academic Publishing, Saarbruecken",
+  "pages": "",
+  "type": "Book",
+  "topics": [
+   "Summarization",
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "M.Tech. thesis published as a monograph.",
+  "links": [
+   {
+    "label": "Google Books",
+    "url": "https://books.google.com/books?id=5T9jngEACAAJ"
+   }
+  ]
+ },
+ {
+  "id": "conf-1",
+  "year": 2013,
+  "title": "Transliterated Search System for Indian Languages",
+  "authors": [
+   "Partha Pakray",
+   "Pinaki Bhaskar"
+  ],
+  "venue": "FIRE 2013 Working Notes",
+  "venue_full": "Pre-proceedings / Working Notes of the 5th Forum for Information Retrieval Evaluation (FIRE 2013), Shared Task on Transliterated Search, New Delhi, India",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF (archived)",
+    "url": "https://web.archive.org/web/20220128113642/https://www.isical.ac.in/~fire/wn/STTS/2013-translit_search-pakray-ntnu-norway.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-2",
+  "year": 2013,
+  "title": "Tweet Contextualization (Answering Tweet Question) – the Role of Multi-document Summarization",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Somnath Banerjee",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "INEX @ CLEF 2013 Working Notes",
+  "venue_full": "Working Notes for CLEF 2013 Conference (INEX Tweet Contextualization track), Valencia, Spain, CEUR-WS Vol-1179",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1179/CLEF2013wn-INEX-BhaskarEt2013.pdf"
+   }
+  ]
+ },
+ {
+  "id": "C3",
+  "year": 2012,
+  "title": "A Hybrid QA System with Focused IR and Automatic Summarization for INEX 2011",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Somnath Banerjee",
+   "Snehasis Neogi",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "INEX 2011 · Springer LNCS 7424",
+  "venue_full": "INEX 2011, Focused Retrieval of Content and Structure, Springer LNCS 7424",
+  "pages": "207–218",
+  "type": "Conference",
+  "topics": [
+   "Question answering",
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "DOI",
+    "url": "https://doi.org/10.1007/978-3-642-35734-3_18"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/INEX2012_SB_PB_SB_SN_camera_ready.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-10",
+  "year": 2012,
+  "title": "Comparative & Evaluative QA System in Tourism Domain",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Bidhan Chandra Pal",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "CCSEIT 2012 · ACM ICPS",
+  "venue_full": "Proceedings of the Second International Conference on Computational Science, Engineering and Information Technology (CCSEIT '12), Coimbatore, India, ACM (ICPS), October 2012, pp. 458–465",
+  "pages": "458–465",
+  "type": "Conference",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "DOI",
+    "url": "https://doi.org/10.1145/2393216.2393293"
+   }
+  ]
+ },
+ {
+  "id": "conf-9",
+  "year": 2012,
+  "title": "Keyphrase Extraction in Scientific Articles: A Supervised Approach",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Kishorjit Nongmeikapam",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "COLING 2012 · Demonstration Papers",
+  "venue_full": "Proceedings of COLING 2012: Demonstration Papers, Mumbai, India, December 2012, pp. 17–24",
+  "pages": "17–24",
+  "type": "Conference",
+  "topics": [
+   "Language tools"
+  ],
+  "selected": true,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/C12-3003/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/C12-3003.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/Coling2012Keyphrase.pdf"
+   }
+  ]
+ },
+ {
+  "id": "C2",
+  "year": 2012,
+  "title": "Language Independent Query Focused Snippet Generation",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "CLEF 2012 · Springer LNCS 7488",
+  "venue_full": "CLEF 2012, Information Access Evaluation. Multilinguality, Multimodality, and Visual Analytics, Springer LNCS 7488",
+  "pages": "138–140",
+  "type": "Conference",
+  "topics": [
+   "Retrieval & search",
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "DOI",
+    "url": "https://doi.org/10.1007/978-3-642-33247-0_16"
+   }
+  ]
+ },
+ {
+  "id": "conf-12",
+  "year": 2012,
+  "title": "A Hybrid Tweet Contextualization System using IR and Summarization",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Somnath Banerjee",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "INEX @ CLEF 2012 Working Notes",
+  "venue_full": "CLEF 2012 Evaluation Labs and Workshop, Online Working Notes (INEX Tweet Contextualization track), Rome, Italy, CEUR-WS Vol-1178",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Summarization",
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1178/CLEF2012wn-INEX-BhaskarEt2012.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-8",
+  "year": 2012,
+  "title": "Ad-hoc Information Retrieval focused on Wikipedia based Query Expansion and Entropy Based Ranking",
+  "authors": [
+   "Utsab Barman",
+   "Pintu Lohar",
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "FIRE 2012 Working Notes",
+  "venue_full": "Working Notes of the Forum for Information Retrieval Evaluation (FIRE 2012), Ad-hoc track, ISI Kolkata, India",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF",
+    "url": "https://www.isical.ac.in/~fire/data/working-notes_2012/adhoc/adhoc_JU.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-13",
+  "year": 2012,
+  "title": "An Automatic System for Modality and Negation Detection",
+  "authors": [
+   "Partha Pakray",
+   "Pinaki Bhaskar",
+   "Somnath Banerjee",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "QA4MRE @ CLEF 2012 Working Notes",
+  "venue_full": "CLEF 2012 Evaluation Labs and Workshop, Online Working Notes (QA4MRE lab, Modality and Negation pilot task), Rome, Italy, CEUR-WS Vol-1178",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1178/CLEF2012wn-QA4MRE-PakrayEt2012.pdf"
+   }
+  ]
+ },
+ {
+  "id": "J2",
+  "year": 2012,
+  "title": "Answer Extraction of Comparative and Evaluative Question in Tourism Domain",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Bidhan Chandra Pal",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "IJCSIT, vol. 3(4)",
+  "venue_full": "International Journal of Computer Science and Information Technologies (IJCSIT), Vol. 3(4), pp. 4610-4616",
+  "pages": "4610–4616",
+  "type": "Journal",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF",
+    "url": "https://www.ijcsit.com/docs/Volume%203/vol3Issue4/ijcsit2012030411.pdf"
+   }
+  ]
+ },
+ {
+  "id": "J3",
+  "year": 2012,
+  "title": "Cross Lingual Query Dependent Snippet Generation",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "IJCSIT, vol. 3(4)",
+  "venue_full": "International Journal of Computer Science and Information Technologies (IJCSIT), Vol. 3(4), pp. 4603-4609",
+  "pages": "4603–4609",
+  "type": "Journal",
+  "topics": [
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF",
+    "url": "https://www.ijcsit.com/docs/Volume%203/vol3Issue4/ijcsit2012030410.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-14",
+  "year": 2012,
+  "title": "Detection and Correction of Preposition and Determiner Errors in English: HOO 2012",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Aniruddha Ghosh",
+   "Santanu Pal",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "BEA-7 @ NAACL-HLT 2012",
+  "venue_full": "Proceedings of the Seventh Workshop on Building Educational Applications Using NLP (BEA-7) @ NAACL-HLT 2012, Montreal, Canada, pp. 201-207 (ACL Anthology W12-2023)",
+  "pages": "201–207",
+  "type": "Workshop",
+  "topics": [
+   "Language tools"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/W12-2023/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/W12-2023.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-11",
+  "year": 2012,
+  "title": "Question Answering System for QA4MRE@CLEF 2012",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Partha Pakray",
+   "Somnath Banerjee",
+   "Samadrita Banerjee",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "QA4MRE @ CLEF 2012 Working Notes",
+  "venue_full": "CLEF 2012 Evaluation Labs and Workshop, Online Working Notes (QA4MRE lab), Rome, Italy, CEUR-WS Vol-1178",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": true,
+  "note": "Top-ranked system, c@1 = 0.65.",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1178/CLEF2012wn-QA4MRE-BhaskarEt2012b.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-18",
+  "year": 2011,
+  "title": "A Hybrid Question Answering System based on Information Retrieval and Answer Validation",
+  "authors": [
+   "Partha Pakray",
+   "Pinaki Bhaskar",
+   "Somnath Banerjee",
+   "Bidhan Chandra Pal",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "QA4MRE @ CLEF 2011 Notebook Papers",
+  "venue_full": "CLEF 2011 Labs and Workshop, Notebook Papers (QA4MRE), Amsterdam, 19-22 Sept 2011. CEUR Workshop Proceedings Vol-1177",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "Top-ranked system, c@1 = 0.57.",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1177/CLEF2011wn-QA4MRE-PakrayEt2011.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/clef2011labs_submission_55-1.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-16",
+  "year": 2011,
+  "title": "A Rule Based Approach for Analysis of Comparative or Evaluative Questions in Tourism Domain",
+  "authors": [
+   "Bidhan Chandra Pal",
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "KRAQ @ IJCNLP 2011",
+  "venue_full": "Proceedings of the KRAQ11 Workshop (Knowledge and Reasoning for Answering Questions) @ IJCNLP 2011, Chiang Mai, Thailand, pp. 29-37 (ACL Anthology W11-3105)",
+  "pages": "29–37",
+  "type": "Workshop",
+  "topics": [
+   "Question answering"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/W11-3105/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/W11-3105.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/ijcnlp2011-BP-PB-SB_camera_ready.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-15",
+  "year": 2011,
+  "title": "A Textual Entailment System using Anaphora Resolution",
+  "authors": [
+   "Partha Pakray",
+   "Snehasis Neogi",
+   "Pinaki Bhaskar",
+   "Soujanya Poria",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "TAC 2011 · RTE-7 (NIST)",
+  "venue_full": "Text Analysis Conference (TAC) 2011 Proceedings, RTE-7 track (team JU_CSE_TAC: RTE Main, Novelty Detection, KBP Validation), NIST",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Evaluation & entailment"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "NIST TAC",
+    "url": "https://tac.nist.gov/publications/2011/papers.html"
+   },
+   {
+    "label": "PDF",
+    "url": "https://tac.nist.gov/publications/2011/participant.papers/JU_CSE_TAC.proceedings.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/JU_CSE_TAC.proceedings.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-17",
+  "year": 2011,
+  "title": "May I check the English of your paper!!!",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Aniruddha Ghosh",
+   "Santanu Pal",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "HOO @ ENLG 2011",
+  "venue_full": "Proceedings of the 13th European Workshop on Natural Language Generation (ENLG 2011), Generation Challenges - HOO 2011 Pilot Shared Task, Nancy, France, pp. 250-253 (ACL Anthology W11-2839)",
+  "pages": "250–253",
+  "type": "Workshop",
+  "topics": [
+   "Language tools"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/W11-2839/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/W11-2839.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-19",
+  "year": 2011,
+  "title": "Rule Based Plagiarism Detection using Information Retrieval",
+  "authors": [
+   "Aniruddha Ghosh",
+   "Pinaki Bhaskar",
+   "Santanu Pal",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "PAN @ CLEF 2011 Notebook Papers",
+  "venue_full": "CLEF 2011 Labs and Workshop, Notebook Papers (PAN), Amsterdam, 19-22 Sept 2011. CEUR Workshop Proceedings Vol-1177",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Language tools"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1177/CLEF2011wn-PAN-GhoshEt2011.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/PAN2011-plagiarism-SB_AG_PB_SP.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-20",
+  "year": 2010,
+  "title": "A Query Focused Automatic Multi Document Summarizer",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "ICON 2010",
+  "venue_full": "8th International Conference on Natural Language Processing (ICON 2010), IIT Kharagpur, India, 8-11 Dec 2010, pp. 241-250 (per CV; not independently verified)",
+  "pages": "241–250",
+  "type": "Conference",
+  "topics": [
+   "Summarization"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/ICON-2010_SB_PB-Camera-Ready-Copy.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-22",
+  "year": 2010,
+  "title": "A Query Focused Multi Document Automatic Summarization",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "PACLIC 24 (2010)",
+  "venue_full": "Proceedings of the 24th Pacific Asia Conference on Language, Information and Computation (PACLIC 24), Tohoku University, Sendai, Japan, Nov 2010, pp. 545-554 (ACL Anthology Y10-1063)",
+  "pages": "545–554",
+  "type": "Conference",
+  "topics": [
+   "Summarization"
+  ],
+  "selected": true,
+  "note": "Best-paper nominee, student session.",
+  "links": [
+   {
+    "label": "ACL Anthology",
+    "url": "https://aclanthology.org/Y10-1063/"
+   },
+   {
+    "label": "PDF",
+    "url": "https://aclanthology.org/Y10-1063.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-21",
+  "year": 2010,
+  "title": "Bengali Parsing System at ICON NLP Tool Contest 2010",
+  "authors": [
+   "Aniruddha Ghosh",
+   "Amitava Das",
+   "Pinaki Bhaskar",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "ICON 2010 NLP Tools Contest",
+  "venue_full": "Proceedings of ICON10 NLP Tools Contest: Indian Language Dependency Parsing, Kharagpur, India, 2010, pp. 20-24",
+  "pages": "20–24",
+  "type": "Shared task",
+  "topics": [
+   "Language tools"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF",
+    "url": "https://ltrc.iiit.ac.in/icon/2010/nlptools/files/documents/toolscontest10-workshoppaper-final.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-23",
+  "year": 2010,
+  "title": "JU_CSE_TE: System Description QA@CLEF 2010 - ResPubliQA",
+  "authors": [
+   "Partha Pakray",
+   "Pinaki Bhaskar",
+   "Santanu Pal",
+   "Dipankar Das",
+   "Sivaji Bandyopadhyay",
+   "Alexander Gelbukh"
+  ],
+  "venue": "ResPubliQA @ CLEF 2010 Notebook Papers",
+  "venue_full": "CLEF 2010 LABs and Workshops, Notebook Papers (MLQA 2010 / ResPubliQA), Padua, Italy, 22-23 Sept 2010. CEUR Workshop Proceedings Vol-1176",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Question answering",
+   "Evaluation & entailment"
+  ],
+  "selected": false,
+  "note": "Top-ranked in answer selection, score 0.63.",
+  "links": [
+   {
+    "label": "CEUR-WS",
+    "url": "https://ceur-ws.org/Vol-1176/CLEF2010wn-MLQA10-PakrayEt2010.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/JU-CSE-TE-Respubliqa-2010-System-Report.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-24",
+  "year": 2010,
+  "title": "Theme Based English and Bengali Ad-hoc Monolingual Information Retrieval in FIRE 2010",
+  "authors": [
+   "Pinaki Bhaskar",
+   "Amitava Das",
+   "Partha Pakray",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "FIRE 2010 Working Notes",
+  "venue_full": "Working notes of the Forum for Information Retrieval Evaluation (FIRE) 2010, Gandhinagar, India",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": []
+ },
+ {
+  "id": "conf-25",
+  "year": 2009,
+  "title": "Dependency Parser for Bengali: the JU System at ICON 2009",
+  "authors": [
+   "Aniruddha Ghosh",
+   "Pinaki Bhaskar",
+   "Amitava Das",
+   "Sivaji Bandyopadhyay"
+  ],
+  "venue": "ICON 2009 NLP Tools Contest",
+  "venue_full": "Proceedings of ICON09 NLP Tools Contest: Indian Language Dependency Parsing, Hyderabad, India, 2009, pp. 7-11",
+  "pages": "7–11",
+  "type": "Shared task",
+  "topics": [
+   "Language tools"
+  ],
+  "selected": false,
+  "note": "",
+  "links": [
+   {
+    "label": "PDF",
+    "url": "https://ltrc.iiit.ac.in/icon/2009/nlptools/CR/Parser_Camera_Ready_JU.pdf"
+   },
+   {
+    "label": "PDF (author copy)",
+    "url": "Pinaki_Bhaskar/Publication_files/ICON_2009_Parser.pdf"
+   }
+  ]
+ },
+ {
+  "id": "conf-26",
+  "year": 2008,
+  "title": "English Bengali Ad-hoc Monolingual Information Retrieval Task Result at FIRE 2008",
+  "authors": [
+   "Sivaji Bandyopadhyay",
+   "Amitava Das",
+   "Pinaki Bhaskar"
+  ],
+  "venue": "FIRE 2008 Working Notes",
+  "venue_full": "Working notes of the Forum for Information Retrieval Evaluation (FIRE) 2008, Kolkata, India",
+  "pages": "",
+  "type": "Shared task",
+  "topics": [
+   "Retrieval & search"
+  ],
+  "selected": false,
+  "note": "",
+  "links": []
+ }
+]
