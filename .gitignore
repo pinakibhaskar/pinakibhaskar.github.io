@@ -1,3 +1,8 @@
 .DS_Store
 .vscode/
 
+
+# local Python environment for tools/
+.venv/
+
+__pycache__/
