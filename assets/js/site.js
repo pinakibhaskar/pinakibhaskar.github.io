@@ -10,7 +10,7 @@
      5. Publications: clipped list + "Show all", type / topic / text filters
         (search ignores accents), live count, empty state
      6. "Copy address" button
-     7. Photography lightbox (<dialog>; without it each tile opens its JPEG)
+     7. Lightbox for photographs and award certificates (<dialog>; without it each link opens its JPEG)
      8. Subtle reveal-on-scroll (skipped for reduced motion)
 
    Each block checks that its elements exist, so removing a section from
@@ -301,16 +301,20 @@
     });
   })();
 
-  /* 7. PHOTOGRAPHY LIGHTBOX ------------------------
-     Each tile is a link to its full-size JPEG (data-w / data-h = native pixels). Here the links open
-     a modal <dialog> instead: showModal() keeps focus inside and closes on Esc; this block adds
-     Previous / Next (buttons, arrow keys, swipe), the "n of 12" count, the scroll lock, and
-     hands focus back to the tile that opened it. */
+  /* 7. LIGHTBOX (photographs, award certificates) ------------------------
+     Any element with data-lightbox="<name>" is a group; inside it, each link with data-w / data-h
+     (= native pixels of its full-size JPEG) opens a modal <dialog> instead of the file: showModal()
+     keeps focus inside and closes on Esc; this block adds Previous / Next (buttons, arrow keys,
+     swipe) within the group, the "n of 12" count, the scroll lock, and hands focus back to the
+     link that opened it. The caption is the link's data-caption, or the <figcaption> beside it. */
   (function lightbox() {
-    var links = $$('[data-photos] a');
-    if (!links.length || !window.HTMLDialogElement || !HTMLDialogElement.prototype.showModal) { return; }
+    var groups = $$('[data-lightbox]').map(function (el) {
+      return { name: el.getAttribute('data-lightbox') || 'Images', links: $$('a[data-w]', el) };
+    }).filter(function (g) { return g.links.length; });
+    if (!groups.length || !window.HTMLDialogElement || !HTMLDialogElement.prototype.showModal) { return; }
 
-    var box, source, img, caption, count;                     // the dialog is built the first time it is needed
+    var box, source, img, caption, count, nav;                // the dialog is built the first time it is needed
+    var links = [];                                           // the open group's links
     var current = 0;
     var opener = null;
     var touchX = null;
@@ -329,12 +333,14 @@
       img.alt = $('img', link).alt;
       source.srcset = webp(link);
       img.src = link.getAttribute('href');
-      caption.textContent = $('figcaption', link.parentNode).textContent;
+      var fig = $('figcaption', link.parentNode);
+      caption.textContent = link.getAttribute('data-caption') || (fig ? fig.textContent : '');
       // The live region names the photograph as well: "2 of 12: Mukutmanipur, West Bengal"
-      count.textContent = (current + 1) + ' of ' + links.length;
+      var n = links.length > 1 ? (current + 1) + ' of ' + links.length : '';   // a lone certificate needs no count
+      count.textContent = n;
       var place = doc.createElement('span');
       place.className = 'vh';
-      place.textContent = ': ' + caption.textContent;
+      place.textContent = (n ? ': ' : '') + caption.textContent;
       count.appendChild(place);
     }
 
@@ -361,6 +367,7 @@
       img = $('img', box);
       caption = $('figcaption', box);
       count = $('.lightbox__count', box);
+      nav = $('.lightbox__nav', box);
       // Once a photograph is up, fetch the next one so that Next is immediate.
       img.addEventListener('load', function () { new Image().src = webp(links[(current + 1) % links.length]); });
 
@@ -371,7 +378,9 @@
         if (e.target.closest('[data-close]') || e.target === box || e.target.classList.contains('lightbox__stage')) { box.close(); }
       });
       box.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') { show(current - 1); } else if (e.key === 'ArrowRight') { show(current + 1); }
+        if (links.length > 1) {
+          if (e.key === 'ArrowLeft') { show(current - 1); } else if (e.key === 'ArrowRight') { show(current + 1); }
+        }
         if (e.key !== 'Tab') { return; }
         // Tab wraps round inside the dialog instead of leaving for the browser's own controls.
         var stops = $$('button', box);
@@ -383,7 +392,7 @@
         if (touchX === null) { return; }
         var dx = e.changedTouches[0].clientX - touchX;
         touchX = null;
-        if (Math.abs(dx) > 48) { show(current + (dx < 0 ? 1 : -1)); }
+        if (Math.abs(dx) > 48 && links.length > 1) { show(current + (dx < 0 ? 1 : -1)); }
       }, { passive: true });
       box.addEventListener('close', function () {                // fires however it was closed: button, Esc or a click on the paper
         root.classList.remove('lightbox-open');
@@ -391,15 +400,20 @@
       });
     }
 
-    links.forEach(function (link, i) {
-      link.addEventListener('click', function (e) {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }   // new tab / window / download: leave to the browser
-        e.preventDefault();
-        if (!box) { build(); }
-        opener = link;
-        show(i);
-        root.classList.add('lightbox-open');
-        box.showModal();
+    groups.forEach(function (group) {
+      group.links.forEach(function (link, i) {
+        link.addEventListener('click', function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }   // new tab / window / download: leave to the browser
+          e.preventDefault();
+          if (!box) { build(); }
+          links = group.links;
+          box.setAttribute('aria-label', group.name);
+          nav.hidden = links.length < 2;                       // a single certificate has nothing to step through
+          opener = link;
+          show(i);
+          root.classList.add('lightbox-open');
+          box.showModal();
+        });
       });
     });
   })();

@@ -16,13 +16,17 @@ Pages serves it.
 | `assets/fonts/` | Self-hosted Fraunces + Inter (SIL Open Font License), latin subset, trimmed to the weights the site uses (Fraunces 300–600, optical size 12–72; Inter 400–700). Stay inside those ranges in `site.css`, or replace the files with the full variable fonts. |
 | `assets/img/` | Favicon, the social-share card (`og-card.png`), the hero portrait (`pinaki-bhaskar-320/640`) and the award photo (`pinaki-bhaskar-zinnov-2022-480/960`), each as WebP + JPEG. |
 | `assets/photos/` | The Photography section's images: `<slug>-480.{webp,jpg}` (grid tile) and `<slug>-full.{webp,jpg}` (enlarged view). |
+| `assets/awards/` | Award certificates and photos: `<slug>-240.{webp,jpg}` (thumbnail) and `<slug>-full.{webp,jpg}`. |
+| `assets/certificates/` | Course certificates: the PDF plus a rendered `-480` thumbnail and `-full` image. |
 | `assets/Pinaki_Bhaskar_CV.pdf` | **Not there yet.** The place for the downloadable CV — see “Add the CV” below. |
 | `data/publications.json` | Every publication, with links, type, topics and the `selected` flag. |
 | `data/patents.json` | Every patent (one entry per invention) with status, official links, and the two headline count strings. |
 | `data/photos.json` | The photographs, in display order, with caption and alt text. |
+| `data/awards.json` | Awards & recognition, in two groups, with optional certificate images. |
 | `tools/build_publications.py` | Regenerates the publication markup inside `index.html` from the JSON. |
 | `tools/build_patents.py` | Regenerates the patents table, and checks the patent counts typed elsewhere on the page. |
 | `tools/build_photos.py` | Regenerates the photography grid. |
+| `tools/build_awards.py` | Regenerates the Awards & recognition lists. |
 | `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll` | Hosting housekeeping. |
 | `Pinaki_Bhaskar/` | The retired 2014 iWeb site. Its pages now redirect here; `Publication_files/*.pdf` are still linked from the publication list, so keep them. |
 
@@ -58,6 +62,22 @@ third-party mirror: some of them print inventors' home addresses.
 The current twelve came from old 720–800 px web albums. Originals at 1600 px or more would look much
 better: export `-full` at up to 1600 px wide and the section will use them as they are.
 
+### Add or change an award
+
+1. Edit `data/awards.json` (two groups: External, Samsung internal — keep them separate). An award can
+   carry an `image`: export the certificate or photo to `assets/awards/` as `<slug>-240.{webp,jpg}`
+   (240 px wide thumbnail) and `<slug>-full.{webp,jpg}` (at most 1600 px on the long side; never upscale),
+   strip EXIF, and record the pixel sizes in the JSON. Check the image first: some certificates print
+   employee IDs, addresses or dates of birth.
+2. Run `python3 tools/build_awards.py`.
+
+### Add a course certificate
+
+The Certificates list in *Education & service* is hand-written in `index.html` (search for
+`class="ruled-list certs"`). Copy the Coursera row: put the PDF in `assets/certificates/`, render its
+first page to `<name>-480.{webp,jpg}` and `<name>-full.{webp,jpg}`, and link the provider's own
+verification page when there is one.
+
 ### Add the CV
 
 The site is built with a CV slot that is switched off until a PDF exists, so nothing links to a missing
@@ -77,8 +97,10 @@ Keep the facts in the CV in step with the site (patent and publication counts, d
 
 ### Replace the portrait
 
-The hero portrait is `assets/img/pinaki-bhaskar-320.{webp,jpg}` and `-640.{webp,jpg}` (square). Export a
-new square photo at those two sizes under the same names (strip EXIF) and nothing else needs to change.
+The hero portrait is `assets/img/pinaki-bhaskar-320.{webp,jpg}` and `-640.{webp,jpg}`, 4:5 portrait
+(320×400 and 640×800). Export a new photo at those two sizes under the same names (strip EXIF); if the
+proportions change, update `width`/`height` on the hero `<img>` in `index.html`. Re-render the social card
+too (it shows the portrait).
 The JSON-LD block at the top of `index.html` points at the 640 px JPEG.
 
 ### Change wording

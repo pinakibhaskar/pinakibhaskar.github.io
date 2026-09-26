@@ -1201,6 +1201,19 @@ p + .pub__authors, p + .pub__venue { margin-top: 0.1rem; }
 .awards .ruled-list strong { font-size: var(--fs-body); color: var(--ink); }
 .source { display: block; margin-top: 0.15rem; font-size: var(--fs-small); }     /* provenance line under an award */
 
+/* A list row with a small framed image beside the text (award certificates, course certificates).
+   The plate is a link to the full-size image; site.js opens it in the lightbox. */
+.exhibit { display: flex; align-items: flex-start; gap: var(--s-4); padding-right: 0 !important; }
+.exhibit__text { flex: 1 1 auto; min-width: 0; max-width: var(--prose); }
+.exhibit__plate { flex: 0 0 auto; width: 4.5rem; margin-top: 0.2rem; background: var(--paper-2); transition: border-color 0.15s ease; }
+.exhibit__plate img { display: block; width: 100%; height: auto; }
+.exhibit__plate:hover, .exhibit__plate:focus-visible { border-color: var(--accent); }
+.exhibit__plate:hover img { opacity: 0.9; }
+.certs { margin-top: 0.15rem; }
+.certs > li { font-size: var(--fs-body-s); line-height: 1.6; }
+.certs .exhibit__plate { width: 5.5rem; }                     /* the certificate is landscape, so it can be a little wider */
+@media (min-width: 48rem) { .exhibit__plate { width: 5rem; } .certs .exhibit__plate { width: 6.5rem; } }
+
 .section--contact .section__head { margin-bottom: var(--s-5); }
 .contact__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
 .contact__cta .btn { max-width: 100%; }
@@ -1309,6 +1322,8 @@ p + .pub__authors, p + .pub__venue { margin-top: 0.1rem; }
   .site-header, .skip-link, .sprite, .filters, .empty, .hero__actions, .allpubs__more, .section__links,
   .allpubs__hint .js-only, .site-footer__top, .contact__cta svg, .contact__cta button, .chip::after,
   .proof__text::after, .profiles svg, .recognition__photo, #photography { display: none !important; }
+  .exhibit__plate::after { content: none !important; }     /* an image link: no URL after it */
+  .exhibit__plate { width: 18mm !important; }
 
   .layout { display: block; max-width: none; padding: 0; }
   main, .site-footer { max-width: none; }
