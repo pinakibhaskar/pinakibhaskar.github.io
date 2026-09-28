@@ -15,7 +15,7 @@ Pages serves it.
 | `assets/css/site.css` | Styles. Design tokens (colours, type scale, spacing) are at the top. |
 | `assets/js/site.js` | Progressive enhancement only: theme toggle, mobile menu, publication list (clipped until “Show all”, filters, search), copy-address button, photography lightbox. The page works without it. |
 | `assets/fonts/` | Self-hosted Fraunces + Inter (SIL Open Font License), latin subset, trimmed to the weights the site uses (Fraunces 300–600, optical size 12–72; Inter 400–700). Stay inside those ranges in `site.css`, or replace the files with the full variable fonts. |
-| `assets/img/` | Favicon, the social-share card (`og-card.png`), the portrait (`pinaki-bhaskar-320/640`), the award photo (`pinaki-bhaskar-zinnov-2022-480/960`) and `cards/` (the three home-page card images), each as WebP + JPEG. |
+| `assets/img/` | Favicon, the social-share card (`og-card.png`), the portrait (`pinaki-bhaskar-320/640`), the award photo (`pinaki-bhaskar-zinnov-2022-480/960/full`) and `cards/` (the three home-page card images), each as WebP + JPEG. |
 | `assets/photos/` | The Photography section's images: `<slug>-480.{webp,jpg}` (grid tile) and `<slug>-full.{webp,jpg}` (enlarged view). |
 | `assets/awards/` | Award certificates and photos: `<slug>-240.{webp,jpg}` (thumbnail) and `<slug>-full.{webp,jpg}`. |
 | `assets/certificates/` | Course certificates: the PDF plus a rendered `-480` thumbnail and `-full` image. |
