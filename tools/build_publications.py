@@ -2,9 +2,9 @@
 """Generate the publication markup in index.html from publications.json.
 
 Usage:
-    python3 tools/build_publications.py [path/to/publications.json] [path/to/index.html]
+    python3 tools/build_publications.py [data/publications.json] [research/index.html]
 
-With no arguments it reads data/publications.json and writes index.html, like its two siblings.
+With no arguments it reads data/publications.json and writes research/index.html, like its siblings.
 
 The script rewrites only the text between these marker comments in index.html, so it is safe
 to run again whenever publications.json changes:
@@ -66,6 +66,8 @@ def link_html(link, link_id, title_id):
     External links open in a new tab (announced through NEW_TAB_NOTE); site.css draws their arrow."""
     url = link["url"]
     external = url.startswith(("http://", "https://"))
+    if not external and not url.startswith("/"):
+        url = "/" + url          # root-relative: the page lives in /research/, the author copies under /Pinaki_Bhaskar/
     attrs = f' id="{link_id}" aria-labelledby="{link_id} {title_id}"'
     if external:
         attrs += f' target="_blank" rel="noopener noreferrer" aria-describedby="{NEW_TAB_NOTE}"'
@@ -116,7 +118,7 @@ def replace_block(page, name, body):
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     data_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(here, "..", "data", "publications.json")
-    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(here, "..", "index.html")
+    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(here, "..", "research", "index.html")
     with open(data_path, encoding="utf-8") as fh:
         pubs = json.load(fh)
     # Newest first; stable, so the order inside a year follows the JSON file.

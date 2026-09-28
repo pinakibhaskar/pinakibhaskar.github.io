@@ -17,6 +17,7 @@ Usage (from the site root; both paths are optional):
 No third-party packages needed.
 """
 import html
+import glob
 import json
 import os
 import re
@@ -75,41 +76,40 @@ def plain(fragment):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def check_counts(page, headline, caption):
-    """Every hand-typed copy of the two count strings. Returns (report lines, number of problems)."""
-    places = [
-        ("meta description", r'<meta name="description" content="([^"]*)"', [headline]),
-        ("og:description", r'<meta property="og:description" content="([^"]*)"', [headline]),
-        ("twitter:description", r'<meta name="twitter:description" content="([^"]*)"', [headline]),
-        ("hero sub-head", r'<p class="hero__sub">(.*?)</p>', [headline]),
-        ("proof-strip tile", r'<a class="proof__item" href="#patents">(.*?)</a>', [headline, caption]),
-    ]
+def check_counts(root, headline, caption):
+    """Every mention of a patent count in the site's copy must agree with the JSON.
+    Scans each page's visible text and meta descriptions for "<number> patents" (and the
+    spelled-out "seven patents" form used in prose). Returns (report lines, number of problems)."""
+    words = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
+    want = int(re.match(r"\d+", headline).group())
     lines, problems = [], 0
-    for name, pattern, wanted in places:
-        m = re.search(pattern, page, re.S)
-        if not m:
-            lines.append(f"  MISSING   {name}: not found in index.html")
-            problems += 1
+    pages = sorted(p for p in glob.glob(os.path.join(root, "**", "*.html"), recursive=True)
+                   if os.sep + "Pinaki_Bhaskar" + os.sep not in p and not p.endswith("404.html"))
+    for path in pages:
+        with open(path, encoding="utf-8") as fh:
+            html = fh.read()
+        text = re.sub(r"<[^>]+>", " ", re.sub(r"<!--.*?-->", "", html, flags=re.S))
+        found = re.findall(r"\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\+? patents?\b", text, re.I)
+        found += re.findall(r'content="[^"]*\b(\d+)\+? patents\b', html)
+        rel = os.path.relpath(path, root)
+        if not found:
             continue
-        where = page.count("\n", 0, m.start(1)) + 1
-        text = plain(m.group(1))
-        for want in wanted:
-            ok = want in text
-            problems += not ok
-            lines.append(f'  {"ok      " if ok else "MISMATCH"}  line {where:<5} {name}: "{want}"'
-                         + ("" if ok else f'  <- found: "{text[-70:]}"'))
-    # Any other "N patents" typed somewhere on the page must agree as well.
-    body = plain(page)
-    for stray in sorted(set(re.findall(r"\b\d+\+? patents\b", body)) - {headline}):
-        lines.append(f'  MISMATCH  somewhere on the page: "{stray}" (the JSON says "{headline}")')
-        problems += 1
+        counts = {int(f) if f.isdigit() else words[f.lower()] for f in found}
+        bad = sorted(c for c in counts if c != want)
+        if bad:
+            problems += 1
+            lines.append(f"  MISMATCH  {rel}: says {bad} patents; data/patents.json says {want}")
+        else:
+            lines.append(f"  ok        {rel}: {len(found)} mention(s) of {want} patents")
+    if caption and not any(caption in open(p, encoding="utf-8").read() for p in pages):
+        lines.append(f'  note      the caption "{caption}" is not used on any page (fine)')
     return lines, problems
 
 
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     data_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(here, "..", "data", "patents.json")
-    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(here, "..", "index.html")
+    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(here, "..", "patents", "index.html")
     with open(data_path, encoding="utf-8") as fh:
         data = json.load(fh)
     patents, summary = data["patents"], data["summary"]
@@ -127,12 +127,12 @@ def main():
         print(f'WARNING: patents.json summary says {summary.get("inventions")} inventions / {summary.get("granted")} granted, '
               f"but the list holds {len(patents)} / {granted}. Check the summary and its two strings.")
     headline, caption = summary["headline"], summary["caption"]
-    lines, problems = check_counts(page, headline, caption)
-    print(f'Patent counts: "{headline}" and "{caption}" are typed by hand in these places:')
+    lines, problems = check_counts(os.path.join(here, ".."), headline, caption)
+    print(f'Patent counts: "{headline}" (and "{caption}") are typed by hand in the copy. Every page checked:')
     print("\n".join(lines))
     print("  (not checked: the social card assets/img/og-card.png also shows the patent count)")
     if problems:
-        sys.exit(f"\nERROR: {problems} place(s) in index.html disagree with data/patents.json — edit them and run this again.")
+        sys.exit(f"\nERROR: {problems} place(s) disagree with data/patents.json — edit them and run this again.")
 
 
 if __name__ == "__main__":

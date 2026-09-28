@@ -2,7 +2,7 @@
 """Generate the photography grid in index.html from data/photos.json.
 
 Usage (from the site root; both paths are optional):
-    python3 tools/build_photos.py [data/photos.json] [index.html]
+    python3 tools/build_photos.py [data/photos.json] [photography/index.html]
 
 Rewrites only the tiles between these marker comments, in JSON order:
 
@@ -21,7 +21,8 @@ import sys
 sys.dont_write_bytecode = True   # importing the sibling script must not leave a __pycache__ folder in the site
 from build_publications import esc, replace_block
 
-PHOTO_DIR = "assets/photos"
+PHOTO_DIR = "/assets/photos"
+STRIP = 6            # photographs shown on the home page
 
 
 def tile_html(photo, indent="  "):
@@ -43,12 +44,13 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.join(here, "..")
     data_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(root, "data", "photos.json")
-    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(root, "index.html")
+    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(root, "photography", "index.html")
+    home_path = os.path.join(root, "index.html")
     with open(data_path, encoding="utf-8") as fh:
         photos = json.load(fh)["photos"]
 
     missing = [f'{PHOTO_DIR}/{p["slug"]}-{size}.{ext}' for p in photos for size in ("480", "full") for ext in ("webp", "jpg")
-               if not os.path.exists(os.path.join(root, PHOTO_DIR, f'{p["slug"]}-{size}.{ext}'))]
+               if not os.path.exists(os.path.join(root, PHOTO_DIR.lstrip("/"), f'{p["slug"]}-{size}.{ext}'))]
     if missing:
         sys.exit("ERROR: missing image files:\n  " + "\n  ".join(missing))
 
@@ -58,6 +60,15 @@ def main():
     with open(index_path, "w", encoding="utf-8") as fh:
         fh.write(page)
     print(f"Wrote {len(photos)} photographs to {index_path}")
+    # The home page shows the first STRIP photographs as a teaser.
+    if os.path.exists(home_path):
+        with open(home_path, encoding="utf-8") as fh:
+            home = fh.read()
+        if "<!-- BEGIN:PHOTOS-STRIP" in home:
+            home = replace_block(home, "PHOTOS-STRIP", "\n".join(tile_html(p) for p in photos[:STRIP]))
+            with open(home_path, "w", encoding="utf-8") as fh:
+                fh.write(home)
+            print(f"Wrote the first {STRIP} photographs to {home_path}")
 
 
 if __name__ == "__main__":

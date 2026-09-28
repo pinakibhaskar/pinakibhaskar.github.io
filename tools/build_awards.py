@@ -2,7 +2,7 @@
 """Generate the Awards & recognition lists in index.html from data/awards.json.
 
 Usage (from the site root; both paths are optional):
-    python3 tools/build_awards.py [data/awards.json] [index.html]
+    python3 tools/build_awards.py [data/awards.json] [recognition/index.html]
 
 Rewrites only the markup between these marker comments, one group after another:
 
@@ -21,7 +21,7 @@ import sys
 sys.dont_write_bytecode = True   # importing the sibling script must not leave a __pycache__ folder in the site
 from build_publications import esc, replace_block
 
-AWARD_DIR = "assets/awards"
+AWARD_DIR = "/assets/awards"
 SRIB = '<abbr title="Samsung R&amp;D Institute India – Bangalore">SRI-B</abbr>'
 NEW_TAB = 'target="_blank" rel="noopener noreferrer" aria-describedby="new-tab"'
 
@@ -77,13 +77,13 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.join(here, "..")
     data_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(root, "data", "awards.json")
-    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(root, "index.html")
+    index_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join(root, "recognition", "index.html")
     with open(data_path, encoding="utf-8") as fh:
         groups = json.load(fh)["groups"]
 
     images = [i["image"] for g in groups for i in g["items"] if i.get("image")]
     missing = [f'{AWARD_DIR}/{img["slug"]}-{size}.{ext}' for img in images for size in ("240", "full") for ext in ("webp", "jpg")
-               if not os.path.exists(os.path.join(root, AWARD_DIR, f'{img["slug"]}-{size}.{ext}'))]
+               if not os.path.exists(os.path.join(root, AWARD_DIR.lstrip("/"), f'{img["slug"]}-{size}.{ext}'))]
     if missing:
         sys.exit("ERROR: missing image files:\n  " + "\n  ".join(missing))
 

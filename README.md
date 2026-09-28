@@ -10,23 +10,23 @@ Pages serves it.
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The whole site (one scrolling page). All copy lives here. |
+| `index.html` | The home page (About): portrait, the story, three work cards, current research, six photographs, contact. |
+| `work/`, `research/`, `patents/`, `recognition/`, `background/`, `photography/` | The other pages, one `index.html` each. The site header is copied into every page — if you change the menu, change it in all seven files. |
 | `assets/css/site.css` | Styles. Design tokens (colours, type scale, spacing) are at the top. |
 | `assets/js/site.js` | Progressive enhancement only: theme toggle, mobile menu, publication list (clipped until “Show all”, filters, search), copy-address button, photography lightbox. The page works without it. |
 | `assets/fonts/` | Self-hosted Fraunces + Inter (SIL Open Font License), latin subset, trimmed to the weights the site uses (Fraunces 300–600, optical size 12–72; Inter 400–700). Stay inside those ranges in `site.css`, or replace the files with the full variable fonts. |
-| `assets/img/` | Favicon, the social-share card (`og-card.png`), the hero portrait (`pinaki-bhaskar-320/640`) and the award photo (`pinaki-bhaskar-zinnov-2022-480/960`), each as WebP + JPEG. |
+| `assets/img/` | Favicon, the social-share card (`og-card.png`), the portrait (`pinaki-bhaskar-320/640`), the award photo (`pinaki-bhaskar-zinnov-2022-480/960`) and `cards/` (the three home-page card images), each as WebP + JPEG. |
 | `assets/photos/` | The Photography section's images: `<slug>-480.{webp,jpg}` (grid tile) and `<slug>-full.{webp,jpg}` (enlarged view). |
 | `assets/awards/` | Award certificates and photos: `<slug>-240.{webp,jpg}` (thumbnail) and `<slug>-full.{webp,jpg}`. |
 | `assets/certificates/` | Course certificates: the PDF plus a rendered `-480` thumbnail and `-full` image. |
-| `assets/Pinaki_Bhaskar_CV.pdf` | **Not there yet.** The place for the downloadable CV — see “Add the CV” below. |
 | `data/publications.json` | Every publication, with links, type, topics and the `selected` flag. |
 | `data/patents.json` | Every patent (one entry per invention) with status, official links, and the two headline count strings. |
 | `data/photos.json` | The photographs, in display order, with caption and alt text. |
 | `data/awards.json` | Awards & recognition, in two groups, with optional certificate images. |
-| `tools/build_publications.py` | Regenerates the publication markup inside `index.html` from the JSON. |
-| `tools/build_patents.py` | Regenerates the patents table, and checks the patent counts typed elsewhere on the page. |
-| `tools/build_photos.py` | Regenerates the photography grid. |
-| `tools/build_awards.py` | Regenerates the Awards & recognition lists. |
+| `tools/build_publications.py` | Regenerates the publication lists in `research/index.html`. |
+| `tools/build_patents.py` | Regenerates the patents table in `patents/index.html`, and checks every mention of a patent count across the site. |
+| `tools/build_photos.py` | Regenerates the grid in `photography/index.html` and the six-photo strip on the home page. |
+| `tools/build_awards.py` | Regenerates the award lists in `recognition/index.html`. |
 | `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll` | Hosting housekeeping. |
 | `Pinaki_Bhaskar/` | The retired 2014 iWeb site. Its pages now redirect here; `Publication_files/*.pdf` are still linked from the publication list, so keep them. |
 
@@ -35,17 +35,16 @@ Pages serves it.
 ### Add or change a publication
 
 1. Edit `data/publications.json` (copy an existing entry; set `"selected": true` to feature it).
-2. Run `python3 tools/build_publications.py data/publications.json index.html`
+2. Run `python3 tools/build_publications.py`
 3. The script keeps "37 items", "Showing 37 of 37" and "Show all 37" in step; update the prose counts
-   by hand if they changed ("35+" in the hero, proof strip, research metrics and meta description).
+   by hand if they changed ("35" on the home page and in the research metrics).
 
 ### Add or change a patent
 
 1. Edit `data/patents.json`: one entry per invention. Set `status` to `granted` or `pending`, and update
    `summary.headline` / `summary.caption` (e.g. "7 patents" / "US, PCT, China & India · 5 granted").
-2. Run `python3 tools/build_patents.py data/patents.json index.html`. It rewrites the table and then lists
-   every place the two count strings are typed by hand (meta description, social tags, hero, proof strip);
-   it exits with an error until they all agree with the JSON.
+2. Run `python3 tools/build_patents.py`. It rewrites the table and then checks every page for a mention of
+   a patent count ("7 patents", "seven patents"); it exits with an error until they all agree with the JSON.
 3. The count also appears on the social card `assets/img/og-card.png` — update that too.
 
 Only link patent-office pages (USPTO, WIPO Patentscope) or Google Patents. Never link a WO/PCT PDF or a
@@ -57,7 +56,7 @@ third-party mirror: some of them print inventors' home addresses.
    `<slug>-full.webp` + `.jpg` (the enlarged view — never larger than the original). Keep 4:3, and strip
    EXIF (it can carry GPS coordinates).
 2. Add or reorder the entry in `data/photos.json` (`slug`, `caption`, `alt`, and the two sizes).
-3. Run `python3 tools/build_photos.py data/photos.json index.html`.
+3. Run `python3 tools/build_photos.py`. The first six photographs in the JSON also appear on the home page.
 
 The current twelve came from old 720–800 px web albums. Originals at 1600 px or more would look much
 better: export `-full` at up to 1600 px wide and the section will use them as they are.
@@ -73,48 +72,37 @@ better: export `-full` at up to 1600 px wide and the section will use them as th
 
 ### Add a course certificate
 
-The Certificates list in *Education & service* is hand-written in `index.html` (search for
+The Certificates list on the Background page is hand-written in `background/index.html` (search for
 `class="ruled-list certs"`). Copy the Coursera row: put the PDF in `assets/certificates/`, render its
 first page to `<name>-480.{webp,jpg}` and `<name>-full.{webp,jpg}`, and link the provider's own
 verification page when there is one.
 
-### Add the CV
+### Edit the story on the home page
 
-The site is built with a CV slot that is switched off until a PDF exists, so nothing links to a missing
-file. To switch it on:
-
-1. Save the CV as `assets/Pinaki_Bhaskar_CV.pdf` (that exact name). Before exporting, make sure it
-   carries no phone number, street address, date of birth or marital status — the site deliberately
-   publishes none of these — and check the PDF's document properties (Title/Author) for the same.
-2. Open `assets/css/site.css` and delete the short block at the top marked **CV SLOT** (the single rule
-   `[data-cv-slot] { display: none !important; }`).
-3. The “Download CV (PDF)” button in the hero, the “CV (PDF)” button in the side rail / phone menu, and
-   the “CV (PDF)” chip in Contact all reappear.
-4. Add the PDF to `sitemap.xml` if you want search engines to index it:
-   `<url><loc>https://pinakibhaskar.github.io/assets/Pinaki_Bhaskar_CV.pdf</loc></url>`.
-
-Keep the facts in the CV in step with the site (patent and publication counts, dates, titles).
+The three paragraphs under the name in `index.html` are the only place the site tells the story in
+prose; everything else is evidence. Keep them short (the page is meant to read like a profile, not a
+CV), and keep their facts consistent with the Work, Background and Patents pages.
 
 ### Replace the portrait
 
-The hero portrait is `assets/img/pinaki-bhaskar-320.{webp,jpg}` and `-640.{webp,jpg}`, 4:5 portrait
+The portrait is `assets/img/pinaki-bhaskar-320.{webp,jpg}` and `-640.{webp,jpg}`, 4:5 portrait
 (320×400 and 640×800). Export a new photo at those two sizes under the same names (strip EXIF); if the
-proportions change, update `width`/`height` on the hero `<img>` in `index.html`. Re-render the social card
+proportions change, update `width`/`height` on the `<img>` in `index.html`. Re-render the social card
 too (it shows the portrait).
 The JSON-LD block at the top of `index.html` points at the 640 px JPEG.
 
 ### Change wording
 
-Edit `index.html` directly. A link that leaves the site takes three attributes, copied from any
+Edit the page's `index.html` directly. A link that leaves the site takes three attributes, copied from any
 existing one: `target="_blank" rel="noopener noreferrer" aria-describedby="new-tab"` (the last one
 makes screen readers say "opens in a new tab"; the publication script adds all three by itself).
 
-Keep the same facts in the `<meta name="description">`, the Open Graph tags and the JSON-LD block at
-the top of `index.html` in step (and in the CV, once it exists).
+Keep the same facts in each page's `<meta name="description">` and Open Graph tags, and in the JSON-LD
+block at the top of the home page.
 
 ### Refresh the "last updated" date
 
-Footer of `index.html` and `sitemap.xml`.
+The footer of each page (search for “Last updated”) and `sitemap.xml`.
 
 ## Privacy
 

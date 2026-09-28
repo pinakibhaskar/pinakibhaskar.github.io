@@ -21,17 +21,15 @@
   </script>
 
   <!-- The text font and the headline font, fetched early (fonts are always CORS-mode requests, hence crossorigin). -->
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/inter-latin-var.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-latin-var.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-latin-var.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-latin-var.woff2">
 
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF6EE">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1D1A17">
 
-  <!-- Open Graph / Twitter -->
+  <!-- Social cards -->
   <meta property="og:type" content="profile">
-  <meta property="profile:first_name" content="Pinaki">
-  <meta property="profile:last_name" content="Bhaskar">
   <meta property="og:title" content="Dr. Pinaki Bhaskar — GenAI Research Scientist &amp; Architect · Multimodal &amp; On-device AI">
   <meta property="og:description" content="GenAI Research Scientist &amp; Architect at Samsung R&amp;D Institute India – Bangalore. I lead teams that take vision-language models, multimodal LLMs and knowledge graphs from research into Galaxy phones. PhD, 35+ publications, 7 patents.">
   <meta property="og:url" content="https://pinakibhaskar.github.io/">
@@ -45,8 +43,8 @@
   <meta name="twitter:image" content="https://pinakibhaskar.github.io/assets/img/og-card.png">
   <meta name="twitter:image:alt" content="Dr. Pinaki Bhaskar — I take multimodal AI from research to Galaxy phones. GenAI Research Scientist &amp; Architect, Samsung R&amp;D Institute India – Bangalore.">
 
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
   <script type="application/ld+json">
   {
@@ -111,18 +109,15 @@
   <div class="layout">
 
     <!-- ========================================
-         SITE HEADER
-         One element, three presentations (see site.css § Header):
-         phone = top bar + menu panel · tablet = top bar with inline nav ·
-         wide screens = sticky left rail with the numbered index.
+         SITE HEADER — identical on every page. If you change the menu, change it in all seven files.
+         phone = top bar + menu panel · from 64rem = top bar with the menu inline (see site.css § Header)
          ======================================== -->
     <header class="site-header" id="top">
       <div class="site-header__bar">
-        <a class="brand" href="#top" aria-label="Pinaki Bhaskar — back to top">
+        <a class="brand" href="/" aria-label="Pinaki Bhaskar — home">
           <span class="brand__mark" aria-hidden="true">PB</span>
           <span class="brand__text">
             <span class="brand__name">Pinaki Bhaskar</span>
-            <span class="brand__role">GenAI Research Scientist &amp; Architect</span>
           </span>
         </a>
         <div class="site-header__tools">
@@ -139,30 +134,25 @@
       </div>
 
       <div class="site-nav" id="site-nav" data-nav>
-        <nav aria-label="Sections">
-          <p class="rail-label" aria-hidden="true">Index</p>
+        <nav aria-label="Pages">
+          <p class="rail-label" aria-hidden="true">Pages</p>
           <ol class="index">
-            <li><a href="#work"><span class="index__num" aria-hidden="true">01</span>Work</a></li>
-            <li><a href="#leadership"><span class="index__num" aria-hidden="true">02</span>Leadership</a></li>
-            <li><a href="#experience"><span class="index__num" aria-hidden="true">03</span>Experience</a></li>
-            <li><a href="#patents"><span class="index__num" aria-hidden="true">04</span>Patents</a></li>
-            <li><a href="#research"><span class="index__num" aria-hidden="true">05</span>Research</a></li>
-            <li><a href="#awards"><span class="index__num" aria-hidden="true">06</span>Awards</a></li>
-            <li><a href="#education"><span class="index__num" aria-hidden="true">07</span>Education</a></li>
-            <li><a href="#photography"><span class="index__num" aria-hidden="true">08</span>Photography</a></li>
-            <li><a href="#contact"><span class="index__num" aria-hidden="true">09</span>Contact</a></li>
+            <li><a href="/" aria-current="page">About</a></li>
+            <li><a href="/work/">Work</a></li>
+            <li><a href="/research/">Research</a></li>
+            <li><a href="/patents/">Patents</a></li>
+            <li><a href="/recognition/">Recognition</a></li>
+            <li><a href="/background/">Background</a></li>
+            <li><a href="/photography/">Photography</a></li>
+            <li><a href="/#contact">Contact</a></li>
           </ol>
         </nav>
-
-        <!-- Contact block. Wide-screen rail: the two calls to action only (the hero carries the profile links).
-             Phone menu: all five. -->
+        <!-- Phone menu only (hidden from 64rem): the ways to reach me -->
         <div class="rail-contact">
           <p class="rail-label" id="rail-contact-label">Get in touch</p>
           <ul aria-labelledby="rail-contact-label">
             <li><a class="btn btn--primary btn--small" href="mailto:pinaki.bhaskar@gmail.com">
               <svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Email me</a></li>
-            <li data-cv-slot><a class="btn btn--secondary btn--small" href="assets/Pinaki_Bhaskar_CV.pdf">
-              <svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV (PDF)</a></li>
             <li class="rail-contact__profile"><a class="icon-link" href="https://www.linkedin.com/in/dr-pinaki-bhaskar" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
               <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
             <li class="rail-contact__profile"><a class="icon-link" href="https://scholar.google.co.in/citations?hl=en&amp;user=GNpRs3MAAAAJ" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
@@ -175,86 +165,95 @@
     </header>
 
     <main id="main" tabindex="-1">
-    <!-- Inside <main> the indentation starts again at column 0: shorter lines and a lighter file. -->
 
 <!-- ========================================
-     HERO
+     ABOUT — the story, then the work
      ======================================== -->
-<section class="hero" aria-labelledby="hero-name">
+<section class="intro" aria-labelledby="hero-name">
+  <picture class="intro__portrait plate">
+    <source type="image/webp" srcset="/assets/img/pinaki-bhaskar-320.webp 320w, /assets/img/pinaki-bhaskar-640.webp 640w" sizes="(min-width: 64rem) 224px, (min-width: 48rem) 192px, 88px">
+    <img src="/assets/img/pinaki-bhaskar-320.jpg" srcset="/assets/img/pinaki-bhaskar-320.jpg 320w, /assets/img/pinaki-bhaskar-640.jpg 640w" sizes="(min-width: 64rem) 224px, (min-width: 48rem) 192px, 88px"
+         width="320" height="400" alt="Portrait of Dr. Pinaki Bhaskar" fetchpriority="high" decoding="async">
+  </picture>
 
-  <!-- Masthead: name and meta on the rule, the portrait as a small framed plate at its right end.
-       The portrait is above the fold: fetched early, never lazy. -->
-  <div class="hero__masthead">
-    <div class="hero__id">
-      <h1 class="hero__name" id="hero-name">Dr. Pinaki Bhaskar</h1>
-      <ul class="hero__meta" aria-label="Location and doctorate">
-        <li>Bengaluru, India</li>
-        <li>Ph.D. (Engineering), <span class="nowrap">Jadavpur University, 2014</span></li>
-      </ul>
-    </div>
-    <picture class="hero__portrait plate">
-      <source type="image/webp" srcset="assets/img/pinaki-bhaskar-320.webp 320w, assets/img/pinaki-bhaskar-640.webp 640w" sizes="(min-width: 77.5rem) 104px, (min-width: 48rem) 88px, 72px">
-      <img src="assets/img/pinaki-bhaskar-320.jpg" srcset="assets/img/pinaki-bhaskar-320.jpg 320w, assets/img/pinaki-bhaskar-640.jpg 640w" sizes="(min-width: 77.5rem) 104px, (min-width: 48rem) 88px, 72px"
-           width="320" height="400" alt="Portrait of Dr. Pinaki Bhaskar" fetchpriority="high" decoding="async">
-    </picture>
+  <div class="intro__head">
+    <h1 class="intro__name" id="hero-name">Dr. Pinaki Bhaskar</h1>
+    <p class="intro__headline">I take multimodal AI from research to <em>Galaxy phones.</em></p>
+    <!-- Each separator is tied to the item before it (no space, then &nbsp;), so a dot never starts a line. -->
+    <p class="hero__role">
+      <strong>GenAI Research Scientist &amp; Architect</strong><span class="dot" aria-hidden="true">&nbsp;·</span>
+      <a href="https://research.samsung.com/sri-b" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung R&amp;D Institute India&nbsp;– Bangalore</a><span class="dot" aria-hidden="true">&nbsp;·</span>
+      <span class="nowrap">2015 – present</span>
+    </p>
   </div>
 
-  <p class="hero__headline">I take multimodal AI from research to <em>Galaxy phones.</em></p>
+  <div class="intro__story">
+    <p>I lead the Advanced Technology Lab at Samsung R&amp;D Institute India – Bangalore, and I still design the systems my teams build. My work is multimodal AI on phones: vision-language models, multimodal LLMs and knowledge graphs that have to fit in the pocket of a device rather than a data centre.</p>
+    <p>The project that best shows what we do is natural-language search in Samsung Gallery — a vision-language model that lets you find a photo by describing it. It shipped in the Galaxy S25 series after a three-site effort across Seoul, Suwon and Bangalore, and won Samsung Research’s Best Project award. Before that, my team took an on-device personalised knowledge graph from research into the Galaxy S21 series. Today I’m building multimodal LLMs and Large Action Models for agentic AI inside mobile apps.</p>
+    <p>I came to this from language. My Ph.D. at Jadavpur University (2014) was about getting a machine to read many documents and answer in a few good sentences, and our systems ranked top at CLEF QA4MRE three years running. A postdoctoral year at CNR in Pisa on biomedical question answering followed, and in 2015 I joined Samsung. Along the way: more than 35 publications, seven patents, and the Zinnov Awards 2022 Technical Role Model award.</p>
 
-  <!-- Each separator is tied to the item before it (no space, then &nbsp;), so a dot never starts a line. -->
-  <p class="hero__role">
-    <strong>GenAI Research Scientist &amp; Architect</strong><span class="dot" aria-hidden="true">&nbsp;·</span>
-    <a href="https://research.samsung.com/sri-b" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung R&amp;D Institute India&nbsp;– Bangalore</a><span class="dot" aria-hidden="true">&nbsp;·</span>
-    <span class="nowrap">2015 – present</span>
-  </p>
-
-  <p class="hero__sub">I lead the Advanced Technology Lab team behind the vision-language model that powers natural-language photo search in Samsung Gallery. Today I’m building multimodal LLMs and Large Action Models for agentic AI on mobile. PhD in NLP, 35+ publications, 7 patents.</p>
-
-  <div class="hero__actions">
-    <a class="btn btn--primary" href="mailto:pinaki.bhaskar@gmail.com">
-      <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Email me</a>
-    <!-- CV SLOT: hidden by the [data-cv-slot] rule at the top of site.css until the PDF exists -->
-    <a class="btn btn--secondary" href="assets/Pinaki_Bhaskar_CV.pdf" data-cv-slot>
-      <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>Download CV (PDF)</a>
-    <ul class="profiles" aria-label="Profiles">
-      <li><a class="icon-link" href="https://www.linkedin.com/in/dr-pinaki-bhaskar" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
-        <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
-      <li><a class="icon-link" href="https://scholar.google.co.in/citations?hl=en&amp;user=GNpRs3MAAAAJ" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
-        <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-scholar"/></svg>Google Scholar</a></li>
-      <li><a class="icon-link" href="https://patents.google.com/?inventor=Pinaki+BHASKAR" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
-        <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-file"/></svg>Google Patents</a></li>
-    </ul>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="mailto:pinaki.bhaskar@gmail.com">
+        <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Email me</a>
+      <ul class="profiles" aria-label="Profiles">
+        <li><a class="icon-link" href="https://www.linkedin.com/in/dr-pinaki-bhaskar" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
+          <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+        <li><a class="icon-link" href="https://scholar.google.co.in/citations?hl=en&amp;user=GNpRs3MAAAAJ" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
+          <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-scholar"/></svg>Google Scholar</a></li>
+        <li><a class="icon-link" href="https://patents.google.com/?inventor=Pinaki+BHASKAR" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">
+          <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-file"/></svg>Google Patents</a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- ========================================
-     PROOF STRIP — five facts, each links to the section that backs it up
+     SELECTED WORK — three cards; the full case studies are on /work/
      ======================================== -->
-<section class="proof" aria-label="At a glance">
-  <ul class="proof__list">
-    <li><a class="proof__item" href="#leadership">
-      <span class="proof__figure">11+ <span class="proof__unit">years</span></span>
-      <span class="proof__text">leading machine-learning teams at Samsung R&amp;D</span></a></li>
-    <li><a class="proof__item" href="#work">
-      <span class="proof__figure proof__figure--galaxy">
-        <span class="proof__kicker">Galaxy</span>
-        <span class="proof__models"><span>S21</span> <span>S25</span></span>
-      </span>
-      <span class="proof__text">research shipped in flagship Galaxy phones</span></a></li>
-    <li><a class="proof__item" href="#patents">
-      <span class="proof__figure">7 <span class="proof__unit">patents</span></span>
-      <span class="proof__text">US, PCT, China &amp; India&nbsp;· 5&nbsp;granted</span></a></li>
-    <li><a class="proof__item" href="#research">
-      <span class="proof__figure">35+ <span class="proof__unit">publications</span></span>
-      <span class="proof__text">WACV&nbsp;· COLING&nbsp;· PACLIC&nbsp;· CLEF&nbsp;· 460+&nbsp;citations</span></a></li>
-    <li><a class="proof__item" href="#shared-title">
-      <span class="proof__figure"><span class="proof__unit proof__unit--word">Top‑ranked</span></span>
-      <span class="proof__text">CLEF QA4MRE 2011&nbsp;· 2012&nbsp;· 2013</span></a></li>
+<section class="section section--home" id="work" aria-labelledby="home-work-title">
+  <header class="home-head" data-reveal>
+    <h2 class="section__title" id="home-work-title">Selected work</h2>
+    <a class="more" href="/work/">All case studies<span aria-hidden="true"> →</span></a>
+  </header>
+  <ul class="cards" data-reveal>
+    <li class="card">
+      <picture class="card__media plate">
+        <source type="image/webp" srcset="/assets/img/cards/gallery-search-480.webp 480w, /assets/img/cards/gallery-search-960.webp 960w" sizes="(min-width: 40rem) 280px, 100vw">
+        <img src="/assets/img/cards/gallery-search-480.jpg" srcset="/assets/img/cards/gallery-search-480.jpg 480w, /assets/img/cards/gallery-search-960.jpg 960w" sizes="(min-width: 40rem) 280px, 100vw" width="480" height="360" loading="lazy" decoding="async"
+             alt="Certificate of Appreciation: New Valley Project of the Year (R&amp;D), Gallery Search">
+      </picture>
+      <h3 class="card__title" id="card-1-title">Natural-language search in Samsung Gallery</h3>
+      <p class="card__hook">Find a photo by describing it.</p>
+      <p class="card__text">A vision-language model built as one backbone for several Gallery features. Commercialised in the Galaxy S25 series.</p>
+      <a class="card__link" href="/work/#case-1-title" aria-labelledby="card-1-title">Case study<span aria-hidden="true"> →</span></a>
+    </li>
+    <li class="card">
+      <picture class="card__media plate">
+        <source type="image/webp" srcset="/assets/img/cards/knowledge-graph-480.webp 480w, /assets/img/cards/knowledge-graph-960.webp 960w" sizes="(min-width: 40rem) 280px, 100vw">
+        <img src="/assets/img/cards/knowledge-graph-480.jpg" srcset="/assets/img/cards/knowledge-graph-480.jpg 480w, /assets/img/cards/knowledge-graph-960.jpg 960w" sizes="(min-width: 40rem) 280px, 100vw" width="480" height="360" loading="lazy" decoding="async"
+             alt="First page of the paper POP-VQA: Privacy Preserving, On-Device, Personalized Visual Question Answering (WACV 2024)">
+      </picture>
+      <h3 class="card__title" id="card-2-title">On‑device personalised knowledge graph</h3>
+      <p class="card__hook">Personal context, built and kept on the device.</p>
+      <p class="card__text">A user-centric knowledge graph from the phone’s own data, published at WACV 2024 and ICON, and shipped from the Galaxy S21 series.</p>
+      <a class="card__link" href="/work/#case-2-title" aria-labelledby="card-2-title">Case study<span aria-hidden="true"> →</span></a>
+    </li>
+    <li class="card">
+      <picture class="card__media plate">
+        <source type="image/webp" srcset="/assets/img/cards/mobile-agents-480.webp 480w, /assets/img/cards/mobile-agents-960.webp 960w" sizes="(min-width: 40rem) 280px, 100vw">
+        <img src="/assets/img/cards/mobile-agents-480.jpg" srcset="/assets/img/cards/mobile-agents-480.jpg 480w, /assets/img/cards/mobile-agents-960.jpg 960w" sizes="(min-width: 40rem) 280px, 100vw" width="480" height="360" loading="lazy" decoding="async"
+             alt="System diagram from US patent application 2026/0099969: adding an entity of interest to a captured image">
+      </picture>
+      <h3 class="card__title" id="card-3-title">Multimodal LLMs and Large Action Models for mobile agents</h3>
+      <p class="card__hook">From understanding the screen to acting on it.</p>
+      <p class="card__text">Current research: an on-device multimodal LLM and action models that power agentic AI in mobile apps, with related generative-imaging patents.</p>
+      <a class="card__link" href="/work/#case-3-title" aria-labelledby="card-3-title">Case study<span aria-hidden="true"> →</span></a>
+    </li>
   </ul>
 </section>
 
 <!-- ========================================
-     NOW — current research
+     NOW
      ======================================== -->
 <section class="now row" aria-labelledby="now-title">
   <h2 class="now__label" id="now-title"><span class="now__pip" aria-hidden="true"></span>Current research</h2>
@@ -266,1165 +265,49 @@
 </section>
 
 <!-- ========================================
-     01 · SELECTED WORK
+     PHOTOGRAPHS — six frames; the gallery is on /photography/
      ======================================== -->
-<section class="section" id="work" aria-labelledby="work-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">01</p>
-    <h2 class="section__title" id="work-title">Selected work</h2>
+<section class="section section--home" id="photographs" aria-labelledby="home-photos-title">
+  <header class="home-head" data-reveal>
+    <h2 class="section__title" id="home-photos-title">Photographs</h2>
+    <a class="more" href="/photography/">All photographs<span aria-hidden="true"> →</span></a>
   </header>
-
-  <!-- Case study 1 -->
-  <article class="case" aria-labelledby="case-1-title" data-reveal>
-    <header class="case__head row">
-      <p class="case__index">Case study <span class="case__no">1</span></p>
-      <div>
-        <h3 class="case__title" id="case-1-title">Natural-language search in Samsung Gallery</h3>
-        <p class="case__hook">Find a photo by describing it.</p>
-        <ul class="tags" aria-label="Topics">
-          <li>Vision-language model</li>
-          <li>Semantic image retrieval</li>
-          <li>Research <span aria-hidden="true">→</span><span class="vh">to</span> product</li>
-        </ul>
-      </div>
-    </header>
-    <dl class="spread">
-      <div class="row">
-        <dt>Problem</dt>
-        <dd>People remember moments, not file names or tags. Keyword search cannot answer “the photo where we were all on the beach at sunset”.</dd>
-      </div>
-      <div class="row">
-        <dt>My role</dt>
-        <dd>Team lead, architect and reporting manager. I coordinated three sites — Samsung Research in Seoul, the Mobile eXperience division in Suwon and our lab in Bangalore — to take the work from research to commercial release.</dd>
-      </div>
-      <div class="row">
-        <dt>Approach</dt>
-        <dd>A vision-language model (VLM) for semantic image search in natural language, designed as a single unified backbone that also serves other Gallery features rather than one model per feature. We also built a machine-translation engine for Gallery search.</dd>
-      </div>
-      <div class="row spread__outcome">
-        <dt>Outcome</dt>
-        <dd>Commercialised in Samsung’s Galaxy S25 series.</dd>
-      </div>
-      <div class="row">
-        <dt>Recognition</dt>
-        <dd>
-          <ul class="plain-list">
-            <li>Best Project award from Samsung Research, Seoul, for natural-language search using a VLM in Gallery on the Galaxy S25 series</li>
-            <li>New Valley Project of the Year (R&amp;D), Samsung R&amp;D Institute India – Bangalore (SRI-B) Annual Awards 2024</li>
-            <li>Super Tech Award (Development to Market), Q4 2024</li>
-          </ul>
-        </dd>
-      </div>
-      <div class="row">
-        <dt>Public write-up</dt>
-        <dd>
-          <p class="spread__aside">Samsung’s own account of the feature</p>
-          <ul class="chips">
-            <li><a class="chip" href="https://news.samsung.com/global/interview-a-new-and-enhanced-gallery-experience-how-samsung-transformed-photo-searching-and-video-editing-with-the-galaxy-s25-series" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung Newsroom: how Gallery search works on Galaxy S25</a></li>
-          </ul>
-        </dd>
-      </div>
-    </dl>
-  </article>
-
-  <!-- Case study 2 -->
-  <article class="case" aria-labelledby="case-2-title" data-reveal>
-    <header class="case__head row">
-      <p class="case__index">Case study <span class="case__no">2</span></p>
-      <div>
-        <h3 class="case__title" id="case-2-title">On‑device personalised knowledge graph</h3>
-        <p class="case__hook">Personal context, built and kept on the device.</p>
-        <ul class="tags" aria-label="Topics">
-          <li>Knowledge graph</li>
-          <li>On-device ML</li>
-          <li>Personalisation</li>
-          <li>Privacy</li>
-        </ul>
-      </div>
-    </header>
-    <dl class="spread">
-      <div class="row">
-        <dt>Problem</dt>
-        <dd>Personalised features need to understand a user’s own data, but that data is scattered across apps — and it is private.</dd>
-      </div>
-      <div class="row">
-        <dt>My role</dt>
-        <dd>Led the team from research through commercialisation, in collaboration with Samsung’s Big Data Center.</dd>
-      </div>
-      <div class="row">
-        <dt>Approach</dt>
-        <dd>A user-centric knowledge graph constructed on the phone from the phone’s own data. Published building blocks: on-device attribute extraction from unstructured text (ICON 2021), multi-hop relation-aware representations for inductive knowledge graphs (ICON 2023), and POP-VQA (WACV 2024) — an on‑device visual question answering system that personalises its answers with the user’s knowledge graph, improving accuracy by <strong>36% absolute</strong> on KVQA 1‑hop questions.</dd>
-      </div>
-      <div class="row spread__outcome">
-        <dt>Outcome</dt>
-        <dd>Commercialised starting with the Galaxy S21 series. A granted US patent (US11989193B2) covers rewriting search queries using the user’s context and personalised knowledge graph.</dd>
-      </div>
-      <div class="row">
-        <dt>Recognition</dt>
-        <dd>Samsung-internal global Best Project award, Mobile Developer Conference 2021 (Mobile R&amp;D Office, Korea).</dd>
-      </div>
-      <div class="row">
-        <dt>Links</dt>
-        <dd>
-          <ul class="chips">
-            <li><a class="chip" href="https://openaccess.thecvf.com/content/WACV2024/html/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.html" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">POP-VQA paper (WACV 2024)</a></li>
-            <li><a class="chip" href="https://aclanthology.org/2023.icon-1.3/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ICON 2023 paper</a></li>
-            <li><a class="chip" href="https://aclanthology.org/2021.icon-main.70/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ICON 2021 paper</a></li>
-            <li><a class="chip" href="https://patents.google.com/patent/US11989193B2/en" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Patent US11989193B2</a></li>
-          </ul>
-        </dd>
-      </div>
-    </dl>
-  </article>
-
-  <!-- Case study 3 (unreleased work: deliberately short) -->
-  <article class="case" aria-labelledby="case-3-title" data-reveal>
-    <header class="case__head row">
-      <p class="case__index">Case study <span class="case__no">3</span></p>
-      <div>
-        <h3 class="case__title" id="case-3-title">Multimodal LLMs and Large Action Models for mobile agents</h3>
-        <p class="case__hook">From understanding the screen to acting on it.</p>
-        <ul class="tags" aria-label="Topics">
-          <li>Multimodal LLM</li>
-          <li>Large Action Models</li>
-          <li>Agentic AI</li>
-          <li class="tags__now">Current research</li>
-        </ul>
-      </div>
-    </header>
-    <dl class="spread">
-      <div class="row">
-        <dt>My role</dt>
-        <dd>I lead the development of multimodal LLMs and Large Action Models to power agentic AI capabilities in mobile applications, including an on‑device multimodal LLM.</dd>
-      </div>
-      <div class="row">
-        <dt>Related</dt>
-        <dd>Related generative-imaging work: a pending US patent application (US20260099969A1) on adding a missing person to an already-captured photo with a suitable pose and placement.</dd>
-      </div>
-      <div class="row">
-        <dt>Links</dt>
-        <dd>
-          <ul class="chips">
-            <li><a class="chip" href="https://patents.google.com/patent/US20260099969A1/en" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Patent application US20260099969A1</a></li>
-          </ul>
-        </dd>
-      </div>
-    </dl>
-  </article>
-
-  <!-- Earlier work: compact list -->
-  <div class="earlier row" data-reveal>
-    <h3 class="earlier__title">Earlier at Samsung</h3>
-    <ul class="ruled-list ruled-list--two">
-      <li>Multimodal Story / Memory creation in Gallery</li>
-      <li>Natural expression generation for a social robot</li>
-      <li>On-device Smart Reply for Galaxy Watch</li>
-      <li>Smart assistant for mobile devices</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ========================================
-     02 · LEADERSHIP (+ What I do)
-     ======================================== -->
-<section class="section" id="leadership" aria-labelledby="leadership-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">02</p>
-    <h2 class="section__title" id="leadership-title">Leadership</h2>
-  </header>
-
-  <div class="row" data-reveal>
-    <p class="lead row__body">I manage the Advanced Technology Lab while staying hands-on as its architect and technical lead — I still design the systems my teams build.</p>
-  </div>
-
-  <dl class="spread spread--first" data-reveal>
-    <div class="row">
-      <dt>Lab &amp; people</dt>
-      <dd>Reporting manager for multiple teams and projects. I mentor engineers and researchers in adopting new ML methods, take part in recruitment, and serve on the People Task Force.</dd>
-    </div>
-    <div class="row">
-      <dt>Direction</dt>
-      <dd>I set the lab’s technical direction from a close read of where the technology, our competitors and the market are heading, and I contribute to strategy for the wider research organisation. I also review global project proposals.</dd>
-    </div>
-    <div class="row">
-      <dt>Cross-site delivery</dt>
-      <dd>Programmes run across Bangalore, Seoul and Suwon, with research, product and data organisations at the same table.</dd>
-    </div>
-    <div class="row">
-      <dt>Growing the community</dt>
-      <dd>Organiser and mentor for <a href="https://www.samsung.com/in/solvefortomorrow/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung Solve for Tomorrow</a>, the sponsored M.Tech. programme, hackathons and trainings. Member of the Board of Studies, Dept. of Computer Science &amp; Engineering, National Institute of Technology Meghalaya (2024&nbsp;–&nbsp;present).</dd>
-    </div>
-  </dl>
-
-  <!-- External recognition: the pull-quote with the award photo (photo first in the source, so it
-       sits above the quote on phones; site.css places it to the right of the quote from 48rem). -->
-  <div class="recognition" data-reveal>
-    <figure class="recognition__photo">
-      <picture class="plate">
-        <source type="image/webp" srcset="assets/img/pinaki-bhaskar-zinnov-2022-480.webp 480w, assets/img/pinaki-bhaskar-zinnov-2022-960.webp 960w" sizes="(min-width: 64rem) 272px, (min-width: 48rem) 232px, 160px">
-        <img src="assets/img/pinaki-bhaskar-zinnov-2022-480.jpg" srcset="assets/img/pinaki-bhaskar-zinnov-2022-480.jpg 480w, assets/img/pinaki-bhaskar-zinnov-2022-960.jpg 960w" sizes="(min-width: 64rem) 272px, (min-width: 48rem) 232px, 160px"
-             width="480" height="640" alt="Dr. Pinaki Bhaskar holding the Zinnov Awards 2022 Technical Role Model trophy" loading="lazy" decoding="async">
-      </picture>
-      <figcaption>With the Zinnov Awards 2022 Technical Role Model trophy.</figcaption>
-    </figure>
-    <figure class="pullquote">
-      <blockquote cite="https://news.samsung.com/in/eighth-year-in-a-row-samsung-wins-big-accolades-at-2022-zinnov-awards">
-        <p>“…Technical Role Model award, recognizing technology stalwart Dr.&nbsp;Pinaki Bhaskar for creating a significant impact in the technologies of Artificial Intelligence/Big Data Analytics, Intelligent Automation and co-authoring over 30 research publications.”</p>
-      </blockquote>
-      <figcaption>
-        <p>Source: <a href="https://news.samsung.com/in/eighth-year-in-a-row-samsung-wins-big-accolades-at-2022-zinnov-awards" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung Newsroom India</a>, on the Zinnov Awards 2022</p>
-      </figcaption>
-    </figure>
-  </div>
-
-  <div class="whatido row" data-reveal>
-    <h3 class="whatido__title">What I do</h3>
-    <div>
-      <ul class="ruled-list">
-        <li>Vision-language models for retrieval and understanding</li>
-        <li>Multimodal LLMs and agentic systems (Large Action Models)</li>
-        <li>On-device machine learning under mobile constraints</li>
-        <li>Knowledge graphs and personalisation</li>
-        <li>NLP: question answering, summarisation, retrieval, evaluation</li>
-        <li>Research-to-product leadership: building and managing research teams, cross-site delivery</li>
-      </ul>
-      <p class="tools"><span class="tools__label">Tools</span> Python · TensorFlow · Java · SQL</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     03 · EXPERIENCE
-     ======================================== -->
-<section class="section" id="experience" aria-labelledby="experience-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">03</p>
-    <h2 class="section__title" id="experience-title">Experience</h2>
-  </header>
-
-  <ol class="timeline">
-    <li class="entry row" data-reveal>
-      <p class="entry__dates">2015 – present</p>
-      <div class="entry__body">
-        <h3 class="entry__org"><a href="https://research.samsung.com/sri-b" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung R&amp;D Institute India&nbsp;– Bangalore</a> (SRI-B)</h3>
-        <p class="entry__role"><strong>GenAI Research Scientist &amp; Architect, Machine Learning</strong> — Visual GenAI Group &amp; Advanced Technology Lab</p>
-        <ol class="progression" aria-label="Progression at Samsung, earliest first">
-          <li><span class="progression__role">Chief Engineer</span> <span class="progression__years">2015 – 2020</span></li>
-          <li><span class="progression__role">Senior Chief Engineer</span> <span class="progression__years">2020 – 2022</span></li>
-          <li class="progression__now"><span class="progression__role">Architect <span class="progression__grade">(Staff Engineer grade)</span></span> <span class="progression__years">2022 – present</span></li>
-        </ol>
-        <ul class="bullets">
-          <li>Lead the team building the vision-language model behind natural-language search and other Gallery features; commercialised in the Galaxy S25 series with Samsung Research (Seoul) and the Mobile eXperience division (Suwon).</li>
-          <li>Lead development of multimodal LLMs and Large Action Models for agentic AI in mobile applications.</li>
-          <li>Led the on-device personalised knowledge graph from research to commercial release (Galaxy S21 series onward) with Samsung’s Big Data Center.</li>
-          <li>Earlier: multimodal Story/Memory creation in Gallery, natural expression generation for a social robot, on-device Smart Reply for Galaxy Watch, smart assistant for mobile.</li>
-        </ul>
-      </div>
-    </li>
-
-    <li class="entry row" data-reveal>
-      <p class="entry__dates">May 2014 – Apr 2015</p>
-      <div class="entry__body">
-        <h3 class="entry__org">ERCIM Postdoctoral Research Fellow</h3>
-        <p class="entry__role">Institute of Informatics and Telematics (IIT‑CNR), National Research Council of Italy, Pisa · <a href="https://fellowship.ercim.eu/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ERCIM Alain Bensoussan Fellowship Programme</a></p>
-        <ul class="bullets">
-          <li>Biomedical question answering: linking clinical cases to the literature relevant for patient care, with Dr. Marina Buzzi. Information retrieval, information extraction, NLP and knowledge graphs.</li>
-          <li>Published at ITBAM 2015 (Springer LNCS). Research exchange at Universitat Politècnica de València with Dr. Paolo Rosso (Feb 2015).</li>
-        </ul>
-      </div>
-    </li>
-
-    <li class="entry row" data-reveal>
-      <p class="entry__dates">2007 – 2014</p>
-      <div class="entry__body">
-        <h3 class="entry__org">Jadavpur University</h3>
-        <p class="entry__role">Dept. of Computer Science &amp; Engineering, Kolkata</p>
-        <ul class="roles">
-          <li>
-            <p class="roles__head"><strong>Senior Research Engineer</strong> <span class="roles__dates">Aug 2012 – Apr 2014</span></p>
-            <p>Cross-Lingual Information Access (CLIA) Phase II, the Government of India’s “Sandhan” Indian-language search engine (Lucene, Nutch, Solr). Improved snippet and summary generation; built question answering and web-page summarisation; senior member of the project team (documentation, presentations, project management).</p>
-          </li>
-          <li>
-            <p class="roles__head"><strong>Junior Research Fellow</strong> <span class="roles__dates">Sep 2010 – Jul 2012</span></p>
-            <p>Sole research fellow on the Indo-French (IFCPAR) project “An Advanced Platform for Question Answering Systems”, with Prof. Sivaji Bandyopadhyay (Jadavpur) and Dr. Patrick Saint-Dizier (IRIT-CNRS), including a research stay at IRIT, Toulouse (Sep&nbsp;–&nbsp;Oct&nbsp;2011).</p>
-          </li>
-          <li>
-            <p class="roles__head"><strong>Junior Research Engineer</strong> <span class="roles__dates">Feb 2007 – Aug 2010</span></p>
-            <p>CLIA Phase I. Built the snippet-generation and summary-generation modules of the search engine.</p>
-          </li>
-          <li>
-            <p class="roles__head"><strong>Guest Faculty</strong> <span class="roles__dates">Jul 2011 – Apr 2014</span></p>
-            <p>Taught B.E. and M.Tech. courses (programming languages, numerical analysis, operating systems lab) and assisted Master’s theses.</p>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ol>
-</section>
-
-<!-- ========================================
-     04 · PATENTS
-     ======================================== -->
-<section class="section" id="patents" aria-labelledby="patents-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">04</p>
-    <h2 class="section__title" id="patents-title">Patents</h2>
-  </header>
-
-  <div class="row" data-reveal>
-    <div class="row__body">
-      <p class="lead">Patents filed with Samsung Electronics in search, personalisation, generative imaging and on-device intelligence — every filing I could trace in public patent records, with its current status.</p>
-      <ul class="chips">
-        <li><a class="chip" href="https://patents.google.com/?inventor=Pinaki+BHASKAR" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Full portfolio on Google Patents</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- One table, two presentations (site.css § Patents): a real table from 64rem,
-       stacked rows below. The ARIA roles keep the table semantics when CSS turns rows into blocks. -->
-  <table class="patents" role="table" data-reveal>
-    <caption class="vh">Patents and applications, one row per invention, with number, current status and official link</caption>
-    <thead role="rowgroup">
-      <tr role="row">
-        <th role="columnheader" scope="col">No.</th>
-        <th role="columnheader" scope="col">Invention</th>
-        <th role="columnheader" scope="col">Number</th>
-        <th role="columnheader" scope="col">Status</th>
-      </tr>
-    </thead>
-    <tbody role="rowgroup">
-<!-- BEGIN:PATENTS (generated by tools/build_patents.py from data/patents.json — do not edit by hand) -->
-  <tr role="row">
-    <td role="cell" class="patents__no">1</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">Method and system for modifying search query for a user</span>
-      <span class="patents__desc">Rewrites a search query using the user’s current context and an on-device personalised knowledge graph, so search returns more relevant results.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat1-n">US 11,989,193 B2</span> <span class="patents__also">Also filed via PCT (WO&nbsp;2023/277342) and in India.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11989193" id="pat1-l1" aria-labelledby="pat1-l1 pat1-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">USPTO</a></li><li><a class="chip chip--quiet" href="https://patents.google.com/patent/US11989193B2/en" id="pat1-l2" aria-labelledby="pat1-l2 pat1-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Google Patents</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--granted"><span class="status__state">Granted</span><span class="status__sep"> · </span><span class="status__where">US · May&nbsp;2024</span></span></td>
-  </tr>
-  <tr role="row">
-    <td role="cell" class="patents__no">2</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">Method and system for classifying one or more hyperlinks in a document</span>
-      <span class="patents__desc">Sorts the hyperlinks in a document into categories by analysing the text around each link, without opening the linked content.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat2-n">US 12,561,514 B2</span> <span class="patents__also">A continuation is pending (US&nbsp;2026/0187343&nbsp;A1). Also filed via PCT (WO&nbsp;2024/080794), in China and in India.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12561514" id="pat2-l1" aria-labelledby="pat2-l1 pat2-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">USPTO</a></li><li><a class="chip chip--quiet" href="https://patents.google.com/patent/US12561514B2/en" id="pat2-l2" aria-labelledby="pat2-l2 pat2-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Google Patents</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--granted"><span class="status__state">Granted</span><span class="status__sep"> · </span><span class="status__where">US · Feb&nbsp;2026</span></span></td>
-  </tr>
-  <tr role="row">
-    <td role="cell" class="patents__no">3</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">Methods and electronic devices for adding entity of interest to captured image</span>
-      <span class="patents__desc">Adds a missing person to an already-captured photo, generating a suitable pose and placement from other relevant images.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat3-n">US 2026/0099969 A1</span> <span class="patents__also">Also filed via PCT (WO&nbsp;2026/079564) and in India.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20260099969" id="pat3-l1" aria-labelledby="pat3-l1 pat3-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">USPTO</a></li><li><a class="chip chip--quiet" href="https://patents.google.com/patent/US20260099969A1/en" id="pat3-l2" aria-labelledby="pat3-l2 pat3-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Google Patents</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--pending"><span class="status__state">Pending</span><span class="status__sep"> · </span><span class="status__where">US &amp; PCT</span><span class="status__sep"> · </span><span class="status__meta">published Apr&nbsp;2026</span></span></td>
-  </tr>
-  <tr role="row">
-    <td role="cell" class="patents__no">4</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">A method and a device for capturing a desired event</span>
-      <span class="patents__desc">The user describes the moment they want in a prompt; the camera matches that description against the live stream frame by frame and captures when the event appears.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat4-n">WO 2026/168644 A1</span> <span class="patents__also">Also filed in India.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2026168644" id="pat4-l1" aria-labelledby="pat4-l1 pat4-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">WIPO Patentscope</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--pending"><span class="status__state">Pending</span><span class="status__sep"> · </span><span class="status__where">PCT</span><span class="status__sep"> · </span><span class="status__meta">published Aug&nbsp;2026</span></span></td>
-  </tr>
-  <tr role="row">
-    <td role="cell" class="patents__no">5</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">Method and system for providing personalized audio-visual experience to a user based on an event</span>
-      <span class="patents__desc">Senses the excitement of a live event and plays sounds and visuals matched to the user’s profile.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat5-n">Indian Patent 520765</span> <span class="patents__also">Application 202141009613. Grant notified in the Official Journal of the Patent Office, No.&nbsp;10/2024.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://patentscope.wipo.int/search/en/detail.jsf?docId=IN374030930" id="pat5-l1" aria-labelledby="pat5-l1 pat5-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">WIPO Patentscope</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--granted"><span class="status__state">Granted</span><span class="status__sep"> · </span><span class="status__where">India · Mar&nbsp;2024</span></span></td>
-  </tr>
-  <tr role="row">
-    <td role="cell" class="patents__no">6</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">Method and electronic device for generating personalized activities for a user</span>
-      <span class="patents__desc">A device such as a social robot learns a user’s preferences and its relationship with them, then initiates personalised activities.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat6-n">Indian Patent 562688</span> <span class="patents__also">Application 202141009075. Grant notified in the Official Journal of the Patent Office, No.&nbsp;12/2025.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://patentscope.wipo.int/search/en/detail.jsf?docId=IN374030927" id="pat6-l1" aria-labelledby="pat6-l1 pat6-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">WIPO Patentscope</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--granted"><span class="status__state">Granted</span><span class="status__sep"> · </span><span class="status__where">India · Mar&nbsp;2025</span></span></td>
-  </tr>
-  <tr role="row">
-    <td role="cell" class="patents__no">7</td>
-    <th role="rowheader" scope="row" class="patents__invention">
-      <span class="patents__title">Method and system for monitoring physical fitness</span>
-      <span class="patents__desc">A conversational fitness assistant that understands natural-language input in context and reports results back in natural language.</span>
-    </th>
-    <td role="cell" class="patents__num"><span class="patents__id" id="pat7-n">Indian Patent 552631</span> <span class="patents__also">Application 202041027276. Grant notified in the Official Journal of the Patent Office, No.&nbsp;43/2024.</span> <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://patentscope.wipo.int/search/en/detail.jsf?docId=IN346888030" id="pat7-l1" aria-labelledby="pat7-l1 pat7-n" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">WIPO Patentscope</a></li></ul></td>
-    <td role="cell" class="patents__status"><span class="status status--granted"><span class="status__state">Granted</span><span class="status__sep"> · </span><span class="status__where">India · Oct&nbsp;2024</span></span></td>
-  </tr>
-<!-- END:PATENTS -->
-    </tbody>
-  </table>
-</section>
-
-<!-- ========================================
-     05 · RESEARCH & PUBLICATIONS
-     ======================================== -->
-<section class="section" id="research" aria-labelledby="research-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">05</p>
-    <div class="section__headline">
-      <h2 class="section__title" id="research-title">Research &amp; publications</h2>
-      <ul class="chips section__links" aria-label="Author profiles">
-        <li><a class="chip chip--quiet" href="https://scholar.google.co.in/citations?hl=en&amp;user=GNpRs3MAAAAJ" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Google Scholar</a></li>
-        <li><a class="chip chip--quiet" href="https://aclanthology.org/people/p/pinaki-bhaskar/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <div class="row" data-reveal>
-    <div class="row__body">
-      <p class="lead">My research started with a simple question: how do you get a machine to read many documents and answer in a few good sentences?</p>
-      <p>Question answering, multi-document summarisation, retrieval and entailment-based automatic evaluation — the work of my Ph.D. years — tackle the same problems as today’s retrieval-augmented generation, LLM evaluation and semantic search. At Samsung the same questions moved onto phones and into images.</p>
-      <dl class="metrics">
-        <div><dt>publications</dt><dd>35+</dd></div>
-        <div><dt>citations</dt><dd>460+</dd></div>
-        <div><dt>h‑index</dt><dd>11</dd></div>
-      </dl>
-      <p class="metrics__src">Source: <a href="https://scholar.google.co.in/citations?hl=en&amp;user=GNpRs3MAAAAJ" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Google Scholar</a>, September 2026</p>
-    </div>
-  </div>
-
-  <!-- 5.1 Selected publications -->
-  <div class="subhead row" data-reveal>
-    <h3 class="subhead__title row__body" id="selected-pubs-title">Selected publications</h3>
-  </div>
-  <ol class="pubs pubs--selected" aria-labelledby="selected-pubs-title">
-<!-- BEGIN:PUBS-SELECTED (generated by tools/build_publications.py — do not edit by hand) -->
-  <li class="pub row" id="sel-new-2">
-    <p class="pub__meta"><span class="pub__year">2024</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="sel-new-2-t">POP-VQA – Privacy Preserving, On-Device, Personalized Visual Question Answering</h4>
-      <p class="pub__authors">Pragya Paramita Sahu, Abhishek Raut, Jagdish Singh Samant, Mahesh Gorijala, Vignesh Lakshminarayanan, <strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">WACV 2024</p>
-      <p class="pub__note">On-device VQA personalised with a user knowledge graph; +36% absolute on KVQA 1‑hop questions.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Multimodal &amp; on-device&nbsp;<span class="dot" aria-hidden="true">·</span> Knowledge graphs</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://openaccess.thecvf.com/content/WACV2024/html/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.html" id="sel-new-2-l1" aria-labelledby="sel-new-2-l1 sel-new-2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CVF Open Access</a></li><li><a class="chip chip--quiet" href="https://openaccess.thecvf.com/content/WACV2024/papers/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.pdf" id="sel-new-2-l2" aria-labelledby="sel-new-2-l2 sel-new-2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="sel-new-3">
-    <p class="pub__meta"><span class="pub__year">2023</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="sel-new-3-t">Multi-Hop Relation Aware Representations for Inductive Knowledge Graphs</h4>
-      <p class="pub__authors">Aniruddha Bala, Ankit Sharma, Shlok Sharma, <strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">ICON 2023&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 27–35</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Knowledge graphs</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/2023.icon-1.3/" id="sel-new-3-l1" aria-labelledby="sel-new-3-l1 sel-new-3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/2023.icon-1.3.pdf" id="sel-new-3-l2" aria-labelledby="sel-new-3-l2 sel-new-3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="sel-new-1">
-    <p class="pub__meta"><span class="pub__year">2015</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="sel-new-1-t">From Literature to Knowledge: Exploiting PubMed to Answer Biomedical Questions in Natural Language</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Marina Buzzi, Filippo Geraci, Marco Pellegrini</p>
-      <p class="pub__venue">ITBAM 2015 · Springer LNCS&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 3–15</span></p>
-      <p class="pub__note">Biomedical question answering over PubMed; from the ERCIM postdoctoral fellowship at IIT‑CNR, Pisa.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://doi.org/10.1007/978-3-319-22741-2_1" id="sel-new-1-l1" aria-labelledby="sel-new-1-l1 sel-new-1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">DOI</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="sel-conf-9">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="sel-conf-9-t">Keyphrase Extraction in Scientific Articles: A Supervised Approach</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Kishorjit Nongmeikapam, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">COLING 2012 · Demonstration Papers&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 17–24</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/C12-3003/" id="sel-conf-9-l1" aria-labelledby="sel-conf-9-l1 sel-conf-9-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/C12-3003.pdf" id="sel-conf-9-l2" aria-labelledby="sel-conf-9-l2 sel-conf-9-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/Coling2012Keyphrase.pdf" id="sel-conf-9-l3" aria-labelledby="sel-conf-9-l3 sel-conf-9-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="sel-conf-11">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="sel-conf-11-t">Question Answering System for QA4MRE@CLEF 2012</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Partha Pakray, Somnath Banerjee, Samadrita Banerjee, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">QA4MRE @ CLEF 2012 Working Notes</p>
-      <p class="pub__note">Top-ranked system, c@1 = 0.65.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1178/CLEF2012wn-QA4MRE-BhaskarEt2012b.pdf" id="sel-conf-11-l1" aria-labelledby="sel-conf-11-l1 sel-conf-11-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="sel-conf-22">
-    <p class="pub__meta"><span class="pub__year">2010</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="sel-conf-22-t">A Query Focused Multi Document Automatic Summarization</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">PACLIC 24 (2010)&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 545–554</span></p>
-      <p class="pub__note">Best-paper nominee, student session.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/Y10-1063/" id="sel-conf-22-l1" aria-labelledby="sel-conf-22-l1 sel-conf-22-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/Y10-1063.pdf" id="sel-conf-22-l2" aria-labelledby="sel-conf-22-l2 sel-conf-22-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-<!-- END:PUBS-SELECTED -->
-  </ol>
-
-  <!-- 5.2 Shared-task results -->
-  <div class="subhead row" data-reveal>
-    <h3 class="subhead__title row__body" id="shared-title">Shared-task results</h3>
-  </div>
-  <div class="row" data-reveal>
-    <div class="row__body">
-      <div class="table-wrap">
-        <table class="results" role="table">
-          <caption>Results for our system in international evaluation campaigns. These were team systems from Jadavpur University.</caption>
-          <thead role="rowgroup">
-            <tr role="row"><th role="columnheader" scope="col">Evaluation campaign</th><th role="columnheader" scope="col">Task</th><th role="columnheader" scope="col">Result</th></tr>
-          </thead>
-          <tbody role="rowgroup">
-            <tr role="row"><th role="rowheader" scope="row">CLEF 2013</th><td role="cell">QA4MRE — Question Answering for Machine Reading Evaluation</td><td role="cell"><strong>Top-ranked system</strong> · c@1 0.59</td></tr>
-            <tr role="row"><th role="rowheader" scope="row">CLEF 2012</th><td role="cell">QA4MRE</td><td role="cell"><strong>Top-ranked system</strong> · c@1 0.65</td></tr>
-            <tr role="row"><th role="rowheader" scope="row">CLEF 2011</th><td role="cell">QA4MRE</td><td role="cell"><strong>Top-ranked system</strong> · c@1 0.57</td></tr>
-            <tr role="row"><th role="rowheader" scope="row">CLEF 2010</th><td role="cell">ResPubliQA — answer selection</td><td role="cell"><strong>Top-ranked</strong> · 0.63</td></tr>
-            <tr role="row"><th role="rowheader" scope="row">INEX 2011</th><td role="cell">Question Answering track</td><td role="cell">Top on the relaxed readability metric</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="fineprint"><strong>Also participated:</strong> INEX Tweet Contextualization 2012–13 · FIRE ad-hoc retrieval 2008/2010/2012 · HOO 2011–12 (grammatical error correction) · TAC RTE-7 2011 · PAN 2011 (plagiarism detection) · TAC summarisation 2009–10 · SemEval-2010 keyphrase extraction.</p>
-    </div>
-  </div>
-
-  <!-- 5.3 All publications: every item is in the HTML and shown. With JS the list is clipped to the
-       first few items until "Show all" is pressed or a filter/search is used; print shows everything. -->
-  <div class="allpubs" id="all-publications">
-    <header class="allpubs__head row" data-reveal>
-      <div class="row__body">
-        <h3 class="allpubs__title" id="allpubs-title">All publications</h3>
-        <p class="allpubs__hint">37 items, newest first<span class="js-only"> · filter by type, topic or keyword</span></p>
-      </div>
-    </header>
-
-    <!-- Filter toolbar: enhancement only. Hidden until site.js removes [hidden]. -->
-    <form class="filters" data-pub-filters role="search" aria-label="Filter publications" hidden>
-      <div class="filters__top">
-        <label class="field field--search">
-          <span class="field__label">Search</span>
-          <span class="field__control">
-            <svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
-            <input type="search" name="q" data-pub-search placeholder="Title, author, venue, year" autocomplete="off" spellcheck="false">
-          </span>
-        </label>
-        <label class="field field--select">
-          <span class="field__label">Topic</span>
-          <span class="field__control">
-            <select name="topic" data-pub-topic>
-<!-- BEGIN:PUBS-TOPICS (generated) -->
-              <option value="all">All topics</option>
-              <option value="Question answering">Question answering (12)</option>
-              <option value="Summarization">Summarization (11)</option>
-              <option value="Retrieval &amp; search">Retrieval &amp; search (9)</option>
-              <option value="Language tools">Language tools (6)</option>
-              <option value="Evaluation &amp; entailment">Evaluation &amp; entailment (4)</option>
-              <option value="Knowledge graphs">Knowledge graphs (3)</option>
-              <option value="Multimodal &amp; on-device">Multimodal &amp; on-device (2)</option>
-<!-- END:PUBS-TOPICS -->
-            </select>
-          </span>
-        </label>
-      </div>
-      <div class="filters__types" role="group" aria-label="Publication type">
-<!-- BEGIN:PUBS-TYPES (generated) -->
-        <button class="filter-btn" type="button" data-pub-type="all" aria-pressed="true">All <span class="filter-btn__n">37</span></button>
-        <button class="filter-btn" type="button" data-pub-type="Conference" aria-pressed="false">Conference <span class="filter-btn__n">11</span></button>
-        <button class="filter-btn" type="button" data-pub-type="Workshop" aria-pressed="false">Workshop <span class="filter-btn__n">6</span></button>
-        <button class="filter-btn" type="button" data-pub-type="Shared task" aria-pressed="false">Shared task <span class="filter-btn__n">16</span></button>
-        <button class="filter-btn" type="button" data-pub-type="Journal" aria-pressed="false">Journal <span class="filter-btn__n">3</span></button>
-        <button class="filter-btn" type="button" data-pub-type="Book" aria-pressed="false">Book <span class="filter-btn__n">1</span></button>
-<!-- END:PUBS-TYPES -->
-      </div>
-      <div class="filters__status">
-        <p class="filters__count" data-pub-count role="status" aria-live="polite">Showing 37 of 37</p>
-        <button class="link-btn" type="button" data-pub-reset hidden>Clear filters</button>
-      </div>
-    </form>
-
-    <ol class="pubs pubs--all" data-pub-list aria-labelledby="allpubs-title">
-<!-- BEGIN:PUBS-ALL (generated by tools/build_publications.py — do not edit by hand) -->
-  <li class="pub row" id="pub-new-2" data-type="Conference" data-topics="Multimodal &amp; on-device|Knowledge graphs">
-    <p class="pub__meta"><span class="pub__year">2024</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-new-2-t">POP-VQA – Privacy Preserving, On-Device, Personalized Visual Question Answering</h4>
-      <p class="pub__authors">Pragya Paramita Sahu, Abhishek Raut, Jagdish Singh Samant, Mahesh Gorijala, Vignesh Lakshminarayanan, <strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">WACV 2024</p>
-      <p class="pub__note">On-device VQA personalised with a user knowledge graph; +36% absolute on KVQA 1‑hop questions.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Multimodal &amp; on-device&nbsp;<span class="dot" aria-hidden="true">·</span> Knowledge graphs</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://openaccess.thecvf.com/content/WACV2024/html/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.html" id="pub-new-2-l1" aria-labelledby="pub-new-2-l1 pub-new-2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CVF Open Access</a></li><li><a class="chip chip--quiet" href="https://openaccess.thecvf.com/content/WACV2024/papers/Sahu_POP-VQA_-_Privacy_Preserving_On-Device_Personalized_Visual_Question_Answering_WACV_2024_paper.pdf" id="pub-new-2-l2" aria-labelledby="pub-new-2-l2 pub-new-2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-new-3" data-type="Conference" data-topics="Knowledge graphs">
-    <p class="pub__meta"><span class="pub__year">2023</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-new-3-t">Multi-Hop Relation Aware Representations for Inductive Knowledge Graphs</h4>
-      <p class="pub__authors">Aniruddha Bala, Ankit Sharma, Shlok Sharma, <strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">ICON 2023&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 27–35</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Knowledge graphs</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/2023.icon-1.3/" id="pub-new-3-l1" aria-labelledby="pub-new-3-l1 pub-new-3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/2023.icon-1.3.pdf" id="pub-new-3-l2" aria-labelledby="pub-new-3-l2 pub-new-3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-new-4" data-type="Conference" data-topics="Multimodal &amp; on-device|Knowledge graphs">
-    <p class="pub__meta"><span class="pub__year">2021</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-new-4-t">An On-device Deep-Learning Approach for Attribute Extraction from Heterogeneous Unstructured Text</h4>
-      <p class="pub__authors">Mahesh Gorijala, Aniruddha Bala, <strong>Pinaki Bhaskar</strong>, Krishnaditya, Vikram Mupparthi</p>
-      <p class="pub__venue">ICON 2021&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 573–582</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Multimodal &amp; on-device&nbsp;<span class="dot" aria-hidden="true">·</span> Knowledge graphs</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/2021.icon-main.70/" id="pub-new-4-l1" aria-labelledby="pub-new-4-l1 pub-new-4-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/2021.icon-main.70.pdf" id="pub-new-4-l2" aria-labelledby="pub-new-4-l2 pub-new-4-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-new-1" data-type="Conference" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2015</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-new-1-t">From Literature to Knowledge: Exploiting PubMed to Answer Biomedical Questions in Natural Language</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Marina Buzzi, Filippo Geraci, Marco Pellegrini</p>
-      <p class="pub__venue">ITBAM 2015 · Springer LNCS&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 3–15</span></p>
-      <p class="pub__note">Biomedical question answering over PubMed; from the ERCIM postdoctoral fellowship at IIT‑CNR, Pisa.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://doi.org/10.1007/978-3-319-22741-2_1" id="pub-new-1-l1" aria-labelledby="pub-new-1-l1 pub-new-1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">DOI</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-C1" data-type="Conference" data-topics="Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2014</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-C1-t">Cross Lingual Snippet Generation Using Snippet Translation System</h4>
-      <p class="pub__authors">Pintu Lohar, <strong>Pinaki Bhaskar</strong>, Santanu Pal, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">CICLing 2014 · Springer LNCS 8404&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 331–342</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://doi.org/10.1007/978-3-642-54903-8_28" id="pub-C1-l1" aria-labelledby="pub-C1-l1 pub-C1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">DOI</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-3" data-type="Shared task" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-3-t">A Hybrid Question Answering System for Multiple Choice Question (MCQ)</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Somnath Banerjee, Partha Pakray, Samadrita Banerjee, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">QA4MRE @ CLEF 2013 Working Notes</p>
-      <p class="pub__note">Top-ranked system, c@1 = 0.59.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1179/CLEF2013wn-QA4MRE-BhaskarEt2013b.pdf" id="pub-conf-3-l1" aria-labelledby="pub-conf-3-l1 pub-conf-3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-7" data-type="Workshop" data-topics="Question answering|Summarization">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Workshop</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-7-t">Answering Questions from Multiple Documents – the Role of Multi-Document Summarization</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">RANLP 2013 Student Research Workshop&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 14–21</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering&nbsp;<span class="dot" aria-hidden="true">·</span> Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/R13-2003/" id="pub-conf-7-l1" aria-labelledby="pub-conf-7-l1 pub-conf-7-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/R13-2003.pdf" id="pub-conf-7-l2" aria-labelledby="pub-conf-7-l2 pub-conf-7-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-6" data-type="Workshop" data-topics="Evaluation &amp; entailment|Summarization">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Workshop</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-6-t">Automatic Evaluation of Summary Using Textual Entailment</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Partha Pakray</p>
-      <p class="pub__venue">RANLP 2013 Student Research Workshop&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 30–37</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Evaluation &amp; entailment&nbsp;<span class="dot" aria-hidden="true">·</span> Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/R13-2005/" id="pub-conf-6-l1" aria-labelledby="pub-conf-6-l1 pub-conf-6-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/R13-2005.pdf" id="pub-conf-6-l2" aria-labelledby="pub-conf-6-l2 pub-conf-6-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-J1" data-type="Journal" data-topics="Evaluation &amp; entailment|Summarization">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Journal</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-J1-t">Entailment-based Fully Automatic Technique for Evaluation of Summaries</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Partha Pakray, Alexander Gelbukh, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">Research in Computing Science, vol.&nbsp;65&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 11–23</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Evaluation &amp; entailment&nbsp;<span class="dot" aria-hidden="true">·</span> Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://www.rcs.cic.ipn.mx/2013_65/" id="pub-J1-l1" aria-labelledby="pub-J1-l1 pub-J1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Journal issue</a></li><li><a class="chip chip--quiet" href="https://www.rcs.cic.ipn.mx/2013_65/Entailment-based%20Fully%20Automatic%20Technique%20for%20Evaluation%20of%20Summaries.pdf" id="pub-J1-l2" aria-labelledby="pub-J1-l2 pub-J1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-5" data-type="Workshop" data-topics="Summarization">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Workshop</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-5-t">Multi-Document Summarization using Automatic Key-Phrase Extraction</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">RANLP 2013 Student Research Workshop&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 22–29</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/R13-2004/" id="pub-conf-5-l1" aria-labelledby="pub-conf-5-l1 pub-conf-5-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/R13-2004.pdf" id="pub-conf-5-l2" aria-labelledby="pub-conf-5-l2 pub-conf-5-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-4" data-type="Shared task" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-4-t">Multiple Choice Question (MCQ) Answering System for Entrance Examination</h4>
-      <p class="pub__authors">Somnath Banerjee, <strong>Pinaki Bhaskar</strong>, Partha Pakray, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">QA4MRE @ CLEF 2013 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1179/CLEF2013wn-QA4MRE-BanerjeeEt2013.pdf" id="pub-conf-4-l1" aria-labelledby="pub-conf-4-l1 pub-conf-4-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-B1" data-type="Book" data-topics="Summarization|Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Book</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-B1-t">Query Focused Language Independent Multi-document Summarization and Information Retrieval for English and Bengali</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">LAP LAMBERT Academic Publishing</p>
-      <p class="pub__note">M.Tech. thesis published as a monograph.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization&nbsp;<span class="dot" aria-hidden="true">·</span> Retrieval &amp; search</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://books.google.com/books?id=5T9jngEACAAJ" id="pub-B1-l1" aria-labelledby="pub-B1-l1 pub-B1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Google Books</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-1" data-type="Shared task" data-topics="Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-1-t">Transliterated Search System for Indian Languages</h4>
-      <p class="pub__authors">Partha Pakray, <strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">FIRE 2013 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://web.archive.org/web/20220128113642/https://www.isical.ac.in/~fire/wn/STTS/2013-translit_search-pakray-ntnu-norway.pdf" id="pub-conf-1-l1" aria-labelledby="pub-conf-1-l1 pub-conf-1-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF (archived)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-2" data-type="Shared task" data-topics="Summarization">
-    <p class="pub__meta"><span class="pub__year">2013</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-2-t">Tweet Contextualization (Answering Tweet Question) – the Role of Multi-document Summarization</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Somnath Banerjee, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">INEX @ CLEF 2013 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1179/CLEF2013wn-INEX-BhaskarEt2013.pdf" id="pub-conf-2-l1" aria-labelledby="pub-conf-2-l1 pub-conf-2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-C3" data-type="Conference" data-topics="Question answering|Summarization">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-C3-t">A Hybrid QA System with Focused IR and Automatic Summarization for INEX 2011</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Somnath Banerjee, Snehasis Neogi, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">INEX 2011 · Springer LNCS 7424&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 207–218</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering&nbsp;<span class="dot" aria-hidden="true">·</span> Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://doi.org/10.1007/978-3-642-35734-3_18" id="pub-C3-l1" aria-labelledby="pub-C3-l1 pub-C3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">DOI</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/INEX2012_SB_PB_SB_SN_camera_ready.pdf" id="pub-C3-l2" aria-labelledby="pub-C3-l2 pub-C3-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-10" data-type="Conference" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-10-t">Comparative &amp; Evaluative QA System in Tourism Domain</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Bidhan Chandra Pal, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">CCSEIT 2012 · ACM ICPS&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 458–465</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://doi.org/10.1145/2393216.2393293" id="pub-conf-10-l1" aria-labelledby="pub-conf-10-l1 pub-conf-10-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">DOI</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-9" data-type="Conference" data-topics="Language tools">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-9-t">Keyphrase Extraction in Scientific Articles: A Supervised Approach</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Kishorjit Nongmeikapam, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">COLING 2012 · Demonstration Papers&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 17–24</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/C12-3003/" id="pub-conf-9-l1" aria-labelledby="pub-conf-9-l1 pub-conf-9-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/C12-3003.pdf" id="pub-conf-9-l2" aria-labelledby="pub-conf-9-l2 pub-conf-9-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/Coling2012Keyphrase.pdf" id="pub-conf-9-l3" aria-labelledby="pub-conf-9-l3 pub-conf-9-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-C2" data-type="Conference" data-topics="Retrieval &amp; search|Summarization">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-C2-t">Language Independent Query Focused Snippet Generation</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">CLEF 2012 · Springer LNCS 7488&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 138–140</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search&nbsp;<span class="dot" aria-hidden="true">·</span> Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://doi.org/10.1007/978-3-642-33247-0_16" id="pub-C2-l1" aria-labelledby="pub-C2-l1 pub-C2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">DOI</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-12" data-type="Shared task" data-topics="Summarization|Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-12-t">A Hybrid Tweet Contextualization System using IR and Summarization</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Somnath Banerjee, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">INEX @ CLEF 2012 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization&nbsp;<span class="dot" aria-hidden="true">·</span> Retrieval &amp; search</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1178/CLEF2012wn-INEX-BhaskarEt2012.pdf" id="pub-conf-12-l1" aria-labelledby="pub-conf-12-l1 pub-conf-12-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-8" data-type="Shared task" data-topics="Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-8-t">Ad-hoc Information Retrieval focused on Wikipedia based Query Expansion and Entropy Based Ranking</h4>
-      <p class="pub__authors">Utsab Barman, Pintu Lohar, <strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">FIRE 2012 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://www.isical.ac.in/~fire/data/working-notes_2012/adhoc/adhoc_JU.pdf" id="pub-conf-8-l1" aria-labelledby="pub-conf-8-l1 pub-conf-8-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-13" data-type="Shared task" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-13-t">An Automatic System for Modality and Negation Detection</h4>
-      <p class="pub__authors">Partha Pakray, <strong>Pinaki Bhaskar</strong>, Somnath Banerjee, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">QA4MRE @ CLEF 2012 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1178/CLEF2012wn-QA4MRE-PakrayEt2012.pdf" id="pub-conf-13-l1" aria-labelledby="pub-conf-13-l1 pub-conf-13-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-J2" data-type="Journal" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Journal</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-J2-t">Answer Extraction of Comparative and Evaluative Question in Tourism Domain</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Bidhan Chandra Pal, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">IJCSIT, vol.&nbsp;3(4)&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 4610–4616</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://www.ijcsit.com/docs/Volume%203/vol3Issue4/ijcsit2012030411.pdf" id="pub-J2-l1" aria-labelledby="pub-J2-l1 pub-J2-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-J3" data-type="Journal" data-topics="Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Journal</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-J3-t">Cross Lingual Query Dependent Snippet Generation</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">IJCSIT, vol.&nbsp;3(4)&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 4603–4609</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://www.ijcsit.com/docs/Volume%203/vol3Issue4/ijcsit2012030410.pdf" id="pub-J3-l1" aria-labelledby="pub-J3-l1 pub-J3-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-14" data-type="Workshop" data-topics="Language tools">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Workshop</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-14-t">Detection and Correction of Preposition and Determiner Errors in English: HOO 2012</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Aniruddha Ghosh, Santanu Pal, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">BEA-7 @ NAACL-HLT 2012&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 201–207</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/W12-2023/" id="pub-conf-14-l1" aria-labelledby="pub-conf-14-l1 pub-conf-14-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/W12-2023.pdf" id="pub-conf-14-l2" aria-labelledby="pub-conf-14-l2 pub-conf-14-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-11" data-type="Shared task" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2012</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-11-t">Question Answering System for QA4MRE@CLEF 2012</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Partha Pakray, Somnath Banerjee, Samadrita Banerjee, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">QA4MRE @ CLEF 2012 Working Notes</p>
-      <p class="pub__note">Top-ranked system, c@1 = 0.65.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1178/CLEF2012wn-QA4MRE-BhaskarEt2012b.pdf" id="pub-conf-11-l1" aria-labelledby="pub-conf-11-l1 pub-conf-11-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-18" data-type="Shared task" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2011</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-18-t">A Hybrid Question Answering System based on Information Retrieval and Answer Validation</h4>
-      <p class="pub__authors">Partha Pakray, <strong>Pinaki Bhaskar</strong>, Somnath Banerjee, Bidhan Chandra Pal, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">QA4MRE @ CLEF 2011 Notebook Papers</p>
-      <p class="pub__note">Top-ranked system, c@1 = 0.57.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1177/CLEF2011wn-QA4MRE-PakrayEt2011.pdf" id="pub-conf-18-l1" aria-labelledby="pub-conf-18-l1 pub-conf-18-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/clef2011labs_submission_55-1.pdf" id="pub-conf-18-l2" aria-labelledby="pub-conf-18-l2 pub-conf-18-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-16" data-type="Workshop" data-topics="Question answering">
-    <p class="pub__meta"><span class="pub__year">2011</span> <span class="pub__type">Workshop</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-16-t">A Rule Based Approach for Analysis of Comparative or Evaluative Questions in Tourism Domain</h4>
-      <p class="pub__authors">Bidhan Chandra Pal, <strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">KRAQ @ IJCNLP 2011&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 29–37</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/W11-3105/" id="pub-conf-16-l1" aria-labelledby="pub-conf-16-l1 pub-conf-16-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/W11-3105.pdf" id="pub-conf-16-l2" aria-labelledby="pub-conf-16-l2 pub-conf-16-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/ijcnlp2011-BP-PB-SB_camera_ready.pdf" id="pub-conf-16-l3" aria-labelledby="pub-conf-16-l3 pub-conf-16-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-15" data-type="Shared task" data-topics="Evaluation &amp; entailment">
-    <p class="pub__meta"><span class="pub__year">2011</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-15-t">A Textual Entailment System using Anaphora Resolution</h4>
-      <p class="pub__authors">Partha Pakray, Snehasis Neogi, <strong>Pinaki Bhaskar</strong>, Soujanya Poria, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">TAC 2011 · RTE-7 (NIST)</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Evaluation &amp; entailment</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://tac.nist.gov/publications/2011/papers.html" id="pub-conf-15-l1" aria-labelledby="pub-conf-15-l1 pub-conf-15-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">NIST TAC</a></li><li><a class="chip chip--quiet" href="https://tac.nist.gov/publications/2011/participant.papers/JU_CSE_TAC.proceedings.pdf" id="pub-conf-15-l2" aria-labelledby="pub-conf-15-l2 pub-conf-15-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/JU_CSE_TAC.proceedings.pdf" id="pub-conf-15-l3" aria-labelledby="pub-conf-15-l3 pub-conf-15-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-17" data-type="Workshop" data-topics="Language tools">
-    <p class="pub__meta"><span class="pub__year">2011</span> <span class="pub__type">Workshop</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-17-t">May I check the English of your paper!!!</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Aniruddha Ghosh, Santanu Pal, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">HOO @ ENLG 2011&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 250–253</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/W11-2839/" id="pub-conf-17-l1" aria-labelledby="pub-conf-17-l1 pub-conf-17-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/W11-2839.pdf" id="pub-conf-17-l2" aria-labelledby="pub-conf-17-l2 pub-conf-17-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-19" data-type="Shared task" data-topics="Language tools">
-    <p class="pub__meta"><span class="pub__year">2011</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-19-t">Rule Based Plagiarism Detection using Information Retrieval</h4>
-      <p class="pub__authors">Aniruddha Ghosh, <strong>Pinaki Bhaskar</strong>, Santanu Pal, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">PAN @ CLEF 2011 Notebook Papers</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1177/CLEF2011wn-PAN-GhoshEt2011.pdf" id="pub-conf-19-l1" aria-labelledby="pub-conf-19-l1 pub-conf-19-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/PAN2011-plagiarism-SB_AG_PB_SP.pdf" id="pub-conf-19-l2" aria-labelledby="pub-conf-19-l2 pub-conf-19-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-20" data-type="Conference" data-topics="Summarization">
-    <p class="pub__meta"><span class="pub__year">2010</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-20-t">A Query Focused Automatic Multi Document Summarizer</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">ICON 2010&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 241–250</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/ICON-2010_SB_PB-Camera-Ready-Copy.pdf" id="pub-conf-20-l1" aria-labelledby="pub-conf-20-l1 pub-conf-20-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-22" data-type="Conference" data-topics="Summarization">
-    <p class="pub__meta"><span class="pub__year">2010</span> <span class="pub__type">Conference</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-22-t">A Query Focused Multi Document Automatic Summarization</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">PACLIC 24 (2010)&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 545–554</span></p>
-      <p class="pub__note">Best-paper nominee, student session.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Summarization</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://aclanthology.org/Y10-1063/" id="pub-conf-22-l1" aria-labelledby="pub-conf-22-l1 pub-conf-22-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">ACL Anthology</a></li><li><a class="chip chip--quiet" href="https://aclanthology.org/Y10-1063.pdf" id="pub-conf-22-l2" aria-labelledby="pub-conf-22-l2 pub-conf-22-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-21" data-type="Shared task" data-topics="Language tools">
-    <p class="pub__meta"><span class="pub__year">2010</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-21-t">Bengali Parsing System at ICON NLP Tool Contest 2010</h4>
-      <p class="pub__authors">Aniruddha Ghosh, Amitava Das, <strong>Pinaki Bhaskar</strong>, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">ICON 2010 NLP Tools Contest&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 20–24</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ltrc.iiit.ac.in/icon/2010/nlptools/files/documents/toolscontest10-workshoppaper-final.pdf" id="pub-conf-21-l1" aria-labelledby="pub-conf-21-l1 pub-conf-21-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-23" data-type="Shared task" data-topics="Question answering|Evaluation &amp; entailment">
-    <p class="pub__meta"><span class="pub__year">2010</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-23-t">JU_CSE_TE: System Description QA@CLEF 2010 - ResPubliQA</h4>
-      <p class="pub__authors">Partha Pakray, <strong>Pinaki Bhaskar</strong>, Santanu Pal, Dipankar Das, Sivaji Bandyopadhyay, Alexander Gelbukh</p>
-      <p class="pub__venue">ResPubliQA @ CLEF 2010 Notebook Papers</p>
-      <p class="pub__note">Top-ranked in answer selection, score 0.63.</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Question answering&nbsp;<span class="dot" aria-hidden="true">·</span> Evaluation &amp; entailment</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ceur-ws.org/Vol-1176/CLEF2010wn-MLQA10-PakrayEt2010.pdf" id="pub-conf-23-l1" aria-labelledby="pub-conf-23-l1 pub-conf-23-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">CEUR-WS</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/JU-CSE-TE-Respubliqa-2010-System-Report.pdf" id="pub-conf-23-l2" aria-labelledby="pub-conf-23-l2 pub-conf-23-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-24" data-type="Shared task" data-topics="Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2010</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-24-t">Theme Based English and Bengali Ad-hoc Monolingual Information Retrieval in FIRE 2010</h4>
-      <p class="pub__authors"><strong>Pinaki Bhaskar</strong>, Amitava Das, Partha Pakray, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">FIRE 2010 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search</p>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-25" data-type="Shared task" data-topics="Language tools">
-    <p class="pub__meta"><span class="pub__year">2009</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-25-t">Dependency Parser for Bengali: the JU System at ICON 2009</h4>
-      <p class="pub__authors">Aniruddha Ghosh, <strong>Pinaki Bhaskar</strong>, Amitava Das, Sivaji Bandyopadhyay</p>
-      <p class="pub__venue">ICON 2009 NLP Tools Contest&nbsp;<span class="dot" aria-hidden="true">·</span> <span class="nowrap">pp. 7–11</span></p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Language tools</p>
-      <ul class="chips chips--tight"><li><a class="chip chip--quiet" href="https://ltrc.iiit.ac.in/icon/2009/nlptools/CR/Parser_Camera_Ready_JU.pdf" id="pub-conf-25-l1" aria-labelledby="pub-conf-25-l1 pub-conf-25-t" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">PDF</a></li><li><a class="chip chip--quiet" href="Pinaki_Bhaskar/Publication_files/ICON_2009_Parser.pdf" id="pub-conf-25-l2" aria-labelledby="pub-conf-25-l2 pub-conf-25-t">PDF (author copy)</a></li></ul>
-    </div>
-  </li>
-  <li class="pub row" id="pub-conf-26" data-type="Shared task" data-topics="Retrieval &amp; search">
-    <p class="pub__meta"><span class="pub__year">2008</span> <span class="pub__type">Shared task</span></p>
-    <div class="pub__body">
-      <h4 class="pub__title" id="pub-conf-26-t">English Bengali Ad-hoc Monolingual Information Retrieval Task Result at FIRE 2008</h4>
-      <p class="pub__authors">Sivaji Bandyopadhyay, Amitava Das, <strong>Pinaki Bhaskar</strong></p>
-      <p class="pub__venue">FIRE 2008 Working Notes</p>
-      <p class="pub__topics"><span class="vh">Topics: </span>Retrieval &amp; search</p>
-    </div>
-  </li>
-<!-- END:PUBS-ALL -->
-    </ol>
-
-    <div class="empty" data-pub-empty hidden>
-      <p class="empty__title">No publications match those filters.</p>
-      <p><button class="btn btn--secondary btn--small" type="button" data-pub-reset>Clear filters</button></p>
-    </div>
-
-    <p class="allpubs__more" data-pub-more hidden>
-      <button class="btn btn--secondary" type="button">Show all 37</button>
-    </p>
-  </div>
-</section>
-
-<!-- ========================================
-     06 · AWARDS & RECOGNITION — two visibly separate groups
-     ======================================== -->
-<section class="section" id="awards" aria-labelledby="awards-title" data-lightbox="Award certificates">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">06</p>
-    <h2 class="section__title" id="awards-title">Awards &amp; recognition</h2>
-  </header>
-
-<!-- BEGIN:AWARDS (generated by tools/build_awards.py from data/awards.json — do not edit by hand) -->
-  <div class="awards row" data-reveal>
-    <h3 class="awards__group">External</h3>
-    <ul class="ruled-list">
-      <li class="exhibit">
-        <div class="exhibit__text"><strong>Technical Role Model — Emerging (AI &amp; Big Data Analytics)</strong>, Zinnov Awards 2022 <span class="source">Source: <a href="https://news.samsung.com/in/eighth-year-in-a-row-samsung-wins-big-accolades-at-2022-zinnov-awards" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Samsung Newsroom India</a></span></div>
-        <a class="exhibit__plate plate" href="assets/awards/zinnov-2022-stage-full.jpg" data-w="1000" data-h="668" data-caption="Receiving the Technical Role Model award, Zinnov Awards 2022" aria-label="Receiving the Technical Role Model award, Zinnov Awards 2022 (opens the image)"><picture><source type="image/webp" srcset="assets/awards/zinnov-2022-stage-240.webp"><img src="assets/awards/zinnov-2022-stage-240.jpg" width="240" height="160" alt="Dr. Pinaki Bhaskar on stage receiving the Zinnov Awards 2022 trophy" loading="lazy" decoding="async"></picture></a>
-      </li>
-      <li><strong>Top-ranked system</strong>, CLEF QA4MRE 2011, 2012 and 2013 · ResPubliQA 2010 (answer selection) — team systems, Jadavpur University</li>
-      <li><strong>Best-paper nominee</strong>, student session, PACLIC 24 (Tohoku University, Sendai, 2010)</li>
-      <li><strong>ERCIM Alain Bensoussan postdoctoral fellowship</strong>, 2014 – 15</li>
-      <li><strong>Travel grant</strong>, Microsoft Research India (CLEF 2013) · ELIAS / European Science Foundation registration grants (CLEF 2011, CLEF 2013)</li>
-    </ul>
-  </div>
-
-  <div class="awards row" data-reveal>
-    <h3 class="awards__group">Samsung <span class="awards__qual">(internal)</span></h3>
-    <ul class="ruled-list">
-      <li class="exhibit">
-        <div class="exhibit__text"><strong>Best Project award</strong>, Samsung Research (Seoul) — natural-language Gallery search with a VLM, Galaxy S25 series</div>
-        <a class="exhibit__plate plate" href="assets/awards/samsung-research-awards-2025-full.jpg" data-w="1071" data-h="1574" data-caption="Samsung Research Awards 2025 — Research and Development" aria-label="Samsung Research Awards 2025 — Research and Development (opens the image)"><picture><source type="image/webp" srcset="assets/awards/samsung-research-awards-2025-240.webp"><img src="assets/awards/samsung-research-awards-2025-240.jpg" width="240" height="353" alt="Samsung Research Awards certificate for Research and Development presented to Pinaki Bhaskar, April 2025" loading="lazy" decoding="async"></picture></a>
-      </li>
-      <li class="exhibit">
-        <div class="exhibit__text"><strong>New Valley Project of the Year (R&amp;D)</strong>, <abbr title="Samsung R&amp;D Institute India – Bangalore">SRI-B</abbr> Annual Awards 2024 — Gallery Search</div>
-        <a class="exhibit__plate plate" href="assets/awards/new-valley-2024-full.jpg" data-w="1280" data-h="899" data-caption="New Valley Project of the Year (R&amp;D) — Gallery Search, SRI-B Annual Award 2024" aria-label="New Valley Project of the Year (R&amp;D) — Gallery Search, SRI-B Annual Award 2024 (opens the image)"><picture><source type="image/webp" srcset="assets/awards/new-valley-2024-240.webp"><img src="assets/awards/new-valley-2024-240.jpg" width="240" height="169" alt="Certificate of Appreciation: New Valley Project of the Year (R&amp;D), Gallery Search, presented to Pinaki Bhaskar, February 2025" loading="lazy" decoding="async"></picture></a>
-      </li>
-      <li class="exhibit">
-        <div class="exhibit__text"><strong>Super Tech Award — Development to Market</strong>, Samsung Excellence Awards, Q4 2024</div>
-        <a class="exhibit__plate plate" href="assets/awards/super-tech-q4-2024-full.jpg" data-w="511" data-h="800" data-caption="Samsung Excellence Award — Super Tech Award, Q4 2024" aria-label="Samsung Excellence Award — Super Tech Award, Q4 2024 (opens the image)"><picture><source type="image/webp" srcset="assets/awards/super-tech-q4-2024-240.webp"><img src="assets/awards/super-tech-q4-2024-240.jpg" width="240" height="376" alt="Samsung Excellence Award certificate: Super Tech Award, Development to market, presented to Pinaki Bhaskar, January 2025" loading="lazy" decoding="async"></picture></a>
-      </li>
-      <li class="exhibit">
-        <div class="exhibit__text"><strong>Team Awesome Award</strong>, Samsung Excellence Awards, Q4 2023 — on-device GenAI and One UI intelligence for the Galaxy S24 (team award)</div>
-        <a class="exhibit__plate plate" href="assets/awards/team-awesome-q4-2023-full.jpg" data-w="539" data-h="800" data-caption="Samsung Excellence Award — Team Awesome Award, Q4 2023" aria-label="Samsung Excellence Award — Team Awesome Award, Q4 2023 (opens the image)"><picture><source type="image/webp" srcset="assets/awards/team-awesome-q4-2023-240.webp"><img src="assets/awards/team-awesome-q4-2023-240.jpg" width="240" height="356" alt="Samsung Excellence Award certificate: Team Awesome Award for on-device GenAI and One UI intelligence, presented to Pinaki Bhaskar, January 2024" loading="lazy" decoding="async"></picture></a>
-      </li>
-      <li><strong>Global Best Project award</strong>, Mobile Developer Conference 2021 (Mobile R&amp;D Office, Korea) — on-device user-centric knowledge graph</li>
-      <li class="exhibit">
-        <div class="exhibit__text"><strong>The ACE Employee annual award</strong>, 2021 – 22</div>
-        <a class="exhibit__plate plate" href="assets/awards/ace-employee-2021-22-full.jpg" data-w="1280" data-h="982" data-caption="Excellence Awards — The Ace Employee, Annual Awards 2021–22" aria-label="Excellence Awards — The Ace Employee, Annual Awards 2021–22 (opens the image)"><picture><source type="image/webp" srcset="assets/awards/ace-employee-2021-22-240.webp"><img src="assets/awards/ace-employee-2021-22-240.jpg" width="240" height="184" alt="Annual Awards 2021-22 Excellence Awards certificate: The Ace Employee, presented to Pinaki Bhaskar, April 2022" loading="lazy" decoding="async"></picture></a>
-      </li>
-      <li><strong>Star of the Quarter — Lead by Example</strong>, Q3 2021 · Spot award, Sep 2021</li>
-      <li><strong>Samsung Citizen Award — Highflier</strong>, 2019</li>
-    </ul>
-  </div>
-<!-- END:AWARDS -->
-</section>
-
-<!-- ========================================
-     07 · EDUCATION & SERVICE
-     ======================================== -->
-<section class="section" id="education" aria-labelledby="education-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">07</p>
-    <h2 class="section__title" id="education-title">Education &amp; service</h2>
-  </header>
-
-  <ol class="timeline">
-    <li class="entry row" data-reveal>
-      <p class="entry__dates">2014</p>
-      <div class="entry__body">
-        <h3 class="entry__org">Ph.D. (Engineering)</h3>
-        <p class="entry__role">Jadavpur University, Kolkata</p>
-        <p class="thesis">Thesis: <cite>Answering Questions from Multiple Documents – the Role of Multi-document Summarization</cite>. Supervisor: Prof. Sivaji Bandyopadhyay.</p>
-      </div>
-    </li>
-    <li class="entry row" data-reveal>
-      <p class="entry__dates">2010</p>
-      <div class="entry__body">
-        <h3 class="entry__org">M.Tech., Computer Technology</h3>
-        <p class="entry__role">Jadavpur University</p>
-        <p class="thesis">Thesis: <cite>A Query Focused Language Independent Multi Document Summarizer and Ad-hoc Monolingual Information Retrieval for English and Bengali</cite>.</p>
-      </div>
-    </li>
-    <li class="entry row" data-reveal>
-      <p class="entry__dates">2006</p>
-      <div class="entry__body">
-        <h3 class="entry__org">B.Tech., Computer Science &amp; Engineering</h3>
-        <p class="entry__role">Govt. College of Engineering &amp; Textile Technology, Berhampore (West Bengal University of Technology)</p>
-      </div>
-    </li>
-  </ol>
-
-  <dl class="spread spread--compact" data-reveal>
-    <div class="row">
-      <dt>Certificates</dt>
-      <dd>
-        <ul class="ruled-list certs" data-lightbox="Certificates">
-          <li class="exhibit">
-            <div class="exhibit__text"><strong>Neural Networks and Deep Learning</strong>, DeepLearning.AI (Andrew Ng) via Coursera, October 2020
-              <span class="source"><a href="https://www.coursera.org/verify/VVEUHZUEFQTK" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Verify on Coursera</a> · <a href="assets/certificates/coursera-neural-networks-and-deep-learning.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab">Certificate (PDF)</a></span></div>
-            <a class="exhibit__plate plate" href="assets/certificates/coursera-neural-networks-and-deep-learning-full.jpg" data-w="1600" data-h="1236" data-caption="Neural Networks and Deep Learning — Coursera course certificate, October 2020" aria-label="Coursera certificate (opens the image)"><picture><source type="image/webp" srcset="assets/certificates/coursera-neural-networks-and-deep-learning-480.webp"><img src="assets/certificates/coursera-neural-networks-and-deep-learning-480.jpg" width="480" height="371" alt="Coursera course certificate: Neural Networks and Deep Learning, DeepLearning.AI, awarded to Pinaki Bhaskar on 8 October 2020" loading="lazy" decoding="async"></picture></a>
-          </li>
-          <li>Leadership Communication (CommUP Plus), <abbr title="Samsung R&amp;D Institute India – Bangalore">SRI-B</abbr>, 2022</li>
-          <li>Introduction to Linguistics, Jadavpur University, 2011</li>
-        </ul>
-      </dd>
-    </div>
-    <div class="row">
-      <dt>Service</dt>
-      <dd>Board of Studies, NIT Meghalaya (2024&nbsp;–&nbsp;present) · Programme committee: MIKE 2013, INEX 2011 · Reviewer: COLING, CICLing, ICON, NLP-KE, KRAQ, INEX, MIKE (2010&nbsp;–&nbsp;2013).</dd>
-    </div>
-    <div class="row">
-      <dt>Talks</dt>
-      <dd>CLEF 2013 (Valencia) · COLING 2012 (Mumbai) · FIRE 2012 (Kolkata) · ENLG 2011 (Nancy) · CLEF 2011 (Amsterdam) · ICON 2010 (Kharagpur) · FIRE 2008 (Kolkata).</dd>
-    </div>
-  </dl>
-</section>
-
-<!-- ========================================
-     08 · PHOTOGRAPHY — a quiet note before the close. Every tile links to the full JPEG;
-     site.js turns those links into a lightbox.
-     ======================================== -->
-<section class="section" id="photography" aria-labelledby="photography-title">
-  <header class="section__head row" data-reveal>
-    <p class="section__num" aria-hidden="true">08</p>
-    <h2 class="section__title" id="photography-title">Photography</h2>
-  </header>
-
-  <div class="row" data-reveal>
-    <p class="photos__label" aria-hidden="true">Photographs</p>
-    <p>Away from work I photograph landscapes and cities. A few frames from the Himalaya, rural Bengal and Europe.</p>
-  </div>
-
-  <ul class="photos" data-lightbox="Photographs" data-reveal>
-<!-- BEGIN:PHOTOS (generated by tools/build_photos.py from data/photos.json — do not edit by hand) -->
+  <p class="home-intro" data-reveal>Away from work I photograph landscapes and cities. A few frames from the Himalaya, rural Bengal and Europe.</p>
+  <ul class="photos photos--strip" data-lightbox="Photographs" data-reveal>
+<!-- BEGIN:PHOTOS-STRIP (generated by tools/build_photos.py from data/photos.json — do not edit by hand) -->
   <li><figure class="photo">
-    <a href="assets/photos/rohtang-peaks-cirrus-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/rohtang-peaks-cirrus-480.webp"><img src="assets/photos/rohtang-peaks-cirrus-480.jpg" width="480" height="360" alt="Snow-dusted Himalayan peaks wrapped in cloud beneath a deep blue sky streaked with cirrus." loading="lazy" decoding="async"></picture></a>
+    <a href="/assets/photos/rohtang-peaks-cirrus-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="/assets/photos/rohtang-peaks-cirrus-480.webp"><img src="/assets/photos/rohtang-peaks-cirrus-480.jpg" width="480" height="360" alt="Snow-dusted Himalayan peaks wrapped in cloud beneath a deep blue sky streaked with cirrus." loading="lazy" decoding="async"></picture></a>
     <figcaption>Rohtang Pass, Himachal Pradesh</figcaption>
   </figure></li>
   <li><figure class="photo">
-    <a href="assets/photos/mukutmanipur-island-sun-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/mukutmanipur-island-sun-480.webp"><img src="assets/photos/mukutmanipur-island-sun-480.jpg" width="480" height="360" alt="Low sun above a small wooded island, its reflection a bright path across the still reservoir." loading="lazy" decoding="async"></picture></a>
+    <a href="/assets/photos/mukutmanipur-island-sun-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="/assets/photos/mukutmanipur-island-sun-480.webp"><img src="/assets/photos/mukutmanipur-island-sun-480.jpg" width="480" height="360" alt="Low sun above a small wooded island, its reflection a bright path across the still reservoir." loading="lazy" decoding="async"></picture></a>
     <figcaption>Mukutmanipur, West Bengal</figcaption>
   </figure></li>
   <li><figure class="photo">
-    <a href="assets/photos/eiffel-lattice-night-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="assets/photos/eiffel-lattice-night-480.webp"><img src="assets/photos/eiffel-lattice-night-480.jpg" width="480" height="360" alt="The iron lattice of the Eiffel Tower seen from directly below at night, lit gold against a black sky." loading="lazy" decoding="async"></picture></a>
+    <a href="/assets/photos/eiffel-lattice-night-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="/assets/photos/eiffel-lattice-night-480.webp"><img src="/assets/photos/eiffel-lattice-night-480.jpg" width="480" height="360" alt="The iron lattice of the Eiffel Tower seen from directly below at night, lit gold against a black sky." loading="lazy" decoding="async"></picture></a>
     <figcaption>Under the Eiffel Tower, Paris</figcaption>
   </figure></li>
   <li><figure class="photo">
-    <a href="assets/photos/rohtang-snow-road-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/rohtang-snow-road-480.webp"><img src="assets/photos/rohtang-snow-road-480.jpg" width="480" height="360" alt="A dark mountain road curving through fresh snow towards a valley filled with storm cloud." loading="lazy" decoding="async"></picture></a>
+    <a href="/assets/photos/rohtang-snow-road-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="/assets/photos/rohtang-snow-road-480.webp"><img src="/assets/photos/rohtang-snow-road-480.jpg" width="480" height="360" alt="A dark mountain road curving through fresh snow towards a valley filled with storm cloud." loading="lazy" decoding="async"></picture></a>
     <figcaption>Rohtang Pass, Himachal Pradesh</figcaption>
   </figure></li>
   <li><figure class="photo">
-    <a href="assets/photos/mukutmanipur-golden-birds-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/mukutmanipur-golden-birds-480.webp"><img src="assets/photos/mukutmanipur-golden-birds-480.jpg" width="480" height="360" alt="A line of birds flying low between two wooded headlands over water turned gold by the evening sun." loading="lazy" decoding="async"></picture></a>
+    <a href="/assets/photos/mukutmanipur-golden-birds-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="/assets/photos/mukutmanipur-golden-birds-480.webp"><img src="/assets/photos/mukutmanipur-golden-birds-480.jpg" width="480" height="360" alt="A line of birds flying low between two wooded headlands over water turned gold by the evening sun." loading="lazy" decoding="async"></picture></a>
     <figcaption>Mukutmanipur, West Bengal</figcaption>
   </figure></li>
   <li><figure class="photo">
-    <a href="assets/photos/seine-rainbow-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="assets/photos/seine-rainbow-480.webp"><img src="assets/photos/seine-rainbow-480.jpg" width="480" height="360" alt="A rainbow arcing through dark storm clouds above sunlit trees and moored boats on the Seine." loading="lazy" decoding="async"></picture></a>
+    <a href="/assets/photos/seine-rainbow-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="/assets/photos/seine-rainbow-480.webp"><img src="/assets/photos/seine-rainbow-480.jpg" width="480" height="360" alt="A rainbow arcing through dark storm clouds above sunlit trees and moored boats on the Seine." loading="lazy" decoding="async"></picture></a>
     <figcaption>Rainbow over the Seine, Paris</figcaption>
   </figure></li>
-  <li><figure class="photo">
-    <a href="assets/photos/rohtang-huts-cloud-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/rohtang-huts-cloud-480.webp"><img src="assets/photos/rohtang-huts-cloud-480.jpg" width="480" height="360" alt="Two stone huts at the foot of a mountain swallowed by cloud, with two black birds in flight." loading="lazy" decoding="async"></picture></a>
-    <figcaption>Rohtang Pass, Himachal Pradesh</figcaption>
-  </figure></li>
-  <li><figure class="photo">
-    <a href="assets/photos/invalides-night-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="assets/photos/invalides-night-480.webp"><img src="assets/photos/invalides-night-480.jpg" width="480" height="360" alt="The gilded dome of Les Invalides glowing among the city lights of Paris, seen from above at night." loading="lazy" decoding="async"></picture></a>
-    <figcaption>Les Invalides by night, Paris</figcaption>
-  </figure></li>
-  <li><figure class="photo">
-    <a href="assets/photos/mukutmanipur-lone-tree-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/mukutmanipur-lone-tree-480.webp"><img src="assets/photos/mukutmanipur-lone-tree-480.jpg" width="480" height="360" alt="A single bright-green tree standing on red earth in front of a dark line of woodland." loading="lazy" decoding="async"></picture></a>
-    <figcaption>Mukutmanipur, West Bengal</figcaption>
-  </figure></li>
-  <li><figure class="photo">
-    <a href="assets/photos/notre-dame-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="assets/photos/notre-dame-480.webp"><img src="assets/photos/notre-dame-480.jpg" width="480" height="360" alt="The south side of Notre-Dame cathedral with its spire and rose window, above the trees of the riverbank." loading="lazy" decoding="async"></picture></a>
-    <figcaption>Notre-Dame de Paris</figcaption>
-  </figure></li>
-  <li><figure class="photo">
-    <a href="assets/photos/rohtang-switchbacks-full.jpg" data-w="720" data-h="540"><picture><source type="image/webp" srcset="assets/photos/rohtang-switchbacks-480.webp"><img src="assets/photos/rohtang-switchbacks-480.jpg" width="480" height="360" alt="A high green valley crossed by a road of tight switchbacks, with vehicles small in the distance." loading="lazy" decoding="async"></picture></a>
-    <figcaption>Rohtang Pass, Himachal Pradesh</figcaption>
-  </figure></li>
-  <li><figure class="photo">
-    <a href="assets/photos/amsterdam-tall-ship-full.jpg" data-w="800" data-h="600"><picture><source type="image/webp" srcset="assets/photos/amsterdam-tall-ship-480.webp"><img src="assets/photos/amsterdam-tall-ship-480.jpg" width="480" height="360" alt="The masts, yards and rigging of a moored three-masted sailing ship against a pale overcast sky." loading="lazy" decoding="async"></picture></a>
-    <figcaption>Tall ship, Amsterdam</figcaption>
-  </figure></li>
-<!-- END:PHOTOS -->
+<!-- END:PHOTOS-STRIP -->
   </ul>
 </section>
 
 <!-- ========================================
-     09 · CONTACT
+     CONTACT
      ======================================== -->
 <section class="section section--contact" id="contact" aria-labelledby="contact-title">
   <header class="section__head row">
-    <p class="section__num" aria-hidden="true">09</p>
     <h2 class="section__title section__title--display" id="contact-title">Let’s talk.</h2>
   </header>
   <div class="row">
@@ -1441,11 +324,11 @@
         <li><a class="icon-link" href="https://www.linkedin.com/in/dr-pinaki-bhaskar" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
         <li><a class="icon-link" href="https://scholar.google.co.in/citations?hl=en&amp;user=GNpRs3MAAAAJ" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-scholar"/></svg>Google Scholar</a></li>
         <li><a class="icon-link" href="https://patents.google.com/?inventor=Pinaki+BHASKAR" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-file"/></svg>Google Patents</a></li>
-        <li data-cv-slot><a class="icon-link" href="assets/Pinaki_Bhaskar_CV.pdf"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-download"/></svg>CV (PDF)</a></li>
       </ul>
     </div>
   </div>
 </section>
+
     </main>
 
     <footer class="site-footer">
@@ -1455,6 +338,6 @@
   </div>
 
   <!-- If site.js cannot be loaded, drop the "js" class so the page falls back to its no-JS form (menu in the flow). -->
-  <script src="assets/js/site.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+  <script src="/assets/js/site.js" defer onerror="document.documentElement.classList.remove('js')"></script>
 </body>
 </html>

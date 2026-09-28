@@ -8,8 +8,8 @@
      3.  Base & typography
      4.  Utilities (.row grid, .vh, prose measure, buttons, chips, profile links, tags, lists, .plate)
      5.  Layout shell
-     6.  Header: top bar (phone) / inline nav (tablet) / left rail (wide)
-     7.  Hero
+     6.  Header: sticky top bar; the menu is a panel on phones and inline from 64rem
+     7.  Home page: intro (portrait + story), section heads, work cards, photo strip
      8.  Proof strip
      9.  Now
      10. Sections & section heads
@@ -88,13 +88,6 @@
 
 /* 2. DESIGN TOKENS ------------------------ */
 
-/* CV SLOT ------------------------------------------------------------------
-   The site is waiting for a CV. When the PDF is ready, save it as
-   assets/Pinaki_Bhaskar_CV.pdf and DELETE this one rule: the three links marked
-   data-cv-slot in index.html (hero button, rail, contact) reappear by themselves.
-   ------------------------------------------------------------------------- */
-[data-cv-slot] { display: none !important; }
-
 :root {
   /* Colour — light ("paper"). One accent only: burnt orange.
      --accent       decoration, rules, focus rings, large UI (3:1 on paper)
@@ -150,7 +143,7 @@
   --gutter: 2rem;
   --measure: 45rem;        /* 720px reading column */
   --prose: 68ch;           /* longest line of running text inside that column */
-  --rail-w: 13rem;
+  --site-w: calc(var(--label-col) + var(--gutter) + var(--measure));   /* the content column */
   --bar-h: 3.5rem;
   --radius: 3px;
 
@@ -488,17 +481,8 @@ svg { flex: none; }
 .layout { padding-inline: var(--page-pad); }
 main { display: block; max-width: calc(var(--label-col) + var(--gutter) + var(--measure)); margin-inline: auto; }
 
-@media (min-width: 77.5rem) {
-  .layout {
-    display: grid;
-    grid-template-columns: var(--rail-w) minmax(0, 1fr);
-    column-gap: clamp(3rem, 5vw, 5rem);
-    max-width: 82rem;
-    margin-inline: auto;
-  }
-  .site-header { grid-column: 1; grid-row: 1 / span 2; }
-  main, .site-footer { grid-column: 2; margin-inline: 0; }
-  html { scroll-padding-top: 2rem; }
+@media (min-width: 64rem) {
+  .site-header { padding-inline: max(var(--page-pad), calc((100% - var(--site-w)) / 2)); }
 }
 
 
@@ -534,16 +518,14 @@ html:not(.js) .site-header { position: static; }
 .brand__text { display: grid; }
 .brand__name { font: 600 1.0625rem/1.2 var(--serif); letter-spacing: -0.005em; }
 .brand__role { display: none; }
-/* Below the rail breakpoint the bar shows the monogram alone while the masthead <h1> is on
-   screen, so the name is not printed twice; site.js adds .past-masthead once it scrolls away.
-   Without JS the name simply stays. */
-@media (max-width: 77.49rem) {
-  .js .brand__text { opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s; }
-  .js.past-masthead .brand__text,
-  .js .brand:focus-visible .brand__text { opacity: 1; visibility: visible; }    /* a focus ring never surrounds empty space */
-}
+/* On the home page the bar shows the monogram alone while the masthead <h1> is on screen, so the
+   name is not printed twice; site.js adds .past-masthead once it scrolls away (immediately on the
+   other pages, which have no masthead). Without JS the name simply stays. */
+.js .brand__text { opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s; }
+.js.past-masthead .brand__text,
+.js .brand:focus-visible .brand__text { opacity: 1; visibility: visible; }    /* a focus ring never surrounds empty space */
 
-/* Theme toggle: moon on light, sun on dark. Label text only shows in the rail. */
+/* Theme toggle: moon on light, sun on dark. */
 .theme-toggle__sun, .theme-toggle__label { display: none; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .theme-toggle__sun { display: block; }
@@ -599,11 +581,11 @@ html:not(.js) .site-header { position: static; }
 .index a[aria-current] { color: var(--accent-text); }
 .index a[aria-current] .index__num { color: var(--accent-text); }
 
-/* Contact block: closes the phone menu with all five links; the rail keeps the two calls to action */
+/* Contact block: closes the phone menu */
 .rail-contact { margin-top: var(--s-5); }
 .rail-contact ul { display: flex; flex-wrap: wrap; gap: var(--s-2); }
 
-/* 6b. Tablet / small laptop (64rem – 77.5rem): index sits inline in the bar. */
+/* 6b. From 64rem: the menu sits inline in the bar. */
 @media (min-width: 64rem) {
   .site-header, html:not(.js) .site-header { position: sticky; display: flex; align-items: center; gap: var(--s-5); min-height: var(--bar-h); }
   .site-header__bar { display: contents; }
@@ -627,75 +609,11 @@ html:not(.js) .site-header { position: static; }
   .index a[aria-current] { box-shadow: inset 0 -2px 0 var(--accent); }
 }
 
-/* 6c. Wide (>= 77.5rem): the header becomes a sticky left rail. */
-@media (min-width: 77.5rem) {
-  .site-header, html:not(.js) .site-header {
-    top: 0; align-self: start;
-    flex-direction: column; align-items: stretch; gap: 0;
-    height: 100vh; height: 100dvh;
-    /* The rail scrolls if it must (overflow-y), which also clips it sideways. The side padding,
-       cancelled by equal negative margins, keeps focus rings and the index's accent rule inside. */
-    margin-inline: -1.25rem -0.5rem; padding: 3.25rem 0.5rem 2rem 1.25rem;
-    overflow-y: auto;
-    border-bottom: 0;
-    background: none;
-  }
-  .brand { flex: none; flex-direction: column; align-items: flex-start; gap: var(--s-4); }
-  .brand__mark { flex: none; width: 2.75rem; height: 2.75rem; font-size: 1.1875rem; }
-  .brand__name { font-size: 1.3125rem; }
-  .brand__role { display: block; margin-top: 0.3rem; font-size: 0.8125rem; line-height: 1.45; color: var(--ink-2); max-width: 11rem; }
-
-  .site-nav, .js .site-nav { margin: var(--s-7) 0 0; flex: 1 0 auto; }      /* grows, never squashed: a short window scrolls the rail */
-  .rail-label, .rail-contact { display: block; }
-  .rail-label { margin: 0 0 var(--s-3); }
-  .index { display: block; }
-  .index__num { display: inline; }
-  .index a {
-    display: grid; grid-template-columns: 1.9rem 1fr; gap: 0; align-items: baseline;
-    min-height: 0; padding: 0.42rem 0 0.42rem 0.9rem; margin-left: -0.9rem;
-    border-left: 2px solid transparent;
-    font-size: var(--fs-body-s); font-weight: 450;
-    color: var(--ink-2);
-    box-shadow: none !important;
-  }
-  .index a:hover { color: var(--ink); }
-  .index a[aria-current] { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
-  .index a[aria-current] .index__num { color: var(--accent-text); }
-
-  .rail-contact { margin-top: var(--s-6); }
-  .rail-contact ul { display: grid; justify-items: start; }
-  .rail-contact__profile { display: none; }
-  /* The hero carries the same two buttons, so the rail's copies wait until those have scrolled
-     away (site.js sets .past-hero). Without JS they are simply always there. */
-  .js .rail-contact { opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s; }
-  .js.past-hero .rail-contact { opacity: 1; visibility: visible; }
-
-  .site-header__tools { margin: var(--s-5) 0 0 -0.6rem; }
-  .theme-toggle { padding-inline: 0.6rem; }
-  .theme-toggle__label { display: inline; }
-}
-/* Short wide windows: tighten the rail in two steps so nothing is cut off
-   (the second step covers a 1366 × 768 laptop, whose browser window is about 625px tall). */
-@media (min-width: 77.5rem) and (max-height: 46rem) {
-  .site-header, html:not(.js) .site-header { padding-top: 1.75rem; padding-bottom: 1rem; }
-  .brand__role { display: none; }
-  .site-nav, .js .site-nav { margin-top: var(--s-5); }
-  .rail-contact { margin-top: var(--s-4); }
-}
-@media (min-width: 77.5rem) and (max-height: 41rem) {
-  .site-header, html:not(.js) .site-header { padding-bottom: 0.5rem; }
-  .site-nav, .js .site-nav { margin-top: var(--s-4); }
-  .rail-label { margin-bottom: var(--s-2); }
-  .index a { padding-block: 0.2rem; }
-  .rail-contact { margin-top: var(--s-3); }
-  .site-header__tools { margin-top: var(--s-3); }
-}
 
 
 /* 7. HERO ------------------------ */
 
 .hero { padding-top: clamp(1.5rem, 0.6rem + 4vw, 3.5rem); }
-@media (min-width: 77.5rem) { .hero { padding-top: 3.25rem; } }   /* the portrait's top edge lines up with the rail's monogram */
 
 /* Masthead: name + meta sit on the rule; the portrait stands on it at the right end.
    The portrait is small on purpose (its backdrop is loud): 64–80px on phones, where it takes no
@@ -719,11 +637,6 @@ html:not(.js) .site-header { position: static; }
   .hero__meta { display: flex; column-gap: 0.6rem; }
   .hero__meta li + li::before { content: "·"; margin-right: 0.6rem; color: var(--ink-3); }
   .hero__portrait { width: 7rem; }
-}
-/* No rail (top bar): smaller portrait, less air above, so the proof figures make a 1024 x 768 first screen */
-@media (min-width: 48rem) and (max-width: 77.49rem) {
-  .hero { padding-top: var(--s-5); }
-  .hero__portrait { width: 6rem; }
 }
 
 .hero__headline {
@@ -758,6 +671,74 @@ html:not(.js) .site-header { position: static; }
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-top: var(--s-5); }
+
+
+/* 7b. HOME PAGE ------------------------
+   Intro: the portrait beside the name on phones; from 48rem the portrait stands to the left of the
+   name AND the story, like a magazine profile. */
+.intro {
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); column-gap: var(--s-4); align-items: center;
+  padding-top: clamp(1.5rem, 0.6rem + 4vw, 3.25rem);
+}
+.intro__portrait { width: 100%; align-self: start; }
+.intro__head { min-width: 0; }
+.intro__story { grid-column: 1 / -1; margin-top: var(--s-5); max-width: var(--measure); }
+@media (min-width: 48rem) {
+  .intro { grid-template-columns: 12rem minmax(0, 1fr); column-gap: var(--s-6); align-items: start; }
+  .intro__portrait { grid-row: 1 / span 2; }
+  .intro__head { align-self: end; padding-top: var(--s-4); }
+  .intro__story { grid-column: 2; margin-top: var(--s-5); }
+}
+@media (min-width: 64rem) { .intro { grid-template-columns: 14rem minmax(0, 1fr); column-gap: var(--s-7); } }
+.intro__name { font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.75rem); font-weight: 600; letter-spacing: -0.014em; line-height: 1.08; }
+.intro__headline {
+  margin-top: var(--s-2);
+  font-family: var(--serif); font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem); font-weight: 340;
+  line-height: 1.22; letter-spacing: -0.018em; text-wrap: balance;
+}
+.intro__headline em { color: var(--accent-text); font-weight: 340; }
+.intro .hero__role { margin-top: var(--s-3); }
+.intro__story p { font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.65; }
+.intro__story p + p { margin-top: var(--s-4); }
+.intro__story .hero__actions { margin-top: var(--s-5); }
+
+/* Home section heads: a rule, the title, and a "more" link on the same baseline */
+.section--home { margin-top: clamp(3.5rem, 2.5rem + 4vw, 6rem); }
+.home-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-2) var(--s-5);
+  padding-top: var(--s-4); border-top: 2px solid var(--ink);
+}
+.home-head .section__title { font-size: clamp(1.625rem, 1.3rem + 1.3vw, 2.25rem); }
+.more { font-size: var(--fs-small); font-weight: 600; color: var(--accent-text); text-decoration: none; white-space: nowrap; }
+.more:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.home-intro { margin-top: var(--s-4); max-width: var(--measure); }
+
+/* Work cards: the image, a serif title, one line of hook, one of outcome; the whole card is the link */
+.cards { display: grid; gap: var(--s-6) var(--s-5); margin-top: var(--s-5); }
+@media (min-width: 40rem) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card { position: relative; padding-bottom: var(--s-4); border-bottom: 1px solid var(--rule); }
+.card__media { display: block; }
+.card__media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.card__title { margin-top: var(--s-4); font-family: var(--serif); font-size: 1.25rem; font-weight: 500; line-height: 1.25; letter-spacing: -0.012em; text-wrap: balance; }
+.card__hook { margin-top: var(--s-1); font-family: var(--serif); font-style: italic; font-size: 1.0625rem; color: var(--ink-2); }
+.card__text { margin-top: var(--s-3); font-size: var(--fs-body-s); line-height: 1.55; color: var(--ink-2); }
+.card__link { display: inline-block; margin-top: var(--s-3); font-size: var(--fs-small); font-weight: 600; color: var(--accent-text); text-decoration: none; }
+.card__link::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }   /* stretches the link over the card */
+.card:hover .card__title, .card:focus-within .card__title { color: var(--accent-text); }
+.card:hover .card__media { border-color: var(--accent); }
+.card__link:focus-visible { outline: none; }
+.card__link:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Contact on the home page: full width like the other home sections (no hanging-label column) */
+@media (min-width: 48rem) {
+  .section--contact .row { grid-template-columns: minmax(0, 1fr); }
+  .section--contact .row__body, .section--contact .section__head > .section__title { grid-column: 1; }
+}
+.section--contact .lead { max-width: var(--measure); }
+
+/* Six photographs on the home page: three across from 40rem */
+@media (min-width: 40rem) { .photos--strip, .photos.photos--strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.section--home .photos { margin-top: var(--s-5); }
 
 
 /* 8. PROOF STRIP ------------------------
@@ -859,6 +840,11 @@ html:not(.js) .site-header { position: static; }
 }
 .section__title { font-family: var(--serif-display); font-size: var(--fs-h2); font-weight: 400; letter-spacing: -0.02em; line-height: 1.08; }
 .section__title--display { font-size: var(--fs-display); font-weight: 340; letter-spacing: -0.028em; }
+
+/* The page title (h1) and later section titles sit in the text column; the label column is empty. */
+@media (min-width: 48rem) { .section__head > .section__title, .section__head > .section__headline { grid-column: 2; } }
+.section--first { margin-top: clamp(1.5rem, 0.8rem + 3vw, 3rem); }
+.subhead--first { margin-top: 0; }
 
 /* Title with links pinned beside it (Research): one line on wide screens, links wrap under on narrow ones */
 .section__headline { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-3) var(--s-5); }
@@ -1230,7 +1216,6 @@ p + .pub__authors, p + .pub__venue { margin-top: 0.1rem; }
   font-size: var(--fs-small); color: var(--ink-2);
 }
 .site-footer p + p { margin-top: 0; }
-@media (min-width: 77.5rem) { .site-footer { margin-inline: 0; } }
 .site-footer__top { display: inline-flex; align-items: center; min-height: 2.75rem; }
 
 
