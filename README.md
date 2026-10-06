@@ -19,6 +19,7 @@ Pages serves it.
 | `assets/photos/` | The Photography section's images: `<slug>-480.{webp,jpg}` (grid tile) and `<slug>-full.{webp,jpg}` (enlarged view). |
 | `assets/awards/` | Award certificates and photos: `<slug>-240.{webp,jpg}` (thumbnail) and `<slug>-full.{webp,jpg}`. |
 | `assets/certificates/` | Course certificates: the PDF plus a rendered `-480` thumbnail and `-full` image. |
+| `assets/talks/` | Invited-talk photographs, `<slug>-480.{webp,jpg}` (480×360 tile) and `<slug>-full.{webp,jpg}`, plus slide decks as PDF. |
 | `data/publications.json` | Every publication, with links, type, topics and the `selected` flag. |
 | `data/patents.json` | Every patent (one entry per invention) with status, official links, and the two headline count strings. |
 | `data/photos.json` | The photographs, in display order, with caption and alt text. |
@@ -76,6 +77,18 @@ The Certificates list on the Background page is hand-written in `background/inde
 `class="ruled-list certs"`). Copy the Coursera row: put the PDF in `assets/certificates/`, render its
 first page to `<name>-480.{webp,jpg}` and `<name>-full.{webp,jpg}`, and link the provider's own
 verification page when there is one.
+
+### Add a talk
+
+The Invited talks list on the Background page is hand-written in `background/index.html` (search for
+`id="talks"`). Copy an existing entry: the date in `entry__dates`, the talk title in `entry__org`, the
+occasion and host in `entry__role`, a short paragraph on what was covered, then the photographs as a
+`photos--strip` (three across) and any links as chips — a few words each (chips do not wrap), one chip per
+destination, and short figcaptions (they are set in uppercase and read out by the lightbox). Export each photograph to `assets/talks/` as
+`<slug>-480.{webp,jpg}` (480×360, the tile — crop to 4:3) and `<slug>-full.{webp,jpg}` (at most 1600 px on
+the long side; never upscale), strip EXIF, and put the full image's pixel size in `data-w` / `data-h`.
+A slide deck goes in `assets/talks/` as a PDF; read it first for anything that should not be public
+(phone numbers, addresses, unreleased work) and for scripts or fonts fetched from other sites.
 
 ### Edit the story on the home page
 

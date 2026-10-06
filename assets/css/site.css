@@ -961,6 +961,10 @@ html:not(.js) .site-header { position: static; }
 }
 
 .entry .bullets { margin-top: var(--s-5); }
+/* Invited talks: a short paragraph under the occasion line, then the photographs (same tiles as the home page strip) */
+.entry__text { margin-top: var(--s-4); max-width: var(--prose); font-size: var(--fs-body-s); line-height: 1.65; color: var(--ink-2); }
+.entry .photos { margin-top: var(--s-5); }
+.entry .photos + .chips { margin-top: var(--s-4); }
 
 .roles { margin-top: var(--s-4); }
 .roles > li { padding-block: var(--s-4); border-top: 1px solid var(--rule); }
