@@ -1,0 +1,1870 @@
+{
+ "note": "Photo albums (see README § Add an album). Files live in assets/albums/<slug>/ as <id>-480.{webp,jpg} (grid tile) and <id>-full.{webp,jpg} (enlarged view, the original pixels), plus og.jpg (the social card, cut from the cover). Order here is display order.",
+ "albums": [
+  {
+   "slug": "rohtang",
+   "title": "Rohtang, the Way to Heaven",
+   "card_line": "The road to the Rohtang Pass, Himachal Pradesh",
+   "when": "",
+   "intro": "The road up to the Rohtang Pass in Himachal Pradesh, from the green valley and its streams to the switchbacks above the cloud line. The weather turned while we were there: two hours of heavy snow buried the huts and the road, and the last photograph shows the same spot as an earlier one, under fresh snow.",
+   "cover": "022",
+   "og": {
+    "w": 1200,
+    "h": 628
+   },
+   "photos": [
+    {
+     "id": "001",
+     "title": "Snow peaks above a green valley",
+     "alt": "Snow-covered peaks rise behind a forested ridge, cloud gathering at the summits beneath a blue sky streaked with cirrus.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "002",
+     "title": "Cloud swirling over the ridge",
+     "alt": "White cloud tumbles over a dark wooded ridge while a snow-streaked peak shows at the right under a sky of swept cirrus.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "003",
+     "title": "Rapids among grey boulders",
+     "alt": "A glacial-green stream churns white over rounded grey boulders, seen from above in strong sunlight.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "004",
+     "title": "Mountain stream in a rocky gorge",
+     "alt": "A fast, pale-green stream threads boulders between a dark rock wall and a stone-walled path lined with shrubs.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "005",
+     "title": "Stream below the cliffs",
+     "alt": "Tall pines on a rocky bluff overlook a boulder-strewn stream, with terraced cliffs and a hazy mountain wall behind.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "006",
+     "title": "Fresh snow on bare slopes",
+     "alt": "Low cloud pours over dark, snow-dusted slopes where a line of leafless trees stands along the ridge.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "007",
+     "title": "Two crows over stone huts",
+     "alt": "Two black birds fly through heavy cloud above a pair of stone huts with tin roofs at the foot of a mountainside.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "008",
+     "title": "Taxis in the mist",
+     "alt": "White SUVs with luggage on their roofs wait on a muddy road beside tarpaulin stalls as mist hides the mountain above.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "009",
+     "title": "Hairpin bends on the mountain road",
+     "alt": "A road loops in tight hairpins across a grassy mountainside toward a cluster of roadside stalls, cars dotted along it.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "010",
+     "title": "Scree slopes and a small tarn",
+     "alt": "A grey, snow-dusted scree slope descends to a small green pool and a gravel road winding across moorland beneath low cloud.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "011",
+     "title": "Queue on the pass road",
+     "alt": "A line of white vehicles waits on a gravel road beneath a snow-dusted ridge wrapped in grey cloud, a few people at the roadside.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "012",
+     "title": "Switchbacks under low cloud",
+     "alt": "A gravel road zigzags across green slopes past a huddle of roadside stalls while cloud fills the valley beyond.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "013",
+     "title": "Snowfall at the pass",
+     "alt": "A man in a dark coat, knitted hat and shawl holds handfuls of snow as flakes fall, parked vehicles and tents blurred behind him.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "014",
+     "title": "Portrait in falling snow",
+     "alt": "Close portrait of a man in a dark hooded coat and green scarf, snowflakes drifting in front of a white, snow-covered ground.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "015",
+     "title": "Standing in the snowfall",
+     "alt": "A man in a black jacket, woollen cap and scarf stands among snow-covered boulders as thick flakes fall against a white sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "016",
+     "title": "Huts fading into the snow",
+     "alt": "Falling snow blurs a line of low huts on a white plateau, with a tumbled dry-stone wall buried in fresh snow in the foreground.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "017",
+     "title": "Whiteout on the plateau",
+     "alt": "A person in a white cap and dark coat stands in heavy snowfall, small figures and huts barely visible on the white plain behind.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "018",
+     "title": "Hairpin in fresh snow",
+     "alt": "A lone vehicle rounds a dark hairpin bend cut through deep fresh snow, more vehicles waiting on the ledge above under a grey sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "019",
+     "title": "Vehicles on the ridge",
+     "alt": "Two small vehicles perch on a snow-dusted rocky ridge that drops away into a wall of grey cloud.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "020",
+     "title": "Switchbacks through the snow",
+     "alt": "A mountain road loops in long switchbacks across a snow-covered valley floor, the slopes above dissolving into mist.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "021",
+     "title": "Ponies waiting in the snow",
+     "alt": "A string of ponies stands on a snowy slope beside a small blue tent, a steep snow-streaked mountain face looming behind in cloud.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "022",
+     "title": "Road curving over the pass",
+     "alt": "A wet black road curves between snow-covered slopes toward a cluster of huts, dark ridges and a cloud-filled valley beyond.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "023",
+     "title": "Roadside huts under snow",
+     "alt": "Snow blankets a scatter of stone huts, tents and tin roofs on a high slope, a snow-streaked ridge behind under a heavy grey sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "024",
+     "title": "Same spot, two hours later",
+     "alt": "Two gabled stone buildings sit under fresh snow at the foot of a cloud-wrapped mountainside, a few small figures on the slope nearby.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    }
+   ]
+  },
+  {
+   "slug": "mukutmanipur",
+   "title": "Mukutmanipur",
+   "card_line": "Kangsabati reservoir, Mukutmanipur, West Bengal",
+   "when": "",
+   "intro": "Mukutmanipur, in West Bengal, where the Kangsabati dam holds back a wide reservoir dotted with wooded islands. Most of these were taken along the dam and the shore as the sun went down over the water. A few frames are of the red laterite country around it.",
+   "cover": "036",
+   "og": {
+    "w": 1200,
+    "h": 628
+   },
+   "photos": [
+    {
+     "id": "001",
+     "title": "Boat on the reservoir shore",
+     "alt": "A small boat rests at the edge of a wide, still reservoir, with low wooded islands on the far side and stony ground in the foreground.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "002",
+     "title": "Sun over the water",
+     "alt": "A bright sun high in a hazy sky above a calm reservoir, a tall tree at the right edge and a wooded island on the horizon.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "003",
+     "title": "Three islands across the water",
+     "alt": "Three low rounded islands sit along the horizon beyond a stretch of gently rippled grey-blue water under a pale sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "004",
+     "title": "Haze over still water",
+     "alt": "A wide expanse of flat, silvery water under a hazy sky, with a wooded shoreline on the right and distant islands fading into the mist.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "005",
+     "title": "Sandbar and blue water",
+     "alt": "A low sandbar curves across deep blue water beneath a clear sky, with boats and trees on the far shore to the left.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "006",
+     "title": "Wooded shore from the water",
+     "alt": "Choppy blue-green water in the foreground with a tree-lined shore and a few beached boats under a pale sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "007",
+     "title": "Sparkle on the reservoir",
+     "alt": "Sunlight glitters in a path across rippled water towards a dark wooded island, with smaller islands fading into the haze beyond.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "008",
+     "title": "Island against the light",
+     "alt": "A low island crowned with trees stands silhouetted against a bright sky, sunlight sparkling on the water in front of it.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "009",
+     "title": "Embankment in the haze",
+     "alt": "A long straight embankment lines the far edge of a calm reservoir under a hazy sky, a beached boat and a lone figure on the bare shore.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "010",
+     "title": "Dark rock by the embankment",
+     "alt": "A dark boulder in the foreground with a long stone-pitched embankment stretching away beside flat, pale water under a hazy sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "011",
+     "title": "Embankment meets the water",
+     "alt": "A stone-faced embankment runs in a straight diagonal into the distance, its base meeting calm grey water beneath a pale sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "012",
+     "title": "Road along the dam crest",
+     "alt": "An empty paved road runs straight along the top of a dam into the haze, trees on the left and sunlit water on the right.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "013",
+     "title": "Hilltop above a winding road",
+     "alt": "A dry grassy hill with scattered bushes and a small white building on its crest, a narrow road curving round its base.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "014",
+     "title": "Shrubs on the shoreline",
+     "alt": "Green shrubs and small white flowers on a red earth bank above a wide stretch of rippled water, with a wooded shore to the left.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "015",
+     "title": "Low stone wall along the reservoir",
+     "alt": "A low whitewashed stone wall and dirt track curve along a reservoir shore, dry grass in front and low hills across the pale blue water.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "016",
+     "title": "Road along the dam embankment",
+     "alt": "An empty tarmac road runs along a grassy embankment toward a scrub-covered hillock, water visible to the left beneath a hazy blue sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "017",
+     "title": "Sun through thin cloud",
+     "alt": "The sun burns through a wisp of cloud above a distant strip of water, dark scrubland in silhouette along the bottom of the frame.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "018",
+     "title": "Brick kiln chimney on the plain",
+     "alt": "A tall tapering brick chimney rises from a kiln surrounded by stacked red bricks, with fields, trees and a hazy hill beyond.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "019",
+     "title": "Empty road toward the hillock",
+     "alt": "A worn tarmac road leads toward a grassy hillock with a small white hut at its foot, calm grey water to the right under a pale sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "020",
+     "title": "Hazy sun over still water",
+     "alt": "A hazy golden sun hangs above a flat reservoir, its reflection a bright shimmering path across the water toward a dark shoreline.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "021",
+     "title": "Low sun across the reservoir",
+     "alt": "A soft sun glows through haze above a wide reservoir, with a wooded island at right and a low hill on the far horizon.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "022",
+     "title": "Wooded islands in the haze",
+     "alt": "Two small wooded islands sit in flat grey water under a pale hazy sky, a tree-topped spit of land reaching in from the right.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "023",
+     "title": "Sun above a wooded island",
+     "alt": "The sun glows through streaked cloud above a small tree-covered island, its light reflected on the water beside a dark rocky shore.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "024",
+     "title": "Cirrus and sun over the water",
+     "alt": "Streaks of cirrus cloud fan across a blue sky around a low sun, with a dark shoreline, a lone tree and a hill across the water.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "025",
+     "title": "Rocky shore and a distant boat",
+     "alt": "Rippled water laps against a rocky shore, with a small boat passing in front of a long wooded bank across the reservoir.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "026",
+     "title": "Lone boat in the mist",
+     "alt": "A small boat with a single figure drifts on flat grey water in thick haze, a wooded island faint on the horizon behind it.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "027",
+     "title": "Island fading into the haze",
+     "alt": "A wooded island dissolves into grey haze across still water, with scrubby trees on a near bank at the left edge.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "028",
+     "title": "Islands across the open water",
+     "alt": "Rippled water stretches toward a line of low wooded islands and a tiny boat on the horizon beneath a pale, hazy sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "029",
+     "title": "Low sun over a wooded island",
+     "alt": "Low sun above a small wooded island, its reflection a bright path across the still water towards a dark rocky shore.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "030",
+     "title": "Country boat under a wide sky",
+     "alt": "A small wooden boat carrying a group of passengers crosses calm blue water beneath a wide sky with a sweep of thin cloud.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "031",
+     "title": "Rocky shore at sundown",
+     "alt": "A dark rocky foreshore leads to a wooded island silhouetted against a hazy sun, its reflection glinting on the water.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "032",
+     "title": "Ferry boat with bicycles",
+     "alt": "A crowded wooden ferry boat with bicycles stacked amidships is poled across calm grey water, passengers standing and seated along its length.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "033",
+     "title": "Buffaloes at the water's edge",
+     "alt": "Two black water buffaloes stand in the shallows beside a rocky shore, a long wooded bank stretching across the far side of the water.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "034",
+     "title": "Birds in a line over the water",
+     "alt": "A thin line of birds flies low over grey rippled water towards a distant wooded shore under a pale, hazy sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "035",
+     "title": "Scattered flock over the reservoir",
+     "alt": "A loose flock of birds scatters above choppy grey water, a low wooded shoreline faint in the haze behind them.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "036",
+     "title": "Sunset between two islands",
+     "alt": "The sun sinks between two dark wooded islands, streaking the water with gold beneath a sky of wispy cirrus.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "037",
+     "title": "Evening light across the water",
+     "alt": "A hazy sun hangs above a small wooded island, laying a golden track across gently rippled water as distant islets fade into the horizon.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "038",
+     "title": "Island shore at dusk",
+     "alt": "Rippled blue water leads to a low wooded island at right, its trees silhouetted against a pale evening sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "039",
+     "title": "Golden sun above an island",
+     "alt": "A golden sun glows through haze above a dark wooded island, its reflection a shimmering column on the water below.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "040",
+     "title": "Birds crossing an amber sky",
+     "alt": "A line of birds glides between two tree-covered banks under a sky washed entirely amber, the water glowing at lower right.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "041",
+     "title": "Sunset over the islands",
+     "alt": "The low sun casts a golden path across rippled water past two silhouetted islands, a thin contrail crossing the amber sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "042",
+     "title": "Last light on the reservoir",
+     "alt": "A hazy sun above a low wooded island throws a bright reflection across calm water, with tree-lined shores fading at either side.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "043",
+     "title": "Wooded shore at dusk",
+     "alt": "A low wooded shoreline darkens against a pale orange and blue sky, its reflection trembling on the rippled surface of the reservoir.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "044",
+     "title": "Boats drawn up on the island",
+     "alt": "Two small wooden boats rest at the edge of a sandy clearing below a dense line of green trees, grey water filling the foreground.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "045",
+     "title": "Headland on the open water",
+     "alt": "A tree-covered point of land tapers into the reservoir on the left, a boat moored at its tip, with hazy sky over the wide grey water.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "046",
+     "title": "Sunset over the islands",
+     "alt": "A golden sun hangs above dark wooded islands, its reflection a bright ribbon across the rippling reservoir.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "047",
+     "title": "Red earth and green trees",
+     "alt": "Rounded green trees stand on a bare expanse of pebbled red laterite soil, with a dirt path curving in from the left.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "048",
+     "title": "Lone tree on laterite ground",
+     "alt": "A single broad-crowned tree casts its shadow on stony red soil, with a dark line of woodland behind under a white sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "049",
+     "title": "Sunset from the shore",
+     "alt": "The setting sun glows amber beneath streaked cloud, its reflection reaching across the water toward a dark beach where a lone figure stands.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "050",
+     "title": "Boats below the hills",
+     "alt": "Small boats and a cluster of visitors gather on a muddy bank beneath two low hills, a single wisp of cloud rising in a pale blue sky.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "051",
+     "title": "Sunset over harvested fields",
+     "alt": "A red sun sinks behind a line of trees beyond stubbled fields, with blurred leaves in the foreground and thin cloud lit from below.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    }
+   ]
+  },
+  {
+   "slug": "europe",
+   "title": "Europe",
+   "card_line": "France, the Netherlands and Belgium",
+   "when": "September – November 2011",
+   "intro": "A trip through France, the Netherlands and Belgium in the autumn of 2011: Paris, Toulouse, Nancy and Lourdes; Amsterdam; Brussels. Most of these frames are from the Seine, Notre-Dame and the Louvre in Paris, and from the canals, squares and stations of Amsterdam, all taken on a small Canon compact.",
+   "cover": "057",
+   "og": {
+    "w": 1200,
+    "h": 628
+   },
+   "photos": [
+    {
+     "id": "001",
+     "title": "Pasture from a train window",
+     "alt": "Cattle grazing on a bright green pasture below a wooded ridge, seen past railway catenary masts under a sky of heavy cloud.",
+     "full": {
+      "w": 800,
+      "h": 505
+     }
+    },
+    {
+     "id": "002",
+     "title": "Smiling at the train window",
+     "alt": "A young child in an elephant-print top leans against a train window, smiling as trees and houses slide past in warm, hazy light.",
+     "full": {
+      "w": 800,
+      "h": 791
+     }
+    },
+    {
+     "id": "003",
+     "title": "Viaduc d'Austerlitz, Paris",
+     "alt": "A great riveted steel arch carries the metro viaduct over the Seine, with excursion boats moored below and office blocks behind.",
+     "full": {
+      "w": 800,
+      "h": 423
+     }
+    },
+    {
+     "id": "004",
+     "title": "Stone bridge over the river",
+     "alt": "A five-arched stone bridge spans a wide grey river beneath an overcast sky, with Haussmann-style apartment blocks and a crane on the far bank.",
+     "full": {
+      "w": 800,
+      "h": 450
+     }
+    },
+    {
+     "id": "005",
+     "title": "Carved cartouche on a bridge arch",
+     "alt": "A carved stone cartouche with a lion's mask and a wreathed face sits at the crown of a bridge arch, two people passing beneath its lamps.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "006",
+     "title": "Rainbow over the quay",
+     "alt": "A faint rainbow drops into a cityscape of mid-rise buildings across a wide river, moored boats along the far bank and wet paving in the foreground.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "007",
+     "title": "Rainbow against a storm sky",
+     "alt": "A bright rainbow arcs across near-black storm clouds while low sun lights a row of white excursion boats and trees along the far riverbank.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "008",
+     "title": "Rainbow above the moored boats",
+     "alt": "A broad rainbow spans a grey sky over sunlit cream-coloured apartment blocks, plane trees and white river boats, a willow branch framing the left edge.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "009",
+     "title": "Rainbow over the riverbank",
+     "alt": "A rainbow curves from the top left down toward tower blocks on the far bank, with a line of moored cruise boats and bronze sculptures on the quay.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "010",
+     "title": "Double rainbow",
+     "alt": "Two rainbows, one bright and one faint, arc across a brooding sky above a riverside skyline, a stone bridge and a row of moored boats.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "011",
+     "title": "Flower bed on a stone wall",
+     "alt": "Red salvias, white petunias and dark coleus crowd a raised bed behind a curved rough-stone wall, with trees and a grassy slope beyond.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "012",
+     "title": "Weeping willow by the river",
+     "alt": "A large weeping willow stands on a riverside quay as a cyclist passes beneath it, with white river boats and apartment buildings across the water.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "013",
+     "title": "Flower bed in a sculpture garden",
+     "alt": "A bed of orange, red and yellow bedding plants around a spiky yucca, edged by a low green wire fence, with a bronze sculpture and trees behind.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "014",
+     "title": "Glass-roofed cruise boat at dusk",
+     "alt": "A long glass-roofed excursion boat crowded with passengers churns along a wide river in low golden light, tall buildings on the far bank.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "015",
+     "title": "Sainte-Geneviève monument, Pont de la Tournelle",
+     "alt": "A tall stone pylon topped by a veiled figure rises from the end of a bridge beside the Seine, walkers passing under its arch beneath a cloudy sky.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "016",
+     "title": "Veiled figure above the bridge",
+     "alt": "Close view of a stone statue of a veiled woman sheltering a child, set on a battlemented pylon against a bright, broken sky.",
+     "full": {
+      "w": 601,
+      "h": 800
+     }
+    },
+    {
+     "id": "017",
+     "title": "Notre-Dame from the quay, Paris",
+     "alt": "Wide view down the Seine from a cobbled quay, the spire and flying buttresses of Notre-Dame rising above the trees of the Île de la Cité.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "018",
+     "title": "The apse of Notre-Dame, Paris",
+     "alt": "The towers, spire and flying buttresses of Notre-Dame seen from across the Seine, a few people on the quay below a grey sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "019",
+     "title": "Seine wall below Notre-Dame, Paris",
+     "alt": "A stone bridge and long quay wall along the Seine, with the spire and towers of Notre-Dame above the trees on the left.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "020",
+     "title": "Notre-Dame above the bridge, Paris",
+     "alt": "The spire, towers and buttressed apse of Notre-Dame rise above a two-arched stone bridge with red-and-white markers over the Seine.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "021",
+     "title": "Love locks on a bridge railing",
+     "alt": "A bridge railing densely covered in brass padlocks and ribbons stretches toward tall stone buildings, two people pausing to look.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "022",
+     "title": "The Seine by Notre-Dame, Paris",
+     "alt": "The Seine curves past moored barges and leafy banks, the towers of Notre-Dame standing on the right under a soft grey sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "023",
+     "title": "Restaurant barge on the Seine",
+     "alt": "Seen from above, diners sit beneath the canopy of a moored restaurant barge while market stalls and white tents line the quay behind.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "024",
+     "title": "South façade of Notre-Dame, Paris",
+     "alt": "The south rose window, slate roofs and spire of Notre-Dame above a line of autumn trees and the stone wall of the quay.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "025",
+     "title": "Rose window and spire, Notre-Dame",
+     "alt": "Close view of the south rose window and gabled transept of Notre-Dame, the dark lead spire climbing into a pale cloudy sky.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "026",
+     "title": "Carved portal of Notre-Dame, Paris",
+     "alt": "A pointed stone portal crowded with carved figures in its arches and tympanum, dark ironwork doors below and four visitors at the foot.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "027",
+     "title": "Cathedral poster, Notre-Dame de Paris",
+     "alt": "A black poster for a film about Notre-Dame de Paris, printed with stained-glass and sculpture details, stands before a carved doorway.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "028",
+     "title": "Cyclists crossing a cobbled square",
+     "alt": "Cyclists ride across a wide cobbled square toward mansard-roofed buildings and a tricolour flag, visitors scattered under an overcast sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "029",
+     "title": "Crowds on a cobbled square",
+     "alt": "Visitors cross a wide cobbled square under a grey sky, with autumn trees and a long mansard-roofed stone facade flying a French flag behind them.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "030",
+     "title": "Charlemagne statue, Paris",
+     "alt": "Green bronze of a crowned rider raising a sceptre on horseback, flanked by two armoured attendants, framed by plane-tree branches against a white sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "031",
+     "title": "Notre-Dame Cathedral, Paris",
+     "alt": "The twin towers and rose window of Notre-Dame rise above its three sculpted portals, small figures crossing the square at dusk.",
+     "full": {
+      "w": 800,
+      "h": 601
+     }
+    },
+    {
+     "id": "032",
+     "title": "Notre-Dame facade, Paris",
+     "alt": "Full west front of Notre-Dame in pale stone, its gallery of kings and rose window stacked beneath the two square towers.",
+     "full": {
+      "w": 601,
+      "h": 800
+     }
+    },
+    {
+     "id": "033",
+     "title": "Portals of Notre-Dame, Paris",
+     "alt": "Close view of the three carved portals, the row of kings and the rose window of Notre-Dame, with umbrellas dotting the pavement below.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "034",
+     "title": "Place du Châtelet, Paris",
+     "alt": "Evening traffic circles the gilded column of the Fontaine du Palmier, with the domed Théâtre du Châtelet and glowing cafe awnings to the left.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "035",
+     "title": "Fontaine du Palmier, Paris",
+     "alt": "A gilded winged Victory tops the tall banded column of the Fontaine du Palmier, sphinxes at its base and a French flag on the building behind.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "036",
+     "title": "Pont Notre-Dame, Paris",
+     "alt": "A single green iron arch spans the grey Seine between stone abutments, traffic passing under the quay arches beneath a cloudy sky.",
+     "full": {
+      "w": 800,
+      "h": 601
+     }
+    },
+    {
+     "id": "037",
+     "title": "Tribunal de Commerce, Paris",
+     "alt": "Ornate stone courthouse with a slate dome and rows of tall windows under a flat white sky, a green hoarding and parked vans along its base.",
+     "full": {
+      "w": 800,
+      "h": 490
+     }
+    },
+    {
+     "id": "038",
+     "title": "Gare de l'Est, Paris",
+     "alt": "The arched glass facade of Gare de l'Est with its rooftop statue and clock, lamps and awnings lit as the sky fades to pale blue.",
+     "full": {
+      "w": 800,
+      "h": 491
+     }
+    },
+    {
+     "id": "039",
+     "title": "Gare de l'Est facade, Paris",
+     "alt": "Fan-shaped iron tracery and a clock beneath the sculpted pediment of Gare de l'Est, with street signs pointing to Place Stalingrad and Porte de Pantin.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "040",
+     "title": "Equestrian statue against storm clouds",
+     "alt": "Dark bronze of a uniformed officer on a high-stepping horse silhouetted against heavy grey cloud, a small bird perched on his shoulder.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "041",
+     "title": "Palais de Chaillot, Paris",
+     "alt": "Fluted stone pillars and tall gold-framed windows of the Palais de Chaillot, gilded figures standing between them above a patterned pavement.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "042",
+     "title": "Gilded inscription, Palais de Chaillot",
+     "alt": "Curved limestone wall of the Palais de Chaillot carrying gold lettering above a bronze figure holding a lyre, with two people and a pram at its foot.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "043",
+     "title": "Bronze Apollo, Trocadéro",
+     "alt": "Green-patinated bronze of a standing figure holding a lyre aloft, set between pale stone columns in front of tall gridded windows.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "044",
+     "title": "At the Trocadéro, Paris",
+     "alt": "A man in a plaid shirt and jeans leans on a stone balustrade, the Eiffel Tower rising behind him under an overcast sky.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "045",
+     "title": "Eiffel Tower from the Trocadéro",
+     "alt": "The Eiffel Tower seen head-on across the Trocadéro gardens and the Pont d'Iéna, under a sky of broken grey and white cloud.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "046",
+     "title": "Eiffel Tower under cloud",
+     "alt": "The full height of the Eiffel Tower filling the frame against a mottled sky, the Paris rooftops low along the bottom edge.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "047",
+     "title": "Summit of the Eiffel Tower",
+     "alt": "The top platform and antenna of the Eiffel Tower in a sepia-toned, vignetted close-up against a hazy sky.",
+     "full": {
+      "w": 601,
+      "h": 800
+     }
+    },
+    {
+     "id": "048",
+     "title": "Eiffel Tower from the Seine",
+     "alt": "The Eiffel Tower towering over the Pont d'Iéna, a long glass-roofed river boat passing on the Seine beneath scattered cloud.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "049",
+     "title": "Under the Eiffel Tower",
+     "alt": "Looking up at the first and second levels of the Eiffel Tower, its iron lattice arching over a glimpse of the city beyond.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "050",
+     "title": "Les Invalides by night",
+     "alt": "The floodlit golden dome of Les Invalides glowing amid a dark sea of Paris city lights, seen from high above.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "051",
+     "title": "Wax figures in a period office",
+     "alt": "Two wax figures in nineteenth-century suits converse in a small wood-panelled office, a third standing by a desk at the back.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "052",
+     "title": "Eiffel Tower lit from below",
+     "alt": "The underside of the Eiffel Tower's iron lattice glowing gold against a black night sky, viewed from directly beneath.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "053",
+     "title": "Eiffel Tower at night",
+     "alt": "The Eiffel Tower illuminated in gold against a dark sky, seen across the lawns of the Champ de Mars with lamps glowing along the edges.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "054",
+     "title": "Night at the Eiffel Tower",
+     "alt": "A man in a plaid shirt stands on a dark pavement with the golden-lit Eiffel Tower rising behind him under a night sky.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "055",
+     "title": "Arc de Triomphe du Carrousel",
+     "alt": "The pale stone arch with rose-marble columns and carved reliefs, a few visitors passing through its central opening.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "056",
+     "title": "Arc du Carrousel, Paris",
+     "alt": "The triple-arched Arc de Triomphe du Carrousel topped by gilded figures and bronze horses, visitors strolling beneath on an overcast day.",
+     "full": {
+      "w": 800,
+      "h": 601
+     }
+    },
+    {
+     "id": "057",
+     "title": "The Louvre courtyard, Paris",
+     "alt": "Wide view of the Louvre's long stone wings and slate domes framing the glass pyramid under an overcast sky, visitors tiny at its base.",
+     "full": {
+      "w": 800,
+      "h": 391
+     }
+    },
+    {
+     "id": "058",
+     "title": "At the Louvre pyramid, Paris",
+     "alt": "A man in a striped shirt with a backpack stands at a metal barrier, the Louvre's glass pyramid and palace wings behind him.",
+     "full": {
+      "w": 800,
+      "h": 587
+     }
+    },
+    {
+     "id": "059",
+     "title": "Louvre palace and pyramid, Paris",
+     "alt": "The ornate Louvre facade and domed pavilion under a pale pink-grey sky, the glass pyramid and equestrian statue at the right edge.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "060",
+     "title": "Equestrian statue, Louvre",
+     "alt": "Equestrian statue of a rider on a rearing horse, set on a stone plinth against the carved windows of the Louvre facade.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "061",
+     "title": "The famous crystal pyramid, Louvre",
+     "alt": "The Louvre's glass pyramid fills the frame beneath a grey sky, a crowd of visitors gathered at its base and a pushchair in the foreground.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "062",
+     "title": "Pavillon Richelieu, Louvre",
+     "alt": "Sculpted stone facade of the Pavillon Richelieu rising above a small glass pyramid, visitors blurred in motion at its foot.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "063",
+     "title": "Musee du Louvre entrance, Paris",
+     "alt": "Revolving doors beneath a steel frame lettered Musee du Louvre, the glass pyramid's lattice overhead and visitors queuing at the right.",
+     "full": {
+      "w": 800,
+      "h": 601
+     }
+    },
+    {
+     "id": "064",
+     "title": "The Da Vinci Code pyramid, Louvre",
+     "alt": "The Louvre's inverted glass pyramid hangs point-down above a small stone pyramid in a bright underground hall, shoppers passing beneath.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "065",
+     "title": "Diana of Versailles, Louvre",
+     "alt": "Marble statue of a striding goddess reaching for an arrow with a leaping stag at her side, in a lamplit sculpture gallery.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "066",
+     "title": "Sculpture gallery, Louvre",
+     "alt": "A vaulted gallery of white marble statues on stone plinths, two visitors raising cameras between the red marble pilasters.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "067",
+     "title": "Psyche revived by Cupid's kiss",
+     "alt": "Marble sculpture of a winged figure cradling a reclining woman, carved drapery spilling over the plinth against a pale stone wall.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "068",
+     "title": "The Mona Lisa, Louvre",
+     "alt": "The Mona Lisa behind glass in its carved gilt frame, the sitter's folded hands and faint smile against a hazy blue landscape.",
+     "full": {
+      "w": 615,
+      "h": 800
+     }
+    },
+    {
+     "id": "069",
+     "title": "Before the Mona Lisa, Louvre",
+     "alt": "A man in a striped shirt with an audio guide stands close to the camera, the Mona Lisa hanging on the wall behind him.",
+     "full": {
+      "w": 724,
+      "h": 800
+     }
+    },
+    {
+     "id": "070",
+     "title": "The Louvre's largest painting",
+     "alt": "The Wedding at Cana, the Louvre's largest painting, a vast gilt-framed banquet beneath classical columns, visitors small in front of it.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "071",
+     "title": "Second-largest painting, Louvre",
+     "alt": "A vast gilt-framed canvas of a crowded coronation ceremony, robed figures gathered beneath columns and a raised golden cross.",
+     "full": {
+      "w": 800,
+      "h": 523
+     }
+    },
+    {
+     "id": "072",
+     "title": "Winged Victory of Samothrace, Louvre",
+     "alt": "A headless winged marble figure in wind-swept drapery stands on a stone ship's prow against pale limestone walls.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "073",
+     "title": "Venus de Milo, Louvre",
+     "alt": "An armless white marble statue of a woman, drapery gathered at her hips, before a dark red marble niche.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "074",
+     "title": "Louvre facade by night",
+     "alt": "A floodlit stone palace wing with a tall pavilion roof and rows of lit windows above a dark, almost deserted cobbled square.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "075",
+     "title": "Pavillon Richelieu, Louvre",
+     "alt": "Looking up at a floodlit ornate pavilion with sculpted figures and columns, the tip of a glass pyramid at its foot.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "076",
+     "title": "Equestrian statue, Louvre courtyard",
+     "alt": "A white stone horse and rider rear on a tall plinth before the floodlit palace facade, visitors gathered below at night.",
+     "full": {
+      "w": 800,
+      "h": 498
+     }
+    },
+    {
+     "id": "077",
+     "title": "Before the Louvre Pyramid, night",
+     "alt": "A man in a maroon shirt and jeans stands before the glass pyramid, the floodlit palace glowing behind under a dark sky.",
+     "full": {
+      "w": 800,
+      "h": 387
+     }
+    },
+    {
+     "id": "078",
+     "title": "Louvre Pyramid at night",
+     "alt": "The glass pyramid glows against a dark sky, the floodlit palace wings and domed pavilion stretching behind it.",
+     "full": {
+      "w": 800,
+      "h": 335
+     }
+    },
+    {
+     "id": "079",
+     "title": "Hôtel du Louvre at night",
+     "alt": "A grand corner building lit golden at night, its name in bright letters above rows of balconied windows and a street lamp.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "080",
+     "title": "Tall ship, Amsterdam",
+     "alt": "The bow of a wooden three-masted sailing ship with a gilded lion figurehead moored beneath an overcast sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "081",
+     "title": "NEMO Science Museum, Amsterdam",
+     "alt": "A huge green-copper building shaped like a ship's hull rises from the water beside a brick quay and a yellow mooring post.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "082",
+     "title": "Harbour skyline at dusk",
+     "alt": "A low city skyline with cranes and a lone tower beneath heavy grey cloud, a pale band of light along the horizon over rippled water.",
+     "full": {
+      "w": 800,
+      "h": 531
+     }
+    },
+    {
+     "id": "083",
+     "title": "Construction cranes above the waterfront",
+     "alt": "Concrete towers and tall construction cranes rise behind a long glass-fronted quay building on grey water under an overcast sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "084",
+     "title": "Dusk over the harbour",
+     "alt": "Grey water and wooden jetties lead toward a distant skyline of cranes and a tower, a faint glow of sunset under low cloud.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "085",
+     "title": "Zouthaven restaurant at dusk, Amsterdam",
+     "alt": "A glass-fronted restaurant glows at dusk, its string of round lamps and seated diners visible behind the Zouthaven sign on a wooden deck.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "086",
+     "title": "Mövenpick Hotel by night, Amsterdam",
+     "alt": "A brick hotel with a red neon sign and glowing lobby stands beside a tram stop and a lit glass tower under a black night sky.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "087",
+     "title": "Amsterdam Centraal at night",
+     "alt": "The floodlit red-brick facade of Amsterdam Centraal, with gilded clock, ornamental gables and tall arched windows against a dark sky.",
+     "full": {
+      "w": 691,
+      "h": 800
+     }
+    },
+    {
+     "id": "088",
+     "title": "Mozes en Aäronkerk, Waterlooplein",
+     "alt": "A pale twin-towered church with a columned portico rises over market stalls and parked bicycles beneath a white overcast sky.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "089",
+     "title": "Blauwbrug over the Amstel, Amsterdam",
+     "alt": "A grey iron bridge with white balustrades and crown-topped lamp posts spans a dark river, canal houses and scaffolding behind it.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "090",
+     "title": "Flower-decked canal boat landing",
+     "alt": "A yellow boat landing lined with pink flower boxes floats before grand canal-side hotels hung with bunting and a row of national flags.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "091",
+     "title": "Munttoren, Amsterdam",
+     "alt": "The dark brick Munttoren with its ornate clock and open belfry rises above a busy junction criss-crossed by tram wires under grey cloud.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "092",
+     "title": "The Concertgebouw, Amsterdam",
+     "alt": "The neoclassical Concertgebouw with its gilded lyre and sculpted pediment stands behind traffic lights and roadworks on an overcast day.",
+     "full": {
+      "w": 800,
+      "h": 450
+     }
+    },
+    {
+     "id": "093",
+     "title": "I amsterdam letters, Rijksmuseum",
+     "alt": "Giant red and white I amsterdam letters stand before the turreted Rijksmuseum, a reflecting pool with gulls in the foreground.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "094",
+     "title": "Gulls before the I amsterdam letters",
+     "alt": "Gulls drift on a rippled pool in front of the I amsterdam letters, a few visitors sitting on them beneath the Rijksmuseum facade.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "095",
+     "title": "Among the I amsterdam letters",
+     "alt": "A man in a green hooded top and jeans stands inside the giant red letters of the I amsterdam sign, the Rijksmuseum behind him.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "096",
+     "title": "Breakfast room at Casa",
+     "alt": "A bright hotel breakfast room with grey carpet, dark chairs at set tables, food posters on the walls and a Casa sign on a wooden stand.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "097",
+     "title": "Station forecourt under bright cloud",
+     "alt": "A mid-century station with a tall glass facade and curved canopy faces a green lawn and a tall conifer, cars parked on the cobbled road.",
+     "full": {
+      "w": 800,
+      "h": 538
+     }
+    },
+    {
+     "id": "098",
+     "title": "Rijksmuseum under scaffolding, Amsterdam",
+     "alt": "The brick towers and steep slate roofs of the Rijksmuseum, one wing wrapped in scaffolding, above a green bus and cyclists at a junction.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "099",
+     "title": "Westerkerk tower, Amsterdam",
+     "alt": "The tall brick tower of the Westerkerk, topped by a blue and gold crown, rises over gabled roofs and street trees beneath a bright, cloud-streaked sky.",
+     "full": {
+      "w": 600,
+      "h": 800
+     }
+    },
+    {
+     "id": "100",
+     "title": "Royal Palace, Dam Square",
+     "alt": "The wide stone front of the Royal Palace with its green-domed cupola, crowds milling across the square below and the Nieuwe Kerk at the right edge.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "101",
+     "title": "Basilica of St Nicholas, Amsterdam",
+     "alt": "Twin-towered basilica with a central dome and rose window standing among brick houses, a blue van and rows of parked bicycles at its foot.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "102",
+     "title": "Centraal station, Amsterdam",
+     "alt": "The long red-brick facade of Amsterdam Centraal with its turrets under a bright blue sky scattered with white clouds, trams and buses passing in front.",
+     "full": {
+      "w": 800,
+      "h": 512
+     }
+    },
+    {
+     "id": "103",
+     "title": "Storm light over Centraal station",
+     "alt": "Heavy grey cloud banks over the clock towers of Amsterdam Centraal, the brick facade catching a patch of low sunlight beneath a web of tram wires.",
+     "full": {
+      "w": 800,
+      "h": 445
+     }
+    },
+    {
+     "id": "104",
+     "title": "Bicycles under a darkening sky",
+     "alt": "A thicket of parked bicycles in front of a canal-cruise kiosk and a white delivery van, dark storm clouds massing above a curved glass tower.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "105",
+     "title": "Dam Square, Amsterdam",
+     "alt": "Sunlit facade of the Royal Palace behind a busy square, with a yellow kiosk, a red snack cart, tram tracks and people strolling across the cobbles.",
+     "full": {
+      "w": 800,
+      "h": 675
+     }
+    },
+    {
+     "id": "106",
+     "title": "Stone lion, National Monument",
+     "alt": "A rough-hewn white stone lion crouches on its plinth, mouth open, against fresh green trees and a tall pale office building.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    },
+    {
+     "id": "107",
+     "title": "National Monument, Dam Square",
+     "alt": "The white travertine pillar of the National Monument rises from a curved wall of carved shields where people sit in the sun, the palace dome behind.",
+     "full": {
+      "w": 800,
+      "h": 600
+     }
+    }
+   ]
+  },
+  {
+   "slug": "convocation-2010",
+   "title": "Convocation 2010",
+   "card_line": "M.Tech. convocation, Jadavpur University, Kolkata",
+   "when": "2010",
+   "intro": "My M.Tech. convocation at Jadavpur University, Kolkata, India, in 2010. The degrees were awarded on campus, and afterwards we stayed on in our orange gowns for photographs: on the red carpet below the convocation banner, around the campus sculpture, and together as a class on the steps of the TEQIP Building.",
+   "cover": "005",
+   "og": {
+    "w": 1200,
+    "h": 628
+   },
+   "photos": [
+    {
+     "id": "001",
+     "title": "Dignitaries on the convocation stage",
+     "alt": "A row of academics in orange and saffron gowns stands behind a blue-draped table on a stage, beneath a banner reading Degree Awarding Ceremony.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "002",
+     "title": "Graduates waiting under the canopy",
+     "alt": "Rows of graduates in orange gowns sit on red plastic chairs under a pale tent, several looking toward the camera; a sign reads M.Tech.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "003",
+     "title": "Among the seated graduates",
+     "alt": "Two graduates in orange gowns turn to face the camera from their seats beneath a tent, others in gowns around them.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "004",
+     "title": "Receiving the degree",
+     "alt": "A graduate in an orange gown reaches across a stage table to receive a document from a man in a yellow and orange gown, against a patterned orange backdrop.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "005",
+     "title": "Jadavpur University convocation hall",
+     "alt": "Three graduates in orange gowns hold yellow envelopes in a crowded hall, the Annual Convocation banner of Jadavpur University behind them.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "006",
+     "title": "Class group on the red carpet",
+     "alt": "About twenty graduates in orange gowns pose in three rows on a red carpet before a cream wall, several holding yellow envelopes.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "007",
+     "title": "Graduate under the yellow flag",
+     "alt": "A graduate in an orange gown holds a yellow envelope on a red carpet, a tall yellow flag and a bare tree against a pale sky behind him.",
+     "full": {
+      "w": 540,
+      "h": 720
+     }
+    },
+    {
+     "id": "008",
+     "title": "Three graduates by the brick building",
+     "alt": "Three graduates in orange gowns with red sashes smile beside a red-brick wall, green foliage and more gowned figures behind them.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "009",
+     "title": "Before the campus sculpture",
+     "alt": "Two graduates in orange gowns stand arm in arm in front of a grey stone sculpture of striding figures ringed by a white railing.",
+     "full": {
+      "w": 540,
+      "h": 720
+     }
+    },
+    {
+     "id": "010",
+     "title": "Graduate in the morning sun",
+     "alt": "A graduate in an orange gown over a striped shirt and white trousers stands in bright sun, a stone statue and railing behind him.",
+     "full": {
+      "w": 540,
+      "h": 720
+     }
+    },
+    {
+     "id": "011",
+     "title": "Portrait beside the statue",
+     "alt": "Close view of a graduate in an orange gown and glasses, sunlit, with a stone statue, railing and other gowned figures behind.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "012",
+     "title": "Graduates around the statue plinth",
+     "alt": "A graduate in an orange gown faces the camera while others in gowns stand with their backs turned at a railed statue plinth under trees.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "013",
+     "title": "Two friends among the bougainvillea",
+     "alt": "A woman in a black top and red scarf and a graduate in an orange gown smile in front of a hedge of magenta bougainvillea.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "014",
+     "title": "Portrait by the flowering hedge",
+     "alt": "A woman with a red scarf and a graduate in an orange gown and white trousers stand before green leaves and magenta bougainvillea.",
+     "full": {
+      "w": 540,
+      "h": 720
+     }
+    },
+    {
+     "id": "015",
+     "title": "Graduates on the red carpet",
+     "alt": "A large group of graduates in orange gowns with red and white sashes, some holding yellow folders, gathered on a red carpet before a pale wall.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "016",
+     "title": "Annual Convocation, Jadavpur University",
+     "alt": "A graduate in an orange gown holding a yellow folder on a red carpet, an Annual Convocation banner and a gate behind him.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "017",
+     "title": "Under the convocation banner",
+     "alt": "A graduate in an orange gown stands on a red carpet holding a yellow folder, with the Annual Convocation banner of Jadavpur University above the gate behind.",
+     "full": {
+      "w": 540,
+      "h": 720
+     }
+    },
+    {
+     "id": "018",
+     "title": "Two friends at the convocation",
+     "alt": "A smiling graduate in an orange gown beside a woman in a red scarf and black jacket, graduates and a convocation banner in the background.",
+     "full": {
+      "w": 720,
+      "h": 540
+     }
+    },
+    {
+     "id": "019",
+     "title": "Class photograph, TEQIP Building",
+     "alt": "Three rows of graduates in orange gowns posed on the steps of a building whose facade reads TEQIP BUILDING.",
+     "full": {
+      "w": 720,
+      "h": 644
+     }
+    }
+   ]
+  }
+ ]
+}

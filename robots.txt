@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-# Retired 2014-era site assets and personal albums: keep them out of search results.
-Disallow: /Pinaki_Bhaskar/My_Albums/
-Disallow: /Pinaki_Bhaskar/Media/
-Disallow: /Pinaki_Bhaskar/Scripts/
 
 Sitemap: https://pinakibhaskar.github.io/sitemap.xml

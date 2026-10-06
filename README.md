@@ -11,25 +11,30 @@ Pages serves it.
 | Path | What it is |
 | --- | --- |
 | `index.html` | The home page (About): portrait, the story, three work cards, current research, six photographs, contact. |
-| `work/`, `research/`, `patents/`, `recognition/`, `background/`, `photography/` | The other pages, one `index.html` each. The site header is copied into every page — if you change the menu, change it in all seven files. |
+| `work/`, `research/`, `patents/`, `recognition/`, `background/`, `photography/` | The other pages, one `index.html` each. The site header is copied into every page — if you change the menu, change it in all seven files, then run `python3 tools/build_albums.py` so the album pages pick it up. |
+| `photography/<album>/` | One generated page per photo album (`tools/build_albums.py`) — do not edit by hand. |
 | `assets/css/site.css` | Styles. Design tokens (colours, type scale, spacing) are at the top. |
 | `assets/js/site.js` | Progressive enhancement only: theme toggle, mobile menu, publication list (clipped until “Show all”, filters, search), copy-address button, photography lightbox. The page works without it. |
 | `assets/fonts/` | Self-hosted Fraunces + Inter (SIL Open Font License), latin subset, trimmed to the weights the site uses (Fraunces 300–600, optical size 12–72; Inter 400–700). Stay inside those ranges in `site.css`, or replace the files with the full variable fonts. |
 | `assets/img/` | Favicon, the social-share card (`og-card.png`), the portrait (`pinaki-bhaskar-320/640`), the award photo (`pinaki-bhaskar-zinnov-2022-480/960/full`) and `cards/` (the three home-page card images), each as WebP + JPEG. |
-| `assets/photos/` | The Photography section's images: `<slug>-480.{webp,jpg}` (grid tile) and `<slug>-full.{webp,jpg}` (enlarged view). |
+| `assets/photos/` | The Photography page's selected images: `<slug>-480.{webp,jpg}` (grid tile) and `<slug>-full.{webp,jpg}` (enlarged view). |
+| `assets/albums/<album>/` | The albums' images: `<id>-480.{webp,jpg}` (grid tile), `<id>-full.{webp,jpg}` (the enlarged view — the original pixels, metadata removed) and `og.jpg` (the social card, cut from the cover). Made by `tools/album_images.py`. |
 | `assets/awards/` | Award certificates and photos: `<slug>-240.{webp,jpg}` (thumbnail) and `<slug>-full.{webp,jpg}`. |
 | `assets/certificates/` | Course certificates: the PDF plus a rendered `-480` thumbnail and `-full` image. |
 | `assets/talks/` | Invited-talk photographs, `<slug>-480.{webp,jpg}` (480×360 tile) and `<slug>-full.{webp,jpg}`, plus slide decks as PDF. |
 | `data/publications.json` | Every publication, with links, type, topics and the `selected` flag. |
 | `data/patents.json` | Every patent (one entry per invention) with status, official links, and the two headline count strings. |
-| `data/photos.json` | The photographs, in display order, with caption and alt text. |
+| `data/photos.json` | The selected photographs, in display order, with caption and alt text. |
+| `data/albums.json` | The albums: title, intro, cover, and every photograph with its title and alt text. |
 | `data/awards.json` | Awards & recognition, in two groups, with optional certificate images. |
 | `tools/build_publications.py` | Regenerates the publication lists in `research/index.html`. |
 | `tools/build_patents.py` | Regenerates the patents table in `patents/index.html`, and checks every mention of a patent count across the site. |
-| `tools/build_photos.py` | Regenerates the grid in `photography/index.html` and the six-photo strip on the home page. |
+| `tools/build_photos.py` | Regenerates the selected-photographs grid in `photography/index.html` and the six-photo strip on the home page. |
+| `tools/album_images.py` | Prepares an album's image files (tiles, metadata-free full size, social card) from the originals. |
+| `tools/build_albums.py` | Regenerates the album cards in `photography/index.html`, every `photography/<album>/index.html`, and adds new album pages to `sitemap.xml`. |
 | `tools/build_awards.py` | Regenerates the award lists in `recognition/index.html`. |
 | `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll` | Hosting housekeeping. |
-| `Pinaki_Bhaskar/` | The retired 2014 iWeb site. Its pages now redirect here; `Publication_files/*.pdf` are still linked from the publication list, so keep them. |
+| `Pinaki_Bhaskar/` | The retired 2014 iWeb site. Its pages now redirect here (the old album pages to the new albums); `Publication_files/*.pdf` are still linked from the publication list, so keep them. |
 
 ## Common edits
 
@@ -61,6 +66,21 @@ third-party mirror: some of them print inventors' home addresses.
 
 The current twelve came from old 720–800 px web albums. Originals at 1600 px or more would look much
 better: export `-full` at up to 1600 px wide and the section will use them as they are.
+
+### Add an album
+
+1. Put the originals in a folder, in the order they should appear, and run
+   `python3 tools/album_images.py <album-slug> <folder>/*.jpg` (needs Pillow: `pip install pillow`).
+   It writes `assets/albums/<album-slug>/<id>-480.{webp,jpg}` (480×360 tiles) and `<id>-full.{webp,jpg}` — the
+   full size keeps the original's pixels and drops only its metadata (EXIF can carry GPS coordinates) — and prints
+   the `"photos"` entries. Pass `--focus 007:top` for a portrait photograph whose subject is near the top (or
+   `bottom`), so the tile is cropped around it; `--og 012` cuts the social card `og.jpg` from that photograph.
+2. Add the album to `data/albums.json`: `slug`, `title`, `card_line` (one line for the card), `when` (or `""`),
+   `intro` (two or three sentences), `cover` (a photo id), `og` (the social card's size, printed by the script),
+   and the printed `photos` list with a short `title` and an `alt` sentence for every photograph. Keep titles and
+   alt text free of people's names.
+3. Run `python3 tools/build_albums.py`. It writes the cards on the Photography page, one page per album, and
+   adds the new page to `sitemap.xml`. To retire an album, delete its entry and its `photography/<slug>/` folder.
 
 ### Add or change an award
 
