@@ -1207,6 +1207,8 @@ p + .pub__authors, p + .pub__venue { margin-top: 0.1rem; }
 .certs > li { font-size: var(--fs-body-s); line-height: 1.6; }
 .certs .exhibit__plate { width: 5.5rem; }                     /* the certificate is landscape, so it can be a little wider */
 @media (min-width: 48rem) { .exhibit__plate { width: 5rem; } .certs .exhibit__plate { width: 6.5rem; } }
+.exhibit--photo .exhibit__plate { width: 5.5rem; }                 /* a photograph beside a case study's recognition list (Work page) */
+@media (min-width: 48rem) { .exhibit--photo .exhibit__plate { width: 7rem; } }
 
 .section--contact .section__head { margin-bottom: var(--s-5); }
 .contact__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }

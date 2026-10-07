@@ -8,13 +8,40 @@
     {
      "title": "Technical Role Model — Emerging (AI & Big Data Analytics)",
      "detail": "Zinnov Awards 2022",
-     "source": {"label": "Samsung Newsroom India", "url": "https://news.samsung.com/in/eighth-year-in-a-row-samsung-wins-big-accolades-at-2022-zinnov-awards"},
-     "image": {"slug": "zinnov-2022-stage", "caption": "Receiving the Technical Role Model award, Zinnov Awards 2022", "alt": "Dr. Pinaki Bhaskar on stage receiving the Zinnov Awards 2022 trophy", "thumb": {"w": 240, "h": 160}, "full": {"w": 1000, "h": 668}}
+     "source": {
+      "label": "Samsung Newsroom India",
+      "url": "https://news.samsung.com/in/eighth-year-in-a-row-samsung-wins-big-accolades-at-2022-zinnov-awards"
+     },
+     "image": {
+      "slug": "zinnov-2022-stage",
+      "caption": "Receiving the Technical Role Model award, Zinnov Awards 2022",
+      "alt": "Dr. Pinaki Bhaskar on stage receiving the Zinnov Awards 2022 trophy",
+      "thumb": {
+       "w": 240,
+       "h": 160
+      },
+      "full": {
+       "w": 1000,
+       "h": 668
+      }
+     }
     },
-    {"title": "Top-ranked system", "detail": "CLEF QA4MRE 2011, 2012 and 2013 · ResPubliQA 2010 (answer selection) — team systems, Jadavpur University"},
-    {"title": "Best-paper nominee", "detail": "student session, PACLIC 24 (Tohoku University, Sendai, 2010)"},
-    {"title": "ERCIM Alain Bensoussan postdoctoral fellowship", "detail": "2014 – 15"},
-    {"title": "Travel grant", "detail": "Microsoft Research India (CLEF 2013) · ELIAS / European Science Foundation registration grants (CLEF 2011, CLEF 2013)"}
+    {
+     "title": "Top-ranked system",
+     "detail": "CLEF QA4MRE 2011, 2012 and 2013 · ResPubliQA 2010 (answer selection) — team systems, Jadavpur University"
+    },
+    {
+     "title": "Best-paper nominee",
+     "detail": "student session, PACLIC 24 (Tohoku University, Sendai, 2010)"
+    },
+    {
+     "title": "ERCIM Alain Bensoussan postdoctoral fellowship",
+     "detail": "2014 – 15"
+    },
+    {
+     "title": "Travel grant",
+     "detail": "Microsoft Research India (CLEF 2013) · ELIAS / European Science Foundation registration grants (CLEF 2011, CLEF 2013)"
+    }
    ]
   },
   {
@@ -24,31 +51,113 @@
     {
      "title": "Best Project award",
      "detail": "Samsung Research (Seoul) — natural-language Gallery search with a VLM, Galaxy S25 series",
-     "image": {"slug": "samsung-research-awards-2025", "caption": "Samsung Research Awards 2025 — Research and Development", "alt": "Samsung Research Awards certificate for Research and Development presented to Pinaki Bhaskar, April 2025", "thumb": {"w": 240, "h": 353}, "full": {"w": 1071, "h": 1574}}
+     "image": {
+      "slug": "samsung-research-awards-2025",
+      "caption": "Samsung Research Awards 2025 — Research and Development",
+      "alt": "Samsung Research Awards certificate for Research and Development presented to Pinaki Bhaskar, April 2025",
+      "thumb": {
+       "w": 240,
+       "h": 353
+      },
+      "full": {
+       "w": 1071,
+       "h": 1574
+      }
+     }
     },
     {
      "title": "New Valley Project of the Year (R&D)",
      "detail": "{SRI-B} Annual Awards 2024 — Gallery Search",
-     "image": {"slug": "new-valley-2024", "caption": "New Valley Project of the Year (R&D) — Gallery Search, SRI-B Annual Award 2024", "alt": "Certificate of Appreciation: New Valley Project of the Year (R&D), Gallery Search, presented to Pinaki Bhaskar, February 2025", "thumb": {"w": 240, "h": 169}, "full": {"w": 1280, "h": 899}}
+     "image": {
+      "slug": "new-valley-2024",
+      "caption": "New Valley Project of the Year (R&D) — Gallery Search, SRI-B Annual Award 2024",
+      "alt": "Certificate of Appreciation: New Valley Project of the Year (R&D), Gallery Search, presented to Pinaki Bhaskar, February 2025",
+      "thumb": {
+       "w": 240,
+       "h": 169
+      },
+      "full": {
+       "w": 1280,
+       "h": 899
+      }
+     }
     },
     {
      "title": "Super Tech Award — Development to Market",
      "detail": "Samsung Excellence Awards, Q4 2024",
-     "image": {"slug": "super-tech-q4-2024", "caption": "Samsung Excellence Award — Super Tech Award, Q4 2024", "alt": "Samsung Excellence Award certificate: Super Tech Award, Development to market, presented to Pinaki Bhaskar, January 2025", "thumb": {"w": 240, "h": 376}, "full": {"w": 511, "h": 800}}
+     "image": {
+      "slug": "super-tech-q4-2024",
+      "caption": "Samsung Excellence Award — Super Tech Award, Q4 2024",
+      "alt": "Samsung Excellence Award certificate: Super Tech Award, Development to market, presented to Pinaki Bhaskar, January 2025",
+      "thumb": {
+       "w": 240,
+       "h": 376
+      },
+      "full": {
+       "w": 511,
+       "h": 800
+      }
+     }
     },
     {
      "title": "Team Awesome Award",
      "detail": "Samsung Excellence Awards, Q4 2023 — on-device GenAI and One UI intelligence for the Galaxy S24 (team award)",
-     "image": {"slug": "team-awesome-q4-2023", "caption": "Samsung Excellence Award — Team Awesome Award, Q4 2023", "alt": "Samsung Excellence Award certificate: Team Awesome Award for on-device GenAI and One UI intelligence, presented to Pinaki Bhaskar, January 2024", "thumb": {"w": 240, "h": 356}, "full": {"w": 539, "h": 800}}
+     "image": {
+      "slug": "team-awesome-q4-2023",
+      "caption": "Samsung Excellence Award — Team Awesome Award, Q4 2023",
+      "alt": "Samsung Excellence Award certificate: Team Awesome Award for on-device GenAI and One UI intelligence, presented to Pinaki Bhaskar, January 2024",
+      "thumb": {
+       "w": 240,
+       "h": 356
+      },
+      "full": {
+       "w": 539,
+       "h": 800
+      }
+     }
     },
-    {"title": "Global Best Project award", "detail": "Mobile Developer Conference 2021 (Mobile R&D Office, Korea) — on-device user-centric knowledge graph"},
+    {
+     "title": "Global Best Project award",
+     "detail": "Mobile Developer Conference 2021 (Mobile R&D Office, Korea) — on-device user-centric knowledge graph",
+     "image": {
+      "slug": "mdc-best-project-2021",
+      "caption": "MDC Best Project — On-device User-centric Knowledge Graph, Mobile Developer Conference, 31 December 2021",
+      "alt": "Samsung MDC Best Project plaque: On-device User-centric Knowledge Graph (SRI-B), Pinaki Bhaskar and project members, Mobile Developer Conference, 31 December 2021",
+      "thumb": {
+       "w": 240,
+       "h": 320
+      },
+      "full": {
+       "w": 654,
+       "h": 1600
+      }
+     }
+    },
     {
      "title": "The ACE Employee annual award",
      "detail": "2021 – 22",
-     "image": {"slug": "ace-employee-2021-22", "caption": "Excellence Awards — The Ace Employee, Annual Awards 2021–22", "alt": "Annual Awards 2021-22 Excellence Awards certificate: The Ace Employee, presented to Pinaki Bhaskar, April 2022", "thumb": {"w": 240, "h": 184}, "full": {"w": 1280, "h": 982}}
+     "image": {
+      "slug": "ace-employee-2021-22",
+      "caption": "Excellence Awards — The Ace Employee, Annual Awards 2021–22",
+      "alt": "Annual Awards 2021-22 Excellence Awards certificate: The Ace Employee, presented to Pinaki Bhaskar, April 2022",
+      "thumb": {
+       "w": 240,
+       "h": 184
+      },
+      "full": {
+       "w": 1280,
+       "h": 982
+      }
+     }
     },
-    {"title": "Star of the Quarter — Lead by Example", "detail": "Q3 2021 · Spot award, Sep 2021"},
-    {"title": "Samsung Citizen Award — Highflier", "detail": "2019"}
+    {
+     "title": "Star of the Quarter — Lead by Example",
+     "detail": "Q3 2021 · Spot award, Sep 2021"
+    },
+    {
+     "title": "Samsung Citizen Award — Highflier",
+     "detail": "2019"
+    }
    ]
   }
  ]
