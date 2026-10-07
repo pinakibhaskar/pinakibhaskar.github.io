@@ -22,6 +22,7 @@ Pages serves it.
 | `assets/awards/` | Award certificates and photos: `<slug>-240.{webp,jpg}` (thumbnail) and `<slug>-full.{webp,jpg}`. |
 | `assets/certificates/` | Course certificates: the PDF plus a rendered `-480` thumbnail and `-full` image. |
 | `assets/talks/` | Invited-talk photographs, `<slug>-480.{webp,jpg}` (480×360 tile) and `<slug>-full.{webp,jpg}`, plus slide decks as PDF. |
+| `assets/community/` | Photographs for the Jury & mentoring entries, same two sizes. |
 | `data/publications.json` | Every publication, with links, type, topics and the `selected` flag. |
 | `data/patents.json` | Every patent (one entry per invention) with status, official links, and the two headline count strings. |
 | `data/photos.json` | The selected photographs, in display order, with caption and alt text. |
@@ -109,6 +110,9 @@ destination, and short figcaptions (they are set in uppercase and read out by th
 the long side; never upscale), strip EXIF, and put the full image's pixel size in `data-w` / `data-h`.
 A slide deck goes in `assets/talks/` as a PDF; read it first for anything that should not be public
 (phone numbers, addresses, unreleased work) and for scripts or fonts fetched from other sites.
+
+The Jury & mentoring section below it (`id="jury"`) uses the same entry pattern, with its images in
+`assets/community/`.
 
 ### Edit the story on the home page
 
